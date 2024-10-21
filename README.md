@@ -89,7 +89,7 @@ To complete this assignment, please observe the following technical restrictions
 
 ### Process
 
-1. Accept the GitHub Classroom invitation [here](--change--).
+1. Accept the GitHub Classroom invitation [here](https://classroom.github.com/a/_SWuvHoE).
 2. Clone the repository to your work computer.
 3. Create or update the HTML pages required.
 4. Commit regularly and push your work using meaningful commit messages.
@@ -134,4 +134,4 @@ In addition to the required features detailed above, the following optional feat
   https://v2.api.noroff.dev/docs/static/index.html#/social-profiles
 
 - GitHub Classroom:  
-  --change--
+  https://classroom.github.com/a/_SWuvHoE
