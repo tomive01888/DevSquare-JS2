@@ -1,12 +1,237 @@
+/* Global settings */
 * {
-  &:before,
-  &:after,
-  & {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  box-sizing: border-box;
-  margin: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Header style */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #a6f2e0;
+  height: 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo style */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Other components */
+.hub {
+  font-weight: bold;
+  background-color: orange;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.divider {
+  color: red;
+  margin: 0 5px;
+}
+
+.sters {
+  font-family: sans-serif;
+}
+
+/* Nav menu */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  font-style: italic;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* Search and profile */
+.search-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid #007bff;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #007bff;
+}
+
+.profile-pic img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Create Post Page */
+.create-post-container {
+  width: 500px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 100px; /* To allow space below header */
+}
+
+.create-post-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* General settings for form */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Button groups */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#preview-btn {
+  background-color: #6c757d;
+}
+
+#publish-btn {
+  background-color: #007bff;
+}
+
+/* Other */
+.preview-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none;
+}
+
+.preview-section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .create-post-container {
+    width: 90%;
+    margin-top: 120px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .profile-pic img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .search-box input {
+    padding: 6px 10px;
+  }
+
+  .create-post-container h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }

@@ -4,13 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noroff FED2 JS2 CA</title>
+    <link rel="stylesheet" href="/src/css/style.css">
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Create Post</h1>
+    <header class="header">
+      <div class="logo">
+        <span class="hub">HUB</span>
+        <span class="divider">|</span>
+        <span class="sters">STERS</span>
+      </div>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
+      <nav class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+      </nav>
+
+    <div class="search-profile">
+      <div class="search-box">
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="profile-pic">
+        <img src="/src/assest/img/Ellipse 1.png" alt="Profile picture">
+      </div>
+    </div>  
+    
+  </header>
+      
+
+     <div class="create-post-container">
+      <h1>Create New Post</h1>
+
+      <form name="postCreat">
+        <label nafor="post-title">Title:</label>
+        <input type="text" id="post-title" name="post-title" placeholder="Enter post title" required>
+
+        <label for="post-content">Content:</label>
+        <textarea id="post-content" name="post-content" placeholder="Write your post here..." required></textarea>
+
+
+        <label for="post-image">Upload Image:</label>
+        <input type="text" id="post-image" name="post-image" placeholder="Post image url here">
+
+        <label for="alt-text">Image alternative text:</label>
+        <input type="text" id="alt-text" name="alt-text" placeholder="Enter alternative text here">
+
+        <label for="post-tag">Tag:</label>
+        <input type="text" id="post-tag" name="post-tag" placeholder="Enter tags here...">
+
+        <div class="button-group">
+          <button type="button" id="preview-btn">Preview</button>
+          <button type="submit" id="publish-btn">Publish</button>
+        </div>
+     
+
+
+      </form>
+
+    </div>
+
+    
   </body>
 </html>
