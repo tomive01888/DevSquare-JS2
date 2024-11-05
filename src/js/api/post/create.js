@@ -11,8 +11,11 @@
  * @returns {Promise<Object>} The created post data from the API.
  * @throws {Error} If the API request fails.
  */
-export async function createPost({ title, body, tags, media }) {}
+// export async function createPost({ title, body, tags, media }) {}
 // src/js/api/post.js
+
+const token = localStorage.getItem("token")
+const apiKey = localStorage.getItem("apiKey")
 
 export async function createPost({ title, body, tags, media }) {
     try {
@@ -20,12 +23,15 @@ export async function createPost({ title, body, tags, media }) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          "X-Noroff-API-KEY": apiKey, 
         },
         body: JSON.stringify({ title, body, tags, media }),
       });
   
       if (!response.ok) {
-        throw new Error('Failed to create post');
+        const errorData = await response.json();
+        throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
       }
   
       const data = await response.json();
@@ -34,32 +40,4 @@ export async function createPost({ title, body, tags, media }) {
       console.error('Error creating post:', error);
       throw error;
     }
-  }
-
-  // Importing the API endpoint from constants.js
-  import { API_ENDPOINT } from '../../constants';
-
-  /**
-   * Updates an existing post by its ID
-   * @param {string} id - The ID of the post to update
-   * @param {object} data - The data to update in the post (title, body, tags, media)
-   * @returns {Promise<object>} - A promise that resolves to the updated post data
-   */
-  export function updatePost(id, { title, body, tags, media }) {
-      return fetch(`${API_ENDPOINT}/posts/${id}`, {
-          method: 'PUT', // Using PUT method for updating the post
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${localStorage.getItem('apikey')}` // Ensures the API key is used for authentication
-          },
-          body: JSON.stringify({ title, body, tags, media })
-      })
-      .then(response => {
-          if (!response.ok) throw new Error(`Failed to update post: ${response.statusText}`);
-          return response.json();
-      })
-      .catch(error => {
-          console.error('Error updating post:', error); // Logs error for further debugging
-          throw error; // Re-throwing error for further handling in calling functions
-      });
   }
