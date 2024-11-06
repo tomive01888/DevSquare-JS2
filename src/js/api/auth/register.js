@@ -18,12 +18,25 @@
  * @param {boolean} [data.venueManager] - Indicates if the user is a venue manager (optional, used for holidaze).
  * @returns {Promise<Object>} A promise that resolves to the user's registration response.
  */
-export async function register({
-  name,
-  email,
-  password,
-  bio,
-  avatar,
-  banner,
-  venueManager,
-}) {}
+
+import { API_AUTH_REGISTER } from "../constants";
+
+export async function register(userData) {
+  const response = await fetch(API_AUTH_REGISTER, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      errorData.message || `Registration failed: ${response.statusText}`
+    );
+  }
+
+  const data = await response.json();
+  return data;
+}
