@@ -1,0 +1,148 @@
+#posts-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.post-article {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 0.5em;
+    border-radius: var(--large-border-radius);
+    transition: transform 300ms ease;
+
+
+
+}
+
+.post-article:hover {
+    transform: scale(1.03);
+    transition: transform 100ms ease;
+
+
+}
+
+.post-article h2 {
+    margin: 0.5em 0;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.post-article .temp-bg {
+    width: 100%;
+    padding-top: 81.25%;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(193, 193, 193);
+    border-radius: var(--large-border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#post-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--large-border-radius);
+
+}
+
+
+.intel-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.intel-wrapper .profile-user {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+#comments-length span {
+    margin-right: 0.3em;
+    font-size: 20px;
+
+}
+
+#comments-length span b {
+    font-size: 20px;
+
+}
+
+.post-article .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: var(--small-border-radius);
+}
+
+.post-info {
+    text-align: end;
+
+    @media (max-width: 1025px) {
+        font-size: 14px;
+
+    }
+}
+
+/* filler posts */
+
+.filler-post {
+    width: 100%;
+    height: 250px;
+    background-color: rgb(211, 211, 211);
+    border-radius: var(--large-border-radius);
+}
+
+/* paginating css */
+
+.posts-paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+
+}
+
+.posts-paginator input {
+    width: 50px;
+    height: 25px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.posts-paginator button {
+    height: 30px;
+    width: 40px;
+    font-size: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    background-color: rgb(215, 215, 215);
+    cursor: pointer;
+    border-radius: var(--small-border-radius);
+    position: relative;
+
+}
+
+.posts-paginator button span {
+    position: absolute;
+    top: -10px;
+}

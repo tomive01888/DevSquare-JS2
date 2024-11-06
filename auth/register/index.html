@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,47 +9,57 @@
   </head>
 
   <body>
-    <h1>Register</h1>
+    <main>
+      <div class="max-small-container">
+        <h1>Register</h1>
 
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
+        <form name="register" novalidate>
+          <div>
+            <label for="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              maxlength="20"
+              pattern="^[\w]+$"
+              title="Please enter a username using only letters and numbers"
+              placeholder="Enter your name"
+            />
+            <span id="nameError" class="error-message"></span>
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              title="Please enter a valid noroff.no or stud.noroff.no address"
+              placeholder="Enter your email"
+            />
+            <span id="emailError" class="error-message"></span>
+          </div>
+
+          <div>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              minlength="8"
+              placeholder="Enter your password"
+              required
+            />
+            <span id="passwordError" class="error-message"></span>
+          </div>
+
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/auth/login/">Login here</a></p>
       </div>
-
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
-    </form>
+    </main>
   </body>
 </html>

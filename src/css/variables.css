@@ -1,0 +1,13 @@
+:root {
+
+    --small-border-radius: 5px;
+    --medium-border-radius: 10px;
+    --large-border-radius: 15px;
+
+    --header-family: Arial, Helvetica, sans-serif;
+    --body-family: Arial, Helvetica, sans-serif;
+
+    --box-shadow: 0 0 8px #8c8c8ca7;
+
+
+}

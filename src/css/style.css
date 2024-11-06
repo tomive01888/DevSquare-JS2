@@ -1,1 +1,44 @@
 @import url(_reset.css);
+@import url(variables.css);
+@import url(home.css);
+@import url(generalForms.css);
+@import url(loader.css);
+@import url(header.css);
+
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    max-width: 80em;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+
+
+    @media (max-width: 1025px) {
+        padding: 0.5em;
+
+    }
+}
+
+.max-small-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    padding: 1em;
+    border-radius: var(--medium-border-radius);
+    background-color: #d3d3d3;
+    box-shadow: var(--box-shadow);
+}

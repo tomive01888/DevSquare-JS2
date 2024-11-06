@@ -1,6 +1,6 @@
 // Use Postman, or JavaScript to get your API key
 // In Workflow we will learn how to secure this information
-export const API_KEY = "replace-with-your-key";
+export const API_KEY = "2bc77b40-fea4-4c98-b7a5-03a5aaf3d962"; //Senotato
 
 export const API_BASE = "https://v2.api.noroff.dev";
 
@@ -17,3 +17,8 @@ export const API_SOCIAL = `${API_BASE}/social`;
 export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
 
 export const API_SOCIAL_PROFILES = `${API_SOCIAL}/profiles`;
+
+// we can remove this token later
+export const TOKEN =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2Vub3RhdG8iLCJlbWFpbCI6InNlbm90YXRvQG5vcm9mZi5ubyIsImlhdCI6MTczMDgxOTQxNn0.jI9iRQPAm2sW3cZ8omtoZpW0vB5bBDn_0rLvNwqWWmo";
+// Senotato

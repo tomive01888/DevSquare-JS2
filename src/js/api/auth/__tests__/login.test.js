@@ -28,8 +28,6 @@ describe("login", () => {
       json: async () => ({ message: "Invalid credentials" }),
     });
 
-    await expect(
-      login({ email: "wrong@example.com", password: "wrongpassword" })
-    ).rejects.toThrow();
+    await expect(login({ email: "senotato@noroff.no ", password: "Senotato123" })).rejects.toThrow();
   });
 });

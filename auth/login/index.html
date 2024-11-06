@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,20 +9,24 @@
   </head>
 
   <body>
-    <h1>Login</h1>
-    <form name="login">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
-      </div>
+    <main>
+      <div class="max-small-container">
+        <h1>Login</h1>
+        <form name="login">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+          </div>
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-      </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required />
+          </div>
 
-      <a href="/auth/register/">Register</a>
-      <button>Login</button>
-    </form>
+          <button class="submit" type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/auth/register/">Register here</a></p>
+      </div>
+    </main>
   </body>
 </html>

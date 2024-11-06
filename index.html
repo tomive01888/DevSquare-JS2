@@ -1,22 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noroff FED2 JS2 CA</title>
+    <script type="module" src="/src/app.js"></script>
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noroff FED2 JS2 CA</title>
-  <script type="module" src="/src/app.js"></script>
-</head>
+  <body>
+    <header>
+      <img src="/images/noroff-logo.png" alt="Noroff Logo" />
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+      <h1>Home</h1>
 
-  <h1>Home</h1>
+      <a href="/profile/">My Profile</a>
+      <a href="/auth/login/">Login</a>
+      <a href="/auth/register/">Register</a>
+      <button>Logout</button>
+    </header>
 
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/">Login</a>
-  <a href="/auth/register/">Register</a>
-  <button>Logout</button>
-</body>
+    <main>
+      <section>
+        <div class="profile-paginator left"></div>
+        <div id="profiles-container"></div>
+        <div class="profile-paginator right"></div>
+      </section>
+      <section>
+        <div id="top-paginator" class="posts-paginator">
+          <button type="button" class="prev-posts"><span>&#8249;</span></button>
+          <div>
+            <label for="post">Go to page:</label>
+            <input class="go-to" type="number" id="post" name="post" />
+          </div>
+
+          <button type="button" class="next-posts"><span>&#8250;</span></button>
+        </div>
+        <div id="posts-container">
+          <div class="filler-post"><span class="loader"></span></div>
+          <div class="filler-post"><span class="loader"></span></div>
+          <div class="filler-post"><span class="loader"></span></div>
+          <div class="filler-post"><span class="loader"></span></div>
+          <div class="filler-post"><span class="loader"></span></div>
+          <div class="filler-post"><span class="loader"></span></div>
+          <!-- posts are injected here -->
+        </div>
+
+        <div id="bottom-paginator" class="posts-paginator">
+          <button type="button" class="prev-posts"><span>&#8249;</span></button>
+          <div>
+            <label for="post2">Go to page:</label>
+            <input class="go-to" type="number" id="post2" name="post2" />
+          </div>
+
+          <button type="button" class="next-posts"><span>&#8250;</span></button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
