@@ -1,9 +1,11 @@
 /**
  * This function should pass data to the login function in api/auth and handle the response
  */
+import { login } from "../../api/auth/login.js";
 
 export async function onLogin(event) {
   event.preventDefault();
+
   const email = event.target.email.value;
   const password = event.target.password.value;
 
@@ -12,15 +14,13 @@ export async function onLogin(event) {
       email,
       password,
     });
-    console.log(data);
-    localStorage.setItem("token", data.data.accessToken);
-
-    const adminUser = data.data;
-    localStorage.setItem("adminUser", JSON.stringify(adminUser));
     window.location.href = "/";
     alert("login successfull");
   } catch (error) {
     console.error("Login failed:", error);
-    alert("Login failed. Please check your credentials and try again.");
+    const errorContainer = document.querySelector(".error-container");
+    const errorMessage = document.querySelector(".error-message");
+    errorContainer.style.display = "block";
+    errorMessage.textContent = error.message;
   }
 }
