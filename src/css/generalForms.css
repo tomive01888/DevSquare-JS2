@@ -18,16 +18,20 @@ form input {
     border: 1px solid #ddd;
     border-radius: var(--small-border-radius);
     box-shadow: var(--box-shadow);
+    font-family: var(--body-family);
+
 
 }
 
 form textarea {
-    height: 150px;
+    min-height: 240px;
     width: 100%;
-    min-height: 120px;
-    font-size: 16px;
-    font-family: var(--body-family);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--small-border-radius);
     box-shadow: var(--box-shadow);
+    font-family: var(--body-family);
+    resize: vertical;
 
 }
 
@@ -41,8 +45,6 @@ form button {
     font-size: 16px;
 }
 
-
-
 .submit {
     background-color: #007bff;
 }
@@ -51,6 +53,29 @@ form button {
     background-color: #0163cb;
 }
 
+.button-group {
+    display: flex;
+    gap: 0.4em;
+}
+
+.resetForm {
+    background-color: rgb(183, 76, 94);
+}
+
+.resetForm:hover {
+    background-color: rgb(139, 58, 71);
+}
+
+.goToPost {
+    background-color: rgb(116, 197, 116);
+}
+
+.goToPost:hover {
+    background-color: rgb(89, 153, 89);
+}
+
+
+/*  pre-page for login and register /auth/    */
 #auth {
     display: flex;
     flex-direction: column;
