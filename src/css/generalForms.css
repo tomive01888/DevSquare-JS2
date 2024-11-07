@@ -2,7 +2,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    margin-bottom: 2em;
+    margin: 2em 0;
     color: #555;
     font-family: var(--body-family);
 
@@ -40,8 +40,6 @@ form button {
     cursor: pointer;
     font-size: 16px;
 }
-
-
 
 .submit {
     background-color: #007bff;
@@ -89,4 +87,21 @@ form button {
     background-color: #0163cb;
 
 
+}
+
+/* register form error handling */
+
+.error-message {
+    font-size: 14px;
+    display: none;
+    margin-top: 0.3em;
+    padding: 0.5em;
+    border: 2px solid var(--red-alert);
+    color: var(--red-alert);
+    border-radius: var(--small-border-radius);
+    background-color: rgb(223, 219, 219);
+}
+
+.error-message:not(:empty) {
+    display: block
 }

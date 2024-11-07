@@ -2,6 +2,8 @@
  * This function should pass data to the register function in api/auth and handle the response
  */
 
+import { register } from "../../api/auth/register";
+
 export async function onRegister(event) {
   event.preventDefault();
 
@@ -16,7 +18,7 @@ export async function onRegister(event) {
   let valid = true;
 
   if (!name) {
-    document.getElementById("nameError").textContent = "Name is reuired!";
+    document.getElementById("nameError").textContent = "Name is required!";
     valid = false;
   } else if (!/^[\w]+$/.test(name)) {
     document.getElementById("nameError").textContent =
@@ -25,7 +27,7 @@ export async function onRegister(event) {
   }
 
   if (!email) {
-    document.getElementById("emailError").textContent = "Email is reuired!";
+    document.getElementById("emailError").textContent = "Email is required!";
     valid = false;
   } else if (!/^[\w\-.]+@(stud\.)?noroff\.no$/.test(name)) {
     document.getElementById("emailError").textContent =
@@ -34,12 +36,10 @@ export async function onRegister(event) {
   }
 
   if (!password) {
-    document.getElementById("passwordError").textContent =
-      "Password  is reuired!";
+    document.getElementById("passwordError").textContent = "Password  is required!";
     valid = false;
   } else if (password.length < 8) {
-    document.getElementById("passwordError").textContent =
-      "Password must be at least 8 characters long.";
+    document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
     valid = false;
   }
 
