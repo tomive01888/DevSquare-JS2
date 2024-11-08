@@ -14,8 +14,8 @@ export async function onLogin(event) {
       email,
       password,
     });
-    window.location.href = "/";
     alert("login successfull");
+    window.location.href = "/";
   } catch (error) {
     console.error("Login failed:", error);
     const errorContainer = document.querySelector(".error-container");

@@ -16,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-main {
+.regular-use {
     width: 100%;
     max-width: 80em;
     min-height: 100vh;
@@ -32,11 +32,25 @@ main {
     }
 }
 
+.form-use {
+    width: 100%;
+    max-width: 80em;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .max-small-container {
+    place-self: center;
+    align-self: center;
+    justify-self: center;
     margin: 0 auto;
     width: 100%;
-    max-width: 600px;
-    height: 400px;
+    max-width: 30em;
+    height: max-content;
     padding: 1em;
     border-radius: var(--medium-border-radius);
     background-color: #d3d3d3;
