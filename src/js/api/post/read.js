@@ -7,10 +7,8 @@
  */
 // export async function readPost(id) {}
 
-import { API_KEY, API_SOCIAL_POSTS, TOKEN } from "../constants";
-
-// const token = localStorage.getItem("token");
-// const apiKey = localStorage.getItem("apiKey");
+import { API_SOCIAL_POSTS } from "../constants";
+import { headers } from "../headers";
 
 export async function readPost(id) {
   const params = new URLSearchParams({ _comments: "true", _author: "true" });
@@ -18,11 +16,7 @@ export async function readPost(id) {
   try {
     const response = await fetch(`${API_SOCIAL_POSTS}/${id}?${params.toString()}`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${TOKEN}`,
-        "X-Noroff-API-Key": API_KEY,
-      },
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
     });
 
     if (!response.ok) {
@@ -58,11 +52,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
   try {
     const response = await fetch(url, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${TOKEN}`,
-        "X-Noroff-API-Key": API_KEY,
-      },
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
     });
 
     if (!response.ok) {
@@ -72,9 +62,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
 
     const { data, meta } = await response.json();
 
-    console.log("backend", meta);
-
-    return { data: data, meta: meta }; // Returns all posts to be paginated
+    return { data: data, meta: meta };
   } catch (error) {
     console.error("Fetch error:", error);
     return [];

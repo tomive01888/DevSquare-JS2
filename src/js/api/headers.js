@@ -1,18 +1,23 @@
+/**
+ * Generates HTTP headers for API requests, allowing conditional inclusion of API key,
+ * authorization token, and content type.
+ *
+ * @param {Object} options - An options object to specify which headers to include.
+ * @param {boolean} [options.apiKey=false] - Set to `true` to include the API key in the headers.
+ * @param {boolean} [options.authToken=false] - Set to `true` to include the Authorization token from localStorage.
+ * @param {boolean} [options.contentType=false] - Set to `true` to include "Content-Type: application/json" in the headers.
+ * @returns {Headers} A Headers instance with the specified headers included.
+ */
+
 import { API_KEY } from "./constants";
 
-export function headers({
-  apiKey = false,
-  authToken = false,
-  contentType = false,
-} = {}) {
+export function headers({ apiKey = false, authToken = false, contentType = false } = {}) {
   const headers = new Headers();
 
-  // Conditionally add API key if needed
   if (apiKey && API_KEY) {
     headers.append("X-Noroff-API-Key", API_KEY);
   }
 
-  // Conditionally add Authorization token if provided
   if (authToken) {
     const token = localStorage.getItem("token");
     if (token) {
@@ -20,7 +25,6 @@ export function headers({
     }
   }
 
-  // Conditionally add Content-Type if specified
   if (contentType) {
     headers.append("Content-Type", "application/json");
   }
