@@ -1,6 +1,6 @@
 // Use Postman, or JavaScript to get your API key
 // In Workflow we will learn how to secure this information
-export const API_KEY = "2bc77b40-fea4-4c98-b7a5-03a5aaf3d962"; //Senotato
+export const API_KEY = "4642c20d-b0b6-45dd-85a2-4e43bf57c602"; //Senotato
 
 export const API_BASE = "https://v2.api.noroff.dev";
 
