@@ -8,9 +8,7 @@
  * @throws {Error} Error if the login fails.
  */
 
-import { API_AUTH_LOGIN } from "../constants";
-
-const API_KEY = "4642c20d-b0b6-45dd-85a2-4e43bf57c602";
+import { API_AUTH_LOGIN, API_KEY } from "../constants";
 
 export async function login({ email, password }) {
   try {
