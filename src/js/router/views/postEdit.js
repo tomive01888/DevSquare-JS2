@@ -1,20 +1,21 @@
 import { authGuard } from "../../utilities/authGuard";
+import { onUpdatePost } from "../../ui/post/update";
+import { readPost } from "../../api/post/read";
 
 authGuard();
 
+const form = document.forms.editPost;
+form.addEventListener("submit", onUpdatePost);
 
-// event listener
+/*
 
-// Importing the onUpdatePost function to connect the edit form
-import { onUpdatePost } from '../ui/post/create';
+// implement a way to populate DOM with current ID from url params
+const urlSearch = new URLSearchParams(window.location.search);
+const postId = urlSearch.get("post");
 
-/**
- * Initializes the edit post view with an event listener
+const postData = await readPost(postId);
+console.log("post data", postData);
+
+document.forms.editPost.title.value = postData.title;
+console.log("Use this value to populate edit form!", postId);
  */
-export function initializeEditPostView() {
-    // Selecting the form element for post editing
-    const editForm = document.querySelector('#editPostForm');
-
-    // Adding event listener to handle form submission
-    editForm.addEventListener('submit', onUpdatePost);
-}

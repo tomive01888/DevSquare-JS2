@@ -12,50 +12,48 @@
  * @returns {Promise<Object>} The updated post data from the API.
  * @throws {Error} If the API request fails.
  */
-export async function updatePost(id, { title, body, tags, media }) {}
 
+import { API_SOCIAL_POSTS } from "../constants";
 
 const token = localStorage.getItem("token");
 const apiKey = localStorage.getItem("apiKey");
 
 export async function updatePost(id, { title, body, tags, media }) {
+  const fetchUrl = `${API_SOCIAL_POSTS}/${id}`;
 
-    const postBody = {
-        title,
-        body,
-    };
+  const postBody = {
+    title,
+    body,
+  };
 
-    if(tags && tags.length > 0){
-        postBody.tags = tags
-    }
-
-    if(!media || |media.url || media.url.trim() === "") {
-        postBody.media = null
-
-    } else{
-        postBody.media = media
-    }
-
-
-    try {
-      const response = await fetch(`${API_SOCIAL_POSTS}/${id}`, { // API URL'ini değiştir
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-          "X-Noroff-API-KEY": apiKey, 
-        },
-        body: JSON.stringify(postBody),
-      });
-  
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
-      }
-  
-      return await response.json();
-    } catch (error) {
-      console.error('Error creating post:', error);
-      throw error;
-    }
+  if (tags && tags.length > 0) {
+    postBody.tags = tags;
   }
+
+  if (!media || media.url || media.url.trim() === "") {
+    postBody.media = null;
+  } else {
+    postBody.media = media;
+  }
+
+  try {
+    const response = await fetch(fetchUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        "X-Noroff-API-KEY": apiKey,
+      },
+      body: JSON.stringify(postBody),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw error;
+  }
+}

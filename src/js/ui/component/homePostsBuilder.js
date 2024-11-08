@@ -9,7 +9,7 @@ export function renderPosts(posts) {
   posts.forEach((post) => {
     const postElement = document.createElement("a");
     postElement.className = "post-article";
-    postElement.href = `/post/?id-post=${post.id}`;
+    postElement.href = `/post/?post=${post.id}`;
 
     const imgSrc = post.media && post.media.url ? post.media.url : "";
     const imgAlt = post.media && post.media.alt ? post.media.alt : "";

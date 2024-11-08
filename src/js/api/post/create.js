@@ -14,30 +14,33 @@
 // export async function createPost({ title, body, tags, media }) {}
 // src/js/api/post.js
 
-const token = localStorage.getItem("token")
-const apiKey = localStorage.getItem("apiKey")
+import { API_SOCIAL_POSTS } from "../constants";
+
+const token = localStorage.getItem("token");
+const apiKey = localStorage.getItem("apiKey");
 
 export async function createPost({ title, body, tags, media }) {
-    try {
-      const response = await fetch('https://v2.api.noroff.dev', { // API URL'ini değiştir
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-          "X-Noroff-API-KEY": apiKey, 
-        },
-        body: JSON.stringify({ title, body, tags, media }),
-      });
-  
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
-      }
-  
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error creating post:', error);
-      throw error;
+  const fetchUrl = `${API_SOCIAL_POSTS}`;
+  try {
+    const response = await fetch(fetchUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        "X-Noroff-API-KEY": apiKey,
+      },
+      body: JSON.stringify({ title, body, tags, media }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
     }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error creating post:", error);
+    throw error;
   }
+}

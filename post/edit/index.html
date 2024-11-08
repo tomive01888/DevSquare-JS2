@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,10 +9,33 @@
   </head>
 
   <body>
-    <h1>Edit Post</h1>
+    <main>
+      <div class="max-medium-container">
+        <h1>Edit Post</h1>
 
-    <form name="editPost">
-      <button>Edit Post</button>
-    </form>
+        <form name="editPost">
+          <label nafor="post-title">Title:</label>
+          <input type="text" id="post-title" name="title" placeholder="Enter post title" required />
+
+          <label for="post-content">Content:</label>
+          <textarea id="post-content" name="body" placeholder="Write your post here..." required></textarea>
+
+          <label for="mediaUrl">Upload Image:</label>
+          <input type="text" id="mediaUrl" name="mediaUrl" placeholder="Post image url here" />
+
+          <label for="mediaAlt">Image alternative text:</label>
+          <input type="text" id="mediaAlt" name="mediaAlt" placeholder="Enter alternative text here" />
+
+          <label for="tags">Tag:</label>
+          <input type="text" id="tags" name="tags" placeholder="Enter tags here..." />
+
+          <button class="submit" type="submit" id="publish-btn">Update post</button>
+          <div class="button-group">
+            <button class="goToPost" type="button">Go visit page</button>
+            <button class="resetForm" type="button">Reset form</button>
+          </div>
+        </form>
+      </div>
+    </main>
   </body>
 </html>

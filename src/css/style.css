@@ -42,3 +42,13 @@ main {
     background-color: #d3d3d3;
     box-shadow: var(--box-shadow);
 }
+
+.max-medium-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1em;
+    border-radius: var(--medium-border-radius);
+    background-color: #d3d3d3;
+    box-shadow: var(--box-shadow);
+}
