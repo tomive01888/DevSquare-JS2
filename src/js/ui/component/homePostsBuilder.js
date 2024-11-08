@@ -25,11 +25,11 @@ export function renderPosts(posts) {
                     <img class="avatar" src="${post.author.avatar.url}" alt="${post.author.avatar.alt}">
                     <p><b>${post.author.name}</b></p>
                 </div>
-                <p id="comments-length"><span>💬</span><b>${post.comments.length}</b></p>
-                <div class="post-info">
-                    <p>${post.created.slice(0, 10)}</p>
-                    <p class="time-stamp">${timeAgo}</p>
-                </div>
+                <p id="comments-length"><span>💬</span><b>${post.comments.length}</b></p>                
+            </div>
+            <div class="post-info">
+                <p>${post.created.slice(0, 10)}</p>
+                <p class="time-stamp">${timeAgo}</p>
             </div>
             
         `;

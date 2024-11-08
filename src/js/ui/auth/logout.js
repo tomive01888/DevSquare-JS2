@@ -3,6 +3,6 @@
  */
 
 export function onLogout() {
-  localStorage.removeItem("adminUser", JSON.stringify(adminUser));
-  localStorage.removeItem("token", data.data.accessToken);
+  localStorage.clear();
+  window.location.href = "/auth/login/";
 }

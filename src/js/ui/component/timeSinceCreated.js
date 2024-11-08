@@ -1,3 +1,13 @@
+/**
+ * Calculates the time difference between the given timestamp and the current time, returning a human-readable string.
+ *
+ * @param {string|number} postTimestamp - The timestamp of the post, which can be a string or number.
+ * @returns {string} A string representing the time elapsed since the post was created, formatted as:
+ *                   - "{X} days ago" for days
+ *                   - "{X} hours ago" for hours
+ *                   - "{X} minutes ago" for minutes
+ */
+
 export function timeSinceCreated(postTimestamp) {
   const postDate = new Date(postTimestamp);
   const now = new Date();
