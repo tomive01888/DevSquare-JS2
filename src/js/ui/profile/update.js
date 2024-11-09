@@ -1,4 +1,3 @@
-export async function onUpdateProfile(event) {}
 import { updateProfile } from "../../api/profile/update";
 
 export async function onUpdateProfile(event) {
@@ -49,5 +48,3 @@ export async function onUpdateProfile(event) {
     alert("Failed to update profile. Please check the inputs are valid.");
   }
 }
-
-// please input this in /src/js/ui/post/update.js

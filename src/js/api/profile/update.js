@@ -1,9 +1,8 @@
 import { API_SOCIAL_PROFILES } from "../constants";
+import { headers } from "../headers";
 
 export async function updateProfile(username, { avatar, banner, bio }) {
-  const token = localStorage.getItem("token");
-  const apiKey = localStorage.getItem("apiKey");
-  const profileEndpoint = username;
+  const fetchUrl = `${API_SOCIAL_PROFILES}/${username}`;
 
   const requestBody = {};
   if (bio) {
@@ -23,13 +22,9 @@ export async function updateProfile(username, { avatar, banner, bio }) {
   }
 
   try {
-    const response = await fetch(`${API_SOCIAL_PROFILES}/${profileEndpoint}`, {
+    const response = await fetch(fetchUrl, {
       method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-        "X-Noroff-API-KEY": apiKey,
-      },
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
       body: JSON.stringify(requestBody),
     });
 

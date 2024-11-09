@@ -16,10 +16,17 @@
 
 #post-content h1 {
     margin: 0.3em 0;
+    word-break: break-all;
+}
+
+#post-content img {
+    width: 100%;
 }
 
 #post-content p {
     padding: 0.4em;
+    word-break: break-all;
+
 
 }
 

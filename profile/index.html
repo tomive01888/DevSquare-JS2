@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,10 +8,39 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <h1>Profile</h1>
+    <header></header>
 
-    <form name="updateProfile">
-      <button>Update Profile</button>
-    </form>
+    <section id="update-profile">
+      <h4>Update profile</h4>
+      <form name="updateProfile">
+        <div>
+          <input id="profile-editor" type="hidden" name="username" value="" />
+        </div>
+        <div>
+          <label for="bio">Bio:</label>
+          <textarea name="bio" id="bio" rows="4" maxlength="280" placeholder="Write your bio here..."></textarea>
+        </div>
+
+        <div>
+          <label for="avatarSrc">Avatar Image Source (URL):</label>
+          <input type="text" name="avatarSrc" id="avatarSrc" placeholder="Enter avatar image URL" />
+        </div>
+        <div>
+          <label for="avatarAlt">Avatar Image Alt Text:</label>
+          <input type="text" name="avatarAlt" id="avatarAlt" placeholder="Enter avatar alt text" />
+        </div>
+
+        <div>
+          <label for="bannerSrc">Banner Image Source (URL):</label>
+          <input type="text" name="bannerSrc" id="bannerSrc" placeholder="Enter banner image URL" />
+        </div>
+        <div>
+          <label for="bannerAlt">Banner Image Alt Text:</label>
+          <input type="text" name="bannerAlt" id="bannerAlt" placeholder="Enter banner alt text" />
+        </div>
+        <div id="error-message" style="color: red; display: none"></div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
   </body>
 </html>
