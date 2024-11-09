@@ -22,7 +22,6 @@ export function createPostContent(post) {
 
   const postContainer = document.getElementById("post-container");
 
-  // Section 1 - Post Content
   const postSection = document.createElement("section");
   postSection.id = "post-content";
 
@@ -31,8 +30,8 @@ export function createPostContent(post) {
 
   const postImg = document.createElement("img");
   postImg.id = "postImg";
-  postImg.src = media.url || "";
-  postImg.alt = media.alt || "";
+  postImg.src = media ? media.url : "";
+  postImg.alt = media ? media.alt : "";
 
   const bodyDiv = document.createElement("div");
   const bodyParagraph = document.createElement("p");
