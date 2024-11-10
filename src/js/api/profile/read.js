@@ -1,3 +1,15 @@
+/**
+ * Fetches a user's profile data, including their posts, following, and followers.
+ *
+ * @async
+ * @function readProfile
+ * @param {string} username - The username of the profile to retrieve.
+ * @returns {Promise<Object|undefined>} Resolves with the profile data object if successful.
+ *  Returns `undefined` if an error occurs during the fetch.
+ *
+ * @throws {Error} Throws an error with the server's status code and message if the fetch fails.
+ */
+
 import { API_SOCIAL_PROFILES } from "../constants";
 import { headers } from "../headers";
 
