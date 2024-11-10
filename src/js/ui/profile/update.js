@@ -3,7 +3,9 @@ import { updateProfile } from "../../api/profile/update";
 export async function onUpdateProfile(event) {
   event.preventDefault();
 
-  const username = event.target.username.value.trim();
+  const urlSearch = new URLSearchParams(window.location.search);
+  const profileName = urlSearch.get("profile");
+
   const bio = event.target.bio.value.trim();
   const avatarSrc = event.target.avatarSrc.value.trim();
   const avatarAlt = event.target.avatarAlt.value.trim();
@@ -36,12 +38,10 @@ export async function onUpdateProfile(event) {
   }
 
   try {
-    const result = await updateProfile(username, profileData);
+    const result = await updateProfile(profileName, profileData);
     if (result) {
       alert("You have updated your profile");
-      setTimeout(() => {
-        location.reload();
-      }, 2300);
+      location.reload();
     }
   } catch (error) {
     console.error("Failed to update profile:", error);
