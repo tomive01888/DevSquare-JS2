@@ -54,7 +54,6 @@ export function createPostContent(post) {
   postSection.appendChild(createdElement);
   postSection.appendChild(timeSinceElement);
 
-  // Section 2 - Author and Post Metadata
   const authorSection = document.createElement("section");
   authorSection.id = "author-section";
 
@@ -70,18 +69,35 @@ export function createPostContent(post) {
   const authorNameElement = document.createElement("p");
   authorNameElement.textContent = author.name;
 
+  const editorDiv = document.createElement("div");
+  editorDiv.id = "editorOptions";
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete post";
+  deleteBtn.addEventListener("click", () => {
+    const confirmAction = confirm("Do you want to delete post?");
+
+    if (confirmAction) {
+      // const deleteInProgress = await deletePost(post.id)
+      console.log("add delete function here");
+      alert("Post has been deleted");
+      window.location.href = "/";
+    }
+  });
+
   const editBtn = document.createElement("a");
   editBtn.href = `/post/edit/?post=${id}`;
   editBtn.textContent = "Edit post";
 
+  editorDiv.appendChild(editBtn);
+  editorDiv.appendChild(deleteBtn);
+
   authorLink.appendChild(authorAvatar);
   authorLink.appendChild(authorNameElement);
 
-  // Append all to authorSection
   authorSection.appendChild(authorLink);
-  authorSection.appendChild(editBtn);
+  authorSection.appendChild(editorDiv);
 
-  // Append both sections to main container
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);
 
