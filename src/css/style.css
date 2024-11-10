@@ -1,10 +1,12 @@
 @import url(_reset.css);
 @import url(variables.css);
+@import url(fonts.css);
 @import url(home.css);
 @import url(generalForms.css);
 @import url(loader.css);
 @import url(header.css);
 @import url(singlePost.css);
+@import url(profilePage.css);
 
 
 body {
@@ -19,7 +21,7 @@ body {
 
 .regular-use {
     width: 100%;
-    max-width: 80em;
+    max-width: 70em;
     min-height: 100vh;
     margin: 0 auto;
     padding: 2em;
@@ -66,4 +68,8 @@ body {
     border-radius: var(--medium-border-radius);
     background-color: #d3d3d3;
     box-shadow: var(--box-shadow);
+}
+
+.hidden {
+    display: none;
 }

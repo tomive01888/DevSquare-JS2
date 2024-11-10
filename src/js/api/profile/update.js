@@ -4,6 +4,7 @@ import { headers } from "../headers";
 export async function updateProfile(username, { avatar, banner, bio }) {
   const fetchUrl = `${API_SOCIAL_PROFILES}/${username}`;
 
+
   const requestBody = {};
   if (bio) {
     requestBody.bio = bio;

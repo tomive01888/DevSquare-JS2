@@ -63,25 +63,33 @@ export function createPostContent(post) {
   authorLink.href = `/profile/?profile=${author.name}`;
 
   const authorAvatar = document.createElement("img");
-  authorAvatar.id = "pr-avatar";
+  authorAvatar.id = "profile-avatar";
   authorAvatar.src = author.avatar.url;
   authorAvatar.alt = `${author.name}'s avatar`;
 
   const authorNameElement = document.createElement("p");
+  authorNameElement.id = "profile-name";
   authorNameElement.textContent = author.name;
 
-  const editBtn = document.createElement("a");
-  editBtn.href = `/post/edit/?post=${id}`;
-  editBtn.textContent = "Edit post";
+  const localName = JSON.parse(localStorage.getItem("adminUser"));
 
   authorLink.appendChild(authorAvatar);
   authorLink.appendChild(authorNameElement);
 
-  // Append all to authorSection
   authorSection.appendChild(authorLink);
-  authorSection.appendChild(editBtn);
 
-  // Append both sections to main container
+  const editBtn = document.createElement("a");
+  editBtn.classList.add("edit-btn");
+  editBtn.href = `/post/edit/?post=${id}`;
+  editBtn.textContent = "Edit post";
+
+  authorSection.appendChild(editBtn);
+  if (author.name !== localName.name) {
+    editBtn.classList.add("hidden");
+  } else {
+    editBtn.classList.remove("hidden");
+  }
+
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);
 
