@@ -8,29 +8,22 @@
     <script type="module" src="/src/app.js"></script>
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <span class="hub">HUB</span>
-        <span class="divider">|</span>
-        <span class="sters">STERS</span>
-      </div>
-
-      <nav class="nav-menu">
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-      </nav>
-
-      <div class="search-profile">
-        <div class="search-box">
-          <input type="text" placeholder="Search" />
-        </div>
-        <div class="profile-pic">
-          <img src="" alt="Profile picture" />
-        </div>
-      </div>
+    <header>
+      <a href="/">
+        <img
+          src="/images/hubsters-logo.png
+        "
+          alt="Hubster Logo"
+        />
+      </a>
+      <a href="/">Home</a>
+      <a id="goProfileBtn" href="/profile/">My Profile</a>
+      <a href="/auth/login/">Login</a>
+      <a href="/auth/register/">Register</a>
+      <button type="button" id="logout-button">Logout</button>
     </header>
 
-    <main>
+    <main class="regular-use">
       <div class="max-medium-container">
         <h1>Create New Post</h1>
 
@@ -52,7 +45,7 @@
 
           <button class="submit" type="submit" id="publish-btn">Publish</button>
           <div class="button-group">
-            <button class="goToPost" type="button">Go visit page</button>
+            <button class="goToPost" type="button" disabled>Go visit page</button>
             <button class="resetForm" type="reset" onclick="alert('Form has been reset')">Reset form</button>
           </div>
         </form>

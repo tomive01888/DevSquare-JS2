@@ -17,8 +17,11 @@ export async function onCreatePost(event) {
   try {
     const response = await createPost({ title, body, tags, media });
 
+    console.log("reterned data:", response);
+
     if (response) {
-      alert("Successfully created a new post");
+      const data = await response;
+      return data;
     } else {
       alert("Something went wrong, failed to create post.");
     }

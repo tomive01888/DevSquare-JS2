@@ -5,8 +5,8 @@ import { authGuard } from "../../utilities/authGuard";
 import { goToProfilePage } from "../../utilities/goOwnProfile";
 
 authGuard();
-// setLogoutListener();
-// goToProfilePage();
+setLogoutListener();
+goToProfilePage();
 
 const urlSearch = new URLSearchParams(window.location.search);
 const idFromParams = urlSearch.get("post");

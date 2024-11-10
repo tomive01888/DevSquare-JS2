@@ -28,6 +28,7 @@ body {
     padding: 2em;
     display: flex;
     flex-direction: column;
+    gap: 2em;
 
 
     @media (max-width: 1025px) {
@@ -48,9 +49,6 @@ body {
 }
 
 .max-small-container {
-    place-self: center;
-    align-self: center;
-    justify-self: center;
     margin: 0 auto;
     width: 100%;
     max-width: 30em;

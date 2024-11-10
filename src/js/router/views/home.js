@@ -16,7 +16,7 @@ let currentPage = initializePageParameter();
 async function initializeHome() {
   const { data, meta } = await readPosts(limit, currentPage);
 
-  renderPosts(data);
+  renderPosts(data, meta);
 
   const pageCount = meta.pageCount;
 

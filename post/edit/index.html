@@ -9,11 +9,28 @@
   </head>
 
   <body>
+    <header>
+      <a href="/">
+        <img
+          src="/images/hubsters-logo.png
+        "
+          alt="Hubster Logo"
+        />
+      </a>
+      <a href="/">Home</a>
+      <a id="goProfileBtn" href="/profile/">My Profile</a>
+      <a href="/auth/login/">Login</a>
+      <a href="/auth/register/">Register</a>
+      <button type="button" id="logout-button">Logout</button>
+    </header>
     <main class="regular-use">
       <div class="max-medium-container">
         <h1>Edit Post</h1>
 
         <form name="editPost">
+          <div>
+            <input type="hidden" type="number" name="id" />
+          </div>
           <label nafor="post-title">Title:</label>
           <input type="text" id="post-title" name="title" placeholder="Enter post title" required />
 
@@ -31,10 +48,13 @@
 
           <button class="submit" type="submit" id="publish-btn">Update post</button>
           <div class="button-group">
-            <button class="goToPost" type="button">Go visit page</button>
-            <button class="resetForm" type="reset">Reset form</button>
+            <button class="delete-post" type="button" name="deletePost">Delete</button>
+            <button class="reset-form" type="reset" onclick="alert('Form has been reset')">Reset form</button>
           </div>
         </form>
+      </div>
+      <div class="max-medium-container new-post">
+        <p>Start creating new post <a href="/post/create/">here</a></p>
       </div>
     </main>
   </body>

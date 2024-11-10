@@ -2,13 +2,15 @@ import { readProfile } from "../../api/profile/read";
 import { populateProfileInfo } from "../../ui/component/populateProfileInfo";
 import { createProfileLink } from "../../ui/component/profileCardsBuilder";
 import { displayPostsListStyle } from "../../ui/component/profilePostsBuilder";
+import { setLogoutListener } from "../../ui/global/logout";
 import { onUpdateProfile } from "../../ui/profile/update";
 import { authGuard } from "../../utilities/authGuard";
 import { goToProfilePage } from "../../utilities/goOwnProfile";
 
 authGuard();
-// setLogoutListener();
+setLogoutListener();
 goToProfilePage();
+
 const form = document.forms.updateProfile;
 form.addEventListener("submit", onUpdateProfile);
 

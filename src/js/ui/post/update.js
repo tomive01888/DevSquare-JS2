@@ -6,7 +6,7 @@ import { updatePost } from "../../api/post/update";
 
 export async function onUpdatePost(event) {
   event.preventDefault();
-
+  const id = event.target.id.value.trim();
   const title = event.target.title.value.trim();
   const body = event.target.body.value.trim();
   const tags = event.target.tags.value ? event.target.tags.value.split(",").map((tag) => tag.trim()) : [];
@@ -15,7 +15,7 @@ export async function onUpdatePost(event) {
     : null;
 
   try {
-    const response = await updatePost({ title, body, tags, media });
+    const response = await updatePost(id, { title, body, tags, media });
 
     if (response) {
       alert("Successfully updated post");

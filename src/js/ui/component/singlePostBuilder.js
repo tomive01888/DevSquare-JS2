@@ -14,6 +14,7 @@ import { timeSinceCreated } from "./timeSinceCreated";
 export function createPostContent(post) {
   const { id, title, body, media, author, tags, created } = post;
 
+  // upper half
   const timeSince = timeSinceCreated(created);
 
   const postContainer = document.getElementById("post-container");
@@ -50,6 +51,7 @@ export function createPostContent(post) {
   postSection.appendChild(createdElement);
   postSection.appendChild(timeSinceElement);
 
+  // Lower half
   const authorSection = document.createElement("section");
   authorSection.id = "author-section";
 
@@ -66,49 +68,43 @@ export function createPostContent(post) {
   authorNameElement.id = "profile-name";
   authorNameElement.textContent = author.name;
 
-  const editorDiv = document.createElement("div");
-  editorDiv.id = "editorOptions";
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete post";
-  deleteBtn.addEventListener("click", () => {
-    const confirmAction = confirm("Do you want to delete post?");
-
-    if (confirmAction) {
-      // const deleteInProgress = await deletePost(post.id)
-      console.log("add delete function here");
-      alert("Post has been deleted");
-      window.location.href = "/";
-    }
-  });
-
-  const editBtn = document.createElement("a");
-  editBtn.href = `/post/edit/?post=${id}`;
-  editBtn.textContent = "Edit post";
-
+  // Add editor div if author and logged user is same person
   const localName = JSON.parse(localStorage.getItem("adminUser"));
+  if (author.name === localName.name) {
+    const editorDiv = document.createElement("div");
+    editorDiv.id = "editorOptions";
+    editorDiv.classList.add("hidden");
 
-  editorDiv.appendChild(editBtn);
-  editorDiv.appendChild(deleteBtn);
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete post";
+    deleteBtn.type = "button";
+    deleteBtn.addEventListener("click", () => {
+      const confirmAction = confirm("Do you want to delete post?");
+
+      if (confirmAction) {
+        // const deleteInProgress = await deletePost(post.id)
+
+        console.log("add delete function here");
+        alert("Post has been deleted");
+        window.location.href = "/";
+      }
+    });
+
+    const editBtn = document.createElement("a");
+    editBtn.classList.add("edit-btn");
+    editBtn.href = `/post/edit/?post=${id}`;
+    editBtn.textContent = "Edit post";
+
+    editorDiv.appendChild(editBtn);
+    editorDiv.appendChild(deleteBtn);
+
+    authorSection.appendChild(editorDiv);
+  }
 
   authorLink.appendChild(authorAvatar);
   authorLink.appendChild(authorNameElement);
 
   authorSection.appendChild(authorLink);
-
-  authorSection.appendChild(editorDiv);
-
-  const editBtn = document.createElement("a");
-  editBtn.classList.add("edit-btn");
-  editBtn.href = `/post/edit/?post=${id}`;
-  editBtn.textContent = "Edit post";
-
-  authorSection.appendChild(editBtn);
-  if (author.name !== localName.name) {
-    editBtn.classList.add("hidden");
-  } else {
-    editBtn.classList.remove("hidden");
-  }
 
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);
