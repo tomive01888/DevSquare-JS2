@@ -1,16 +1,12 @@
 /**
- * Creates and returns HTML elements to display post content including title, image, body, author, tags, and timestamps.
+ * Renders and structures HTML elements to display a post's content including title, body, image, author details, tags, and timestamps.
  *
- * @param {Object} post - The post data object containing details to display.
- * @param {string} post.title - The title of the post.
- * @param {string} post.body - The main content/body of the post.
- * @param {string[]} [post.tags] - An optional array of tags associated with the post.
- * @param {string} post.media - The URL of the main image for the post.
- * @param {Object} post.author - The author data object for the post.
- * @param {string} post.author.username - The username of the post's author.
- * @param {string} post.author.avatar - The avatar URL of the post's author.
- * @param {string} post.created - The creation timestamp of the post.
- * @returns {HTMLElement} A section element containing the structured post content.
+ * This function creates a structured section of HTML to display key details of a given post, such as title, body, main image,
+ * author information, and timestamps, and appends them to the "post-container" element in the DOM.
+ * Additionally, it includes "Edit" and "Delete" buttons for the post, which are conditionally displayed
+ * based on whether the logged-in user is the post author.
+ *
+ * @param {Object} post - The data object containing the post details to be displayed.
  */
 
 import { timeSinceCreated } from "./timeSinceCreated";
@@ -70,7 +66,6 @@ export function createPostContent(post) {
   authorNameElement.id = "profile-name";
   authorNameElement.textContent = author.name;
 
-
   const editorDiv = document.createElement("div");
   editorDiv.id = "editorOptions";
 
@@ -93,7 +88,6 @@ export function createPostContent(post) {
 
   const localName = JSON.parse(localStorage.getItem("adminUser"));
 
-
   editorDiv.appendChild(editBtn);
   editorDiv.appendChild(deleteBtn);
 
@@ -103,7 +97,6 @@ export function createPostContent(post) {
   authorSection.appendChild(authorLink);
 
   authorSection.appendChild(editorDiv);
-
 
   const editBtn = document.createElement("a");
   editBtn.classList.add("edit-btn");
@@ -116,7 +109,6 @@ export function createPostContent(post) {
   } else {
     editBtn.classList.remove("hidden");
   }
-
 
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);

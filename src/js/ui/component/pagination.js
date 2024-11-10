@@ -1,3 +1,16 @@
+/**
+ * Initializes pagination functionality for navigating through pages.
+ *
+ * @function initializePagination
+ * @description
+ * This function sets up event listeners and UI updates for pagination elements, allowing the user to navigate
+ * between pages, either by clicking "next" and "previous" buttons or by entering a page number in input fields.
+ * It also updates the URL parameter to reflect the current page and reloads the page when navigation occurs.
+ * The paginator UI is updated to disable navigation buttons appropriately based on the current page and total page count.
+ *
+ * @param {number} pageCount - The total number of pages available for pagination.
+ */
+
 export function initializePagination(pageCount) {
   const prevButtons = document.querySelectorAll(".prev-posts");
   const nextButtons = document.querySelectorAll(".next-posts");

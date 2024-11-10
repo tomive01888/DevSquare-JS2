@@ -1,3 +1,14 @@
+/**
+ * Displays a list of posts in a specified container with options to view or edit each post.
+ *
+ * @function displayPostsListStyle
+ * @description
+ * This function dynamically generates and appends post elements to a container element with the ID "profile-user-posts".
+ * Each post element includes a title and a link that either allows viewing or editing the post, depending on
+ * whether the currently logged-in user matches the profile being viewed. The link redirects the user to
+ * the appropriate page when clicked.
+ */
+
 export function displayPostsListStyle(posts) {
   const postContainer = document.getElementById("profile-user-posts");
   postContainer.innerHTML = "";

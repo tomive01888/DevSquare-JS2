@@ -1,3 +1,11 @@
+/**
+ * Populates the edit form fields with the provided post data for editing.
+ *
+ * This function takes a post data object and sets the values of the edit form fields to match
+ * the post's current title, body, media URL, media alt text, and tags. It is used when loading
+ * a post into the edit form for modification.
+ */
+
 export async function populateEditForm(postData) {
   document.forms.editPost.title.value = postData.data.title;
   document.forms.editPost.body.value = postData.data.body;
