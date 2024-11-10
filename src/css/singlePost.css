@@ -72,17 +72,38 @@
 }
 
 
+
+#editorOptions {
+    display: flex;
+    gap: 0.5em;
+}
+
+#editorOptions a,
+#editorOptions button {
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    font-size: 14px;
+    border: none;
+
 .edit-btn {
     background-color: #007bff;
     padding: 0.3em 0.7em;
-    color: black;
     border-radius: var(--small-border-radius);
     text-decoration: none;
+
+
+#editorOptions a:hover,
+#editorOptions button:hover {
+    background-color: #0163cb;
+
     color: white;
 
 }
 
 .edit-btn:hover {
     background-color: #0163cb;
+
 
 }
