@@ -1,3 +1,15 @@
+/**
+ * Handles the profile update form submission and sends the updated data to the server.
+ *
+ * This function is triggered when a user submits the profile update form. It collects the
+ * input values for bio, avatar, and banner, and constructs a profile data object. If at least
+ * one field is filled, it sends the updated profile data to the server using the `updateProfile`
+ * function. If the update is successful, the page is reloaded. If no fields are filled or an error occurs,
+ * an alert is displayed to the user.
+ *
+ * @param {Event} event - The event object representing the form submission.
+ */
+
 import { updateProfile } from "../../api/profile/update";
 
 export async function onUpdateProfile(event) {

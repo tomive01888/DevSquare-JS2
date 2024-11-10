@@ -1,3 +1,11 @@
+/**
+ * @description
+ * This function clears the content of the element with ID "posts-container" and
+ * appends a new set of post elements. Each post element includes the post's media image,
+ * author's avatar and name, comment count, and creation date.
+ *
+ */
+
 import { timeSinceCreated } from "./timeSinceCreated";
 
 export function renderPosts(posts) {
