@@ -24,14 +24,23 @@ form input {
 }
 
 form textarea {
-    min-height: 240px;
+    min-height: 100px;
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: var(--small-border-radius);
     box-shadow: var(--box-shadow);
     font-family: var(--body-family);
-    resize: vertical;
+    resize: none;
+    transition: min-height 500ms ease;
+
+
+    @media (max-width: 769px) {
+        min-height: 150px;
+        transition: min-height 500ms ease;
+
+
+    }
 
 }
 
