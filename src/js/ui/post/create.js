@@ -3,6 +3,7 @@
  */
 
 import { createPost } from "../../api/post/create";
+const visitNewPost = document.querySelector(".goToPost");
 
 export async function onCreatePost(event) {
   event.preventDefault();
@@ -15,14 +16,21 @@ export async function onCreatePost(event) {
     : null;
 
   try {
+    visitNewPost.disabled = true;
+
     const response = await createPost({ title, body, tags, media });
 
     console.log("reterned data:", response);
 
     if (response) {
+      alert("Successfully made a new post!");
       const data = await response;
-      return data;
+      visitNewPost.disabled = false;
+      visitNewPost.addEventListener("click", () => {
+        window.location.href = `/post/?post=${data.data.id}`;
+      });
     } else {
+      visitNewPost.disabled = true;
       alert("Something went wrong, failed to create post.");
     }
   } catch (error) {

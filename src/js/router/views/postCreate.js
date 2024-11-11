@@ -11,9 +11,12 @@ const form = document.forms.createPost;
 
 form.addEventListener("submit", onCreatePost);
 
-console.log(onCreatePost.response);
-
 const visitNewPost = document.querySelector(".goToPost");
-visitNewPost.id = "visitNewPostBtn";
-visitNewPost.disabled = true;
-// alert("Successfully created a new post");
+const resetBtn = document.querySelector(".reset-form");
+resetBtn.addEventListener("click", () => {
+  visitNewPost.disabled = true;
+});
+
+form.addEventListener("change", () => {
+  visitNewPost.disabled = true;
+});
