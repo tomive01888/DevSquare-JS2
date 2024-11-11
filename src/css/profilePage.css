@@ -196,8 +196,18 @@
 
 }
 
+#start-new-post {
+    border-radius: var(--medium-border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgb(195, 195, 195);
+    padding: 1em;
+}
+
+#start-new-post a {
+    color: blue;
+}
+
 #visit-section {
-    margin-top: 2em;
     border-radius: var(--medium-border-radius);
     box-shadow: var(--box-shadow);
     border: 1px solid rgb(195, 195, 195);
