@@ -20,20 +20,21 @@
  */
 
 import { API_AUTH_REGISTER } from "../constants";
+import { headers } from "../headers";
 
 export async function register(userData) {
   try {
     const response = await fetch(API_AUTH_REGISTER, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers({ apiKey: false, authToken: false, contentType: true }),
       body: JSON.stringify(userData),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`);
+      throw new Error(
+        `${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`
+      );
     }
 
     const data = await response.json();

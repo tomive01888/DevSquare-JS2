@@ -39,17 +39,15 @@ export async function updatePost(id, { title, body, tags, media }) {
   try {
     const response = await fetch(fetchUrl, {
       method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-        "X-Noroff-API-KEY": apiKey,
-      },
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
       body: JSON.stringify(postBody),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
+      throw new Error(
+        `${errorData.statusCode}: ${errorData.status}. ${errorData.message}`
+      );
     }
 
     return await response.json();
