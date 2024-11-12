@@ -13,4 +13,6 @@ export async function populateEditForm(postData) {
   document.forms.editPost.mediaUrl.value = postData.data.media ? postData.data.media.url : "";
   document.forms.editPost.mediaAlt.value = postData.data.media ? postData.data.media.alt : "";
   document.forms.editPost.tags.value = postData.data.tags ? postData.data.tags.join(", ") : "";
+
+  document.forms.editPost.deletePost.setAttribute("data-id", postData.data.id);
 }

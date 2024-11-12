@@ -15,12 +15,10 @@
 // src/js/api/post.js
 
 import { API_SOCIAL_POSTS } from "../constants";
-
-const token = localStorage.getItem("token");
-const apiKey = localStorage.getItem("apiKey");
+import { headers } from "../headers";
 
 export async function createPost({ title, body, tags, media }) {
-  const fetchUrl = `${API_SOCIAL_POSTS}`;
+  const fetchUrl = API_SOCIAL_POSTS;
   try {
     const response = await fetch(fetchUrl, {
       method: "POST",
@@ -30,9 +28,7 @@ export async function createPost({ title, body, tags, media }) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(
-        `${errorData.statusCode}: ${errorData.status}. ${errorData.message}`
-      );
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
     }
 
     const data = await response.json();

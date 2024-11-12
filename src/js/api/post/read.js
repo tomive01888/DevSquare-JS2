@@ -48,10 +48,10 @@ export async function readPost(id) {
 export async function readPosts(limit = 12, page = 1, tag) {
   const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" });
 
-  const url = `${API_SOCIAL_POSTS}/?${params.toString()}`;
+  const fetchUrl = `${API_SOCIAL_POSTS}/?${params.toString()}`;
 
   try {
-    const response = await fetch(url, {
+    const response = await fetch(fetchUrl, {
       method: "GET",
       headers: headers({ apiKey: true, authToken: true, contentType: true }),
     });
@@ -80,6 +80,5 @@ export async function readPosts(limit = 12, page = 1, tag) {
  * @returns {Promise<object>} Object with data and meta fields.
  * @throws {Error} If the API request fails.
  */
-
 
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {}

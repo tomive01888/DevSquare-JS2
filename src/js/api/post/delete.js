@@ -9,8 +9,10 @@ import { headers } from "../headers";
  */
 
 export async function deletePost(id) {
+  const fetchUrl = `${API_SOCIAL_POSTS}/${id}`;
+
   try {
-    const response = await fetch(`${API_SOCIAL_POSTS}/${id}`, {
+    const response = await fetch(fetchUrl, {
       method: "DELETE",
       headers: headers({ apiKey: true, authToken: true, contentType: true }),
     });

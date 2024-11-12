@@ -16,9 +16,6 @@
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
-const token = localStorage.getItem("token");
-const apiKey = localStorage.getItem("apiKey");
-
 export async function updatePost(id, { title, body, tags, media }) {
   const fetchUrl = `${API_SOCIAL_POSTS}/${id}`;
 
@@ -46,9 +43,7 @@ export async function updatePost(id, { title, body, tags, media }) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(
-        `${errorData.statusCode}: ${errorData.status}. ${errorData.message}`
-      );
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
     }
 
     return await response.json();

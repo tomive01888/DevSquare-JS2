@@ -4,6 +4,7 @@ import { readPost } from "../../api/post/read";
 import { populateEditForm } from "../../ui/post/populateEditForm";
 import { setLogoutListener } from "../../ui/global/logout";
 import { goToProfilePage } from "../../utilities/goOwnProfile";
+import { onDeletePost } from "../../ui/post/delete";
 
 authGuard();
 setLogoutListener();
@@ -20,11 +21,13 @@ const postData = await readPost(postId);
 await populateEditForm(postData);
 
 const loggedUser = JSON.parse(localStorage.getItem("adminUser"));
+
 const formDelete = document.querySelector(".delete-post");
+
 formDelete.addEventListener("click", () => {
   const deleteThisPost = confirm("Wanna delete this post?");
   if (deleteThisPost) {
-    //run delete function here
+    onDeletePost();
     alert("Post deleted");
     window.location.href = `/profile/?profile=${loggedUser.name}`;
   } else {
