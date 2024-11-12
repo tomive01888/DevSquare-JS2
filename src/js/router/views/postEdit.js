@@ -20,17 +20,5 @@ const postData = await readPost(postId);
 
 await populateEditForm(postData);
 
-const loggedUser = JSON.parse(localStorage.getItem("adminUser"));
-
 const formDelete = document.querySelector(".delete-post");
-
-formDelete.addEventListener("click", () => {
-  const deleteThisPost = confirm("Wanna delete this post?");
-  if (deleteThisPost) {
-    onDeletePost();
-    alert("Post deleted");
-    window.location.href = `/profile/?profile=${loggedUser.name}`;
-  } else {
-    return;
-  }
-});
+formDelete.addEventListener("click", onDeletePost);
