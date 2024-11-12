@@ -42,7 +42,7 @@ async function initProfilePage() {
   createProfileLink(following, `${generalInfo.name} is not following anybody currently`, "following");
 
   const usersPostTitle = document.getElementById("visit-users-posts");
-  usersPostTitle.textContent = `${generalInfo.name}' posts:`;
+  usersPostTitle.textContent = `View ${generalInfo.name}' posts:`;
 
   displayPostsListStyle(posts);
 }

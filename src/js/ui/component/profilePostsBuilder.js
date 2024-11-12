@@ -20,33 +20,28 @@ export function displayPostsListStyle(posts) {
     const postTitle = document.createElement("p");
     postTitle.textContent = post.title;
 
+    const postBtnWrapper = document.createElement("div");
+    postBtnWrapper.classList.add("postBtnWrapper");
+
     const goToPost = document.createElement("a");
+    goToPost.classList.add("viewPost");
+    goToPost.textContent = "👁️";
+    goToPost.href = `/post/?post=${post.id}`;
+    postBtnWrapper.appendChild(goToPost);
 
     const urlSearch = new URLSearchParams(window.location.search);
     const userToCompare = urlSearch.get("profile");
-
     const loggedUser = JSON.parse(localStorage.getItem("adminUser"));
     if (loggedUser.name === userToCompare) {
-      goToPost.textContent = "Edit Post";
-      goToPost.href = `/post/edit/?post=${post.id}`;
-    } else {
-      goToPost.textContent = "View Post";
-      goToPost.href = `/post/?post=${post.id}`;
+      const editBtn = document.createElement("a");
+      editBtn.classList.add("editPost");
+      editBtn.textContent = "✏️";
+      editBtn.href = `/post/edit/?post=${post.id}`;
+      postBtnWrapper.appendChild(editBtn);
     }
 
-    goToPost.addEventListener("click", () => {
-      const postId = goToPost.getAttribute("data-id");
-
-      if (loggedUser.name === userToCompare) {
-        goToPost.textContent = "Edit";
-        window.location.href = `/post/edit/?post-id=${postId}`;
-      } else {
-        window.location.href = `/post/?post-id=${postId}`;
-      }
-    });
-
     postElement.appendChild(postTitle);
-    postElement.appendChild(goToPost);
+    postElement.appendChild(postBtnWrapper);
     postContainer.appendChild(postElement);
   });
 }
