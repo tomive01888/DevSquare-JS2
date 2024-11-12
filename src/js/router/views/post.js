@@ -16,13 +16,11 @@ const idFromParams = urlSearch.get("post");
 
 const postData = await readPost(idFromParams);
 
-console.log("post", postData.data);
-
 createPostContent(postData.data);
 
 const filteredMainComments = await getMainComments(postData.data.comments);
-console.log(filteredMainComments);
 createComment(filteredMainComments);
 
 const commentForm = document.forms.comment;
 commentForm.addEventListener("submit", onCommentPost);
+

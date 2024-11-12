@@ -25,6 +25,3 @@ export function onDeletePost(event) {
     }
   }
 }
-
-const deleteBtn = document.querySelector(".delete-post");
-deleteBtn.addEventListener("click", onDeletePost);
