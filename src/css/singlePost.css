@@ -5,7 +5,7 @@
 }
 
 #post-container section {
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     border-radius: var(--large-border-radius);
     padding: 1em;
     width: 100%;
@@ -37,7 +37,7 @@
 
 #post-content p:first-child {
     padding: 0.4em;
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     border-radius: var(--small-border-radius);
     background-color: #dfdfdf;
 
@@ -61,6 +61,7 @@
 }
 
 .authorLink img {
+    object-fit: cover;
     outline: 2px solid white;
     width: 45px;
     height: 45px;
@@ -100,4 +101,35 @@
 
 .new-post {
     width: 100%;
+}
+
+.comment-wrapper {
+    background-color: #dfdfdf;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid lightgray;
+    border-radius: var(--medium-border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.profile-commenter {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-commenter img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: var(--small-border-radius);
+}
+
+.comment {
+    padding: 0.5em 0;
 }

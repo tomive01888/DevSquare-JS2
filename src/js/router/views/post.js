@@ -1,7 +1,9 @@
 import { readPost } from "../../api/post/read";
+import { createComment } from "../../ui/component/commentsBuilder";
 import { createPostContent } from "../../ui/component/singlePostBuilder";
 import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
+import { getMainComments } from "../../utilities/commentsSorter";
 import { goToProfilePage } from "../../utilities/goOwnProfile";
 
 authGuard();
@@ -16,3 +18,9 @@ const postData = await readPost(idFromParams);
 console.log("post", postData.data);
 
 createPostContent(postData.data);
+
+const filteredMainComments = await getMainComments(postData.data.comments);
+console.log(filteredMainComments);
+
+
+createComment(filteredMainComments);
