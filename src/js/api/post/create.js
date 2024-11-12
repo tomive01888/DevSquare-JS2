@@ -24,17 +24,15 @@ export async function createPost({ title, body, tags, media }) {
   try {
     const response = await fetch(fetchUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-        "X-Noroff-API-KEY": apiKey,
-      },
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
       body: JSON.stringify({ title, body, tags, media }),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
+      throw new Error(
+        `${errorData.statusCode}: ${errorData.status}. ${errorData.message}`
+      );
     }
 
     const data = await response.json();
