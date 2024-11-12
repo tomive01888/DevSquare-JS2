@@ -1,8 +1,28 @@
+import { API_SOCIAL_POSTS } from "../constants";
+import { headers } from "../headers";
+
 /**
- * Deletes a post by its ID.
+ * Sends a DELETE request to the API to remove a post by its ID.
  *
- * @param {?} id - The ID of the post to delete. Fill in the appropriate type.
- * @returns {?} What the fucntion returns. Choose an appropriate return type.
- * @throws {Error} If the API request fails.
+ * @param {string} id - The ID of the post to delete.
+ * @returns {Promise<void>} - Resolves if deletion is successful; rejects with error otherwise.
  */
-export async function deletePost(id) {}
+
+export async function deletePost(id) {
+  try {
+    const response = await fetch(`${API_SOCIAL_POSTS}/${id}`, {
+      method: "DELETE",
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to delete post.");
+    }
+
+    console.log(`Post with ID ${id} was successfully deleted.`);
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    throw error;
+  }
+}
