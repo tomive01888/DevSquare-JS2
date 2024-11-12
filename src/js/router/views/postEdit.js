@@ -20,5 +20,4 @@ const postData = await readPost(postId);
 
 await populateEditForm(postData);
 
-const formDelete = document.querySelector(".delete-post");
-formDelete.addEventListener("click", onDeletePost);
+document.querySelector(".delete-post").addEventListener("click", onDeletePost);

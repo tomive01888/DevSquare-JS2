@@ -77,18 +77,9 @@ export function createPostContent(post) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete post";
+    deleteBtn.id = "deleteBtn";
     deleteBtn.type = "button";
-    deleteBtn.addEventListener("click", () => {
-      const confirmAction = confirm("Do you want to delete post?");
-
-      if (confirmAction) {
-        // const deleteInProgress = await deletePost(post.id)
-
-        console.log("add delete function here");
-        alert("Post has been deleted");
-        window.location.href = "/";
-      }
-    });
+    deleteBtn.setAttribute("data-id", id);
 
     const editBtn = document.createElement("a");
     editBtn.classList.add("edit-btn");
