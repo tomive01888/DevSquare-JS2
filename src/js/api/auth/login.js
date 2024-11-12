@@ -8,7 +8,7 @@
  * @throws {Error} Error if the login fails.
  */
 
-import { API_AUTH_KEY, API_AUTH_LOGIN } from "../constants";
+import { API_AUTH_LOGIN } from "../constants";
 import { headers } from "../headers";
 
 export async function login({ email, password }) {
@@ -21,7 +21,9 @@ export async function login({ email, password }) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`);
+      throw new Error(
+        `${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`
+      );
     }
 
     const data = await response.json();
@@ -64,7 +66,9 @@ async function getKey(name) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`);
+      throw new Error(
+        `${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`
+      );
     }
 
     const data = await response.json();
