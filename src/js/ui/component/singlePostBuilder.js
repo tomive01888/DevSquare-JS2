@@ -67,8 +67,8 @@ export function createPostContent(post) {
   const authorNameElement = document.createElement("p");
   authorNameElement.id = "profile-name";
   authorNameElement.textContent = author.name;
+  authorSection.appendChild(authorLink);
 
-  // Add editor div if author and logged user is same person
   const localName = JSON.parse(localStorage.getItem("adminUser"));
   if (author.name === localName.name) {
     const editorDiv = document.createElement("div");
@@ -103,8 +103,6 @@ export function createPostContent(post) {
 
   authorLink.appendChild(authorAvatar);
   authorLink.appendChild(authorNameElement);
-
-  authorSection.appendChild(authorLink);
 
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);
