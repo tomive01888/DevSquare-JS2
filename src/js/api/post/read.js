@@ -7,7 +7,7 @@
  */
 // export async function readPost(id) {}
 
-import { API_SOCIAL_POSTS } from "../constants";
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants";
 import { headers } from "../headers";
 
 export async function readPost(id) {
@@ -22,8 +22,7 @@ export async function readPost(id) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      const errorMessage = `${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`;
-      console.error("API Error:", errorMessage);
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`);
     }
 
     const data = await response.json();
@@ -31,6 +30,7 @@ export async function readPost(id) {
     return data;
   } catch (error) {
     console.error("Error fetching post:", error);
+    throw error;
   }
 }
 
@@ -66,7 +66,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
     return { data: data, meta: meta };
   } catch (error) {
     console.error("Fetch error:", error);
-    return [];
+    throw error;
   }
 }
 
@@ -81,4 +81,27 @@ export async function readPosts(limit = 12, page = 1, tag) {
  * @throws {Error} If the API request fails.
  */
 
-export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
+export async function readPostsByUser(username, limit = 12, page = 1, tag) {
+  const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" });
+
+  const fetchUrl = `${API_SOCIAL_PROFILES}/${username}/posts/?${params.toString()}`;
+
+  try {
+    const response = await fetch(fetchUrl, {
+      method: "GET",
+      headers: headers({ apiKey: true, authToken: true, contentType: true }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.errors[0].message}`);
+    }
+
+    const { data, meta } = await response.json();
+
+    return { data: data, meta: meta };
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
+  }
+} // Not in use

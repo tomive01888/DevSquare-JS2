@@ -17,7 +17,6 @@ export function onDeletePost(event) {
     if (deleteThisPost) {
       deletePost(postDataId);
       window.location.href = `/profile/?profile=${loggedUser.name}`;
-
       alert("Post successfully deleted");
     } else {
       alert("Post deletion cancelled");

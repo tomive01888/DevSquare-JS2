@@ -14,15 +14,13 @@ import { API_KEY } from "./constants";
 export function headers({ apiKey = false, authToken = false, contentType = false } = {}) {
   const headers = new Headers();
 
-  if (apiKey && API_KEY) {
+  if (API_KEY) {
     headers.append("X-Noroff-API-Key", API_KEY);
   }
 
   if (authToken) {
-    const token = localStorage.getItem("token");
-    if (token) {
-      headers.append("Authorization", `Bearer ${token}`);
-    }
+    const token = (typeof localStorage !== "undefined" && localStorage.getItem("token")) || "token";
+    headers.append("Authorization", `Bearer ${token}`);
   }
 
   if (contentType) {

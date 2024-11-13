@@ -57,5 +57,6 @@ export async function updateProfile(username, { avatar, banner, bio }) {
     return data;
   } catch (error) {
     console.error("Failed to update profile", error);
+    throw error;
   }
 }

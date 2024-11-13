@@ -14,6 +14,11 @@ export async function onLogin(event) {
       email,
       password,
     });
+
+    localStorage.setItem("token", data.data.accessToken);
+    const { accessToken, ...userData } = data.data;
+    localStorage.setItem("adminUser", JSON.stringify(userData));
+
     alert("login successfull");
     window.location.href = "/";
   } catch (error) {

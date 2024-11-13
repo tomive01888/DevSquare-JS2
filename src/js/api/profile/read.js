@@ -31,6 +31,7 @@ export async function readProfile(username) {
     return data.data;
   } catch (error) {
     console.error("Failed to fetch profile", error);
+    throw error;
   }
 }
 
