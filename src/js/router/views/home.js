@@ -1,25 +1,24 @@
-import { readPosts } from "../../api/post/read";
-import { renderPosts } from "../../ui/component/homePostsBuilder";
-import { initializePagination } from "../../ui/component/pagination";
+import { goToPage, initializeHome, nextPage, prevPage } from "../../ui/component/homeInitAndPaginator";
 import { setLogoutListener } from "../../ui/global/logout";
 import { authGuard } from "../../utilities/authGuard";
-import { goToProfilePage } from "../../utilities/goOwnProfile";
-import { initializePageParameter } from "../../utilities/initPageParameter";
+import { goToProfilePage } from "../../ui/global/goMyProfile";
 
 authGuard();
 setLogoutListener();
 goToProfilePage();
-
-const limit = 12;
-let currentPage = initializePageParameter();
-
-async function initializeHome() {
-  const { data, meta } = await readPosts(limit, currentPage);
-
-  renderPosts(data, meta);
-
-  const pageCount = meta.pageCount;
-
-  initializePagination(pageCount);
-}
 initializeHome();
+
+document.querySelectorAll(".next-posts").forEach((button) => {
+  button.addEventListener("click", nextPage);
+});
+
+document.querySelectorAll(".prev-posts").forEach((button) => {
+  button.addEventListener("click", prevPage);
+});
+
+document.querySelectorAll(".go-to").forEach((input) => {
+  input.addEventListener("change", () => {
+    const pageInput = parseInt(input.value);
+    goToPage(pageInput);
+  });
+});

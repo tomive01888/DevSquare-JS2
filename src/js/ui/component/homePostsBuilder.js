@@ -6,10 +6,13 @@
  *
  */
 
-import { timeSinceCreated } from "./timeSinceCreated";
+import { timeSinceCreated } from "../../utilities/timeSinceCreated";
 
-export function renderPosts(posts) {
-  console.log(posts);
+export function renderPosts(posts, pageCount) {
+  const maxPageLimit = document.querySelectorAll(".max-page");
+  maxPageLimit.forEach((element) => {
+    element.textContent = `of ${pageCount}`;
+  });
 
   const postsContainer = document.getElementById("posts-container");
   postsContainer.innerHTML = "";
@@ -26,11 +29,15 @@ export function renderPosts(posts) {
 
     postElement.innerHTML = `      
             <div class="temp-bg">
-                <img id="post-img" src="${imgSrc}" alt="${imgAlt}">
+                <img class="post-img" 
+                src="${imgSrc ? imgSrc : "/images/noroff-logo.png"}" 
+                alt="${imgSrc ? imgAlt : "noroff logo"}">
             </div>
             <div class="intel-wrapper">
                 <div class="profile-user">
-                    <img class="avatar" src="${post.author.avatar.url}" alt="${post.author.avatar.alt}">
+                    <img class="avatar" 
+                    src="${post.author.avatar.url}" 
+                    alt="${post.author.avatar.alt}">
                     <p><b>${post.author.name}</b></p>
                 </div>
                 <p id="comments-length"><span>💬</span><b>${post.comments.length}</b></p>                

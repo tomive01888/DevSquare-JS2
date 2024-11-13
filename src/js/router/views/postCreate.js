@@ -1,7 +1,7 @@
 import { setLogoutListener } from "../../ui/global/logout";
 import { onCreatePost } from "../../ui/post/create";
 import { authGuard } from "../../utilities/authGuard";
-import { goToProfilePage } from "../../utilities/goOwnProfile";
+import { goToProfilePage } from "../../utilities/goMyProfile";
 
 authGuard();
 setLogoutListener();
