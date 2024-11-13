@@ -56,6 +56,8 @@ export async function onUpdateProfile(event) {
       location.reload();
     }
   } catch (error) {
+    const errorUpdateMsg = document.getElementById("error-update-msg");
+    errorUpdateMsg.innerHTML = `<p>${error.message}</p>`;
     console.error("Failed to update profile:", error);
     alert("Failed to update profile. Please check the inputs are valid.");
   }

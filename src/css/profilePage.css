@@ -314,3 +314,19 @@
     }
 
 }
+
+#error-update-msg {
+    grid-column: 1 /span 2;
+    display: none;
+    font-size: 14px;
+    margin-top: 0.3em;
+    padding: 0.5em;
+    border: 2px solid var(--red-alert);
+    color: var(--red-alert);
+    border-radius: var(--small-border-radius);
+    background-color: rgb(223, 219, 219);
+}
+
+#error-update-msg:not(:empty) {
+    display: block
+}
