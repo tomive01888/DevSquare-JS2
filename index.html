@@ -30,14 +30,15 @@
       <section>
         <div id="top-paginator" class="posts-paginator">
           <button type="button" class="prev-posts"><span>&#8249;</span></button>
-          <div>
-            <label for="post">Go to page:</label>
-            <input class="go-to" type="number" id="post" name="post" />
-            <span class="max-range"></span>
-          </div>
-
           <button type="button" class="next-posts"><span>&#8250;</span></button>
+
+          <div>
+            <label for="post">Page</label>
+            <input class="go-to" type="number" id="post" name="post" min="1" />
+            <p class="max-page">of</p>
+          </div>
         </div>
+
         <div id="posts-container">
           <div class="filler-post"><div class="loader"></div></div>
           <div class="filler-post"><div class="loader"></div></div>
@@ -50,13 +51,13 @@
 
         <div id="bottom-paginator" class="posts-paginator">
           <button type="button" class="prev-posts"><span>&#8249;</span></button>
-          <div>
-            <label for="post2">Go to page:</label>
-            <input class="go-to" type="number" id="post2" name="post2" />
-            <span class="max-range"></span>
-          </div>
-
           <button type="button" class="next-posts"><span>&#8250;</span></button>
+
+          <div>
+            <label for="post2">Page</label>
+            <input class="go-to" type="number" id="post2" name="post2" />
+            <p class="max-page"></p>
+          </div>
         </div>
       </section>
     </main>

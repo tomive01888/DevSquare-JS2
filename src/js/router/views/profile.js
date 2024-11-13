@@ -1,11 +1,11 @@
 import { readProfile } from "../../api/profile/read";
-import { populateProfileInfo } from "../../ui/component/populateProfileInfo";
+import { populateProfileInfo } from "../../ui/component/populateProfilePage";
 import { createProfileLink } from "../../ui/component/profileCardsBuilder";
 import { displayPostsListStyle } from "../../ui/component/profilePostsBuilder";
 import { setLogoutListener } from "../../ui/global/logout";
 import { onUpdateProfile } from "../../ui/profile/update";
 import { authGuard } from "../../utilities/authGuard";
-import { goToProfilePage } from "../../utilities/goOwnProfile";
+import { goToProfilePage } from "../../ui/global/goMyProfile";
 
 authGuard();
 setLogoutListener();

@@ -5,7 +5,7 @@ import { setLogoutListener } from "../../ui/global/logout";
 import { onCommentPost } from "../../ui/post/comment";
 import { authGuard } from "../../utilities/authGuard";
 import { getMainComments } from "../../utilities/commentsSorter";
-import { goToProfilePage } from "../../utilities/goOwnProfile";
+import { goToProfilePage } from "../../utilities/goMyProfile";
 
 authGuard();
 setLogoutListener();
@@ -23,4 +23,3 @@ createComment(filteredMainComments);
 
 const commentForm = document.forms.comment;
 commentForm.addEventListener("submit", onCommentPost);
-
