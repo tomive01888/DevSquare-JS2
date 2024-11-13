@@ -5,7 +5,7 @@ import { setLogoutListener } from "../../ui/global/logout";
 import { onCommentPost } from "../../ui/post/comment";
 import { authGuard } from "../../utilities/authGuard";
 import { getMainComments } from "../../utilities/commentsSorter";
-import { goToProfilePage } from "../../utilities/goMyProfile";
+import { goToProfilePage } from "../../ui/global/goMyProfile";
 
 authGuard();
 setLogoutListener();

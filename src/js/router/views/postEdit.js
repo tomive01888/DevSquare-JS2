@@ -3,7 +3,7 @@ import { onUpdatePost } from "../../ui/post/update";
 import { readPost } from "../../api/post/read";
 import { populateEditForm } from "../../ui/post/populateEditForm";
 import { setLogoutListener } from "../../ui/global/logout";
-import { goToProfilePage } from "../../utilities/goMyProfile";
+import { goToProfilePage } from "../../ui/global/goMyProfile";
 import { onDeletePost } from "../../ui/post/delete";
 
 authGuard();
