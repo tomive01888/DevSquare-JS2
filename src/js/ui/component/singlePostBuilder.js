@@ -9,7 +9,7 @@
  * @param {Object} post - The data object containing the post details to be displayed.
  */
 
-import { timeSinceCreated } from "./timeSinceCreated";
+import { timeSinceCreated } from "../../utilities/timeSinceCreated";
 
 export function createPostContent(post) {
   const { id, title, body, media, author, tags, created } = post;
