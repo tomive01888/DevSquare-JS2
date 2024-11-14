@@ -14,20 +14,16 @@ export function updateFollowButton(isFollowing, profileName) {
   const followButton = document.getElementById("follow-button");
   const followMsg = document.getElementById("follow-msg");
 
-  // Set initial button text based on the current following state
   followButton.textContent = isFollowing ? "Unfollow" : "Follow";
 
-  // Event listener for the follow/unfollow action
   followButton.onclick = async () => {
     try {
       const action = isFollowing ? "Unfollow" : "Follow";
       await followOrUnfollow(profileName, action);
 
-      // Toggle following state and update button text
       isFollowing = !isFollowing;
       followButton.textContent = isFollowing ? "Unfollow" : "Follow";
 
-      // Update profile followers list
       const data = await readProfile(profileName);
       const { followers } = data;
       createProfileLink(followers, null, "followers");
@@ -37,7 +33,6 @@ export function updateFollowButton(isFollowing, profileName) {
       followMsg.style.display = "block";
       followMsg.textContent = error;
 
-      // Hide message after 4 seconds
       setTimeout(() => {
         followMsg.style.display = "none";
       }, 4000);

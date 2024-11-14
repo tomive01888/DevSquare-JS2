@@ -27,7 +27,8 @@ export function renderPosts(posts, pageCount) {
 
     const timeAgo = timeSinceCreated(post.created);
 
-    postElement.innerHTML = `      
+    postElement.innerHTML = `
+            <h2> ${post.title} </h2>   
             <div class="temp-bg">
                 <img class="post-img" 
                 src="${imgSrc ? imgSrc : "/images/noroff-logo.png"}" 

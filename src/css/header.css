@@ -7,34 +7,59 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: var(--em-small) var(--em-large);
-  background-color: #a6f2e0;
-  height: 80px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--container-bg);
+  height: 60px;
+  box-shadow: var(--box-shadow);
   z-index: 9999;
 }
 
-header a {
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--em-xsmall);
+}
+
+nav a {
+  width: 120px;
   text-decoration: none;
   color: #000;
   font-size: 18px;
-  padding: var(--em-small);
+  /* padding: var(--em-small); */
 }
 
 header img {
-  height: 50px;
-}
-
-header h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
+  height: 40px;
 }
 
 #logout-button {
   padding: var(--em-small) var(--em-large);
   background-color: orange;
   color: #000;
+  font-weight: 700;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.deco-line {
+  position: relative;
+  width: 120px;
+  text-align: center;
+}
+
+.deco-line::before {
+  content: "";
+  width: 0;
+  border-bottom: 2px solid black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  transition: width 300ms ease;
+
+}
+
+.deco-line:hover::before {
+  width: 100%;
+  transition: width 300ms ease;
 }
