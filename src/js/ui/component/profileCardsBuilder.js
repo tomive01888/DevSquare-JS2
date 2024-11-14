@@ -8,10 +8,14 @@
  */
 export async function createProfileLink(profiles, emptyMessage, container) {
   const targetContainer = document.getElementById(container === "followers" ? "followers-list" : "following-list");
+
+  targetContainer.innerHTML = "";
+
   if (!targetContainer) {
     console.error(`Container with ID "${container === "followers" ? "followers-list" : "following-list"}" not found.`);
     return;
   }
+
   if (profiles.length === 0) {
     const message = document.createElement("p");
     message.textContent = emptyMessage;

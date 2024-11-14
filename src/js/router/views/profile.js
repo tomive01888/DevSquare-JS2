@@ -6,6 +6,8 @@ import { setLogoutListener } from "../../ui/global/logout";
 import { onUpdateProfile } from "../../ui/profile/update";
 import { authGuard } from "../../utilities/authGuard";
 import { goToProfilePage } from "../../ui/global/goMyProfile";
+import { checkFollowingStatus } from "../../utilities/isFollowingUser";
+import { updateFollowButton } from "../../ui/profile/follow";
 
 authGuard();
 setLogoutListener();
@@ -21,6 +23,9 @@ async function initProfilePage() {
   const data = await readProfile(profileName);
   const { posts, following, followers, ...generalInfo } = data;
   populateProfileInfo(generalInfo);
+
+  const isFollowing = checkFollowingStatus(followers);
+  updateFollowButton(isFollowing, generalInfo.name);
 
   const radioButtons = document.querySelectorAll('input[name="section"]');
   const sections = document.querySelectorAll(".content-section");
