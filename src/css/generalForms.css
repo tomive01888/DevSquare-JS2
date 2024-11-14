@@ -1,7 +1,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--em-medium);
     margin: 2em 0;
     color: #555;
     font-family: var(--body-family);
@@ -14,8 +14,8 @@ label {
 
 form input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: var(--em-small);
+    border: var(--border-lightgrey);
     border-radius: var(--small-border-radius);
     box-shadow: var(--box-shadow);
     font-family: var(--body-family);
@@ -26,27 +26,24 @@ form input {
 form textarea {
     min-height: 100px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: var(--em-small);
+    border: var(--border-lightgrey);
     border-radius: var(--small-border-radius);
     box-shadow: var(--box-shadow);
     font-family: var(--body-family);
     resize: none;
     transition: min-height 500ms ease;
 
-
     @media (max-width: 769px) {
         min-height: 150px;
         transition: min-height 500ms ease;
 
-
     }
-
 }
 
 form button {
     width: 100%;
-    padding: 10px;
+    padding: var(--em-small);
     border: none;
     border-radius: var(--small-border-radius);
     color: #fff;
@@ -55,11 +52,11 @@ form button {
 }
 
 .submit {
-    background-color: #007bff;
+    background-color: var(--blue-btn);
 }
 
 .submit:hover {
-    background-color: #0163cb;
+    background-color: var(--blue-btn-hov);
 }
 
 .button-group {
@@ -68,19 +65,19 @@ form button {
 }
 
 .delete-post {
-    background-color: rgb(183, 76, 94);
+    background-color: var(--red-alert);
 }
 
 .delete-post:hover {
-    background-color: rgb(139, 58, 71);
+    background-color: var(--red-alert-hov);
 }
 
 .reset-form {
-    background-color: rgb(183, 76, 94);
+    background-color: var(--red-alert);
 }
 
 .reset-form:hover {
-    background-color: rgb(139, 58, 71);
+    background-color: var(--red-alert-hov);
 }
 
 .goToPost {
@@ -104,7 +101,7 @@ form button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: var(--em-large);
     height: 100%;
 
 }
@@ -114,7 +111,7 @@ form button {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1em;
+    gap: var(--em-medium);
     height: 100%;
     width: 100%;
 
@@ -145,8 +142,8 @@ form button {
 .error-message {
     font-size: 14px;
     display: none;
-    margin-top: 0.3em;
-    padding: 0.5em;
+    margin-top: var(--em-xsmall);
+    padding: var(--em-small);
     border: 2px solid var(--red-alert);
     color: var(--red-alert);
     border-radius: var(--small-border-radius);
