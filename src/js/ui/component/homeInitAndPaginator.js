@@ -33,9 +33,9 @@ export async function initializeHome() {
   try {
     const { data, meta } = await readPosts(limit, currentPage);
     metaData = meta;
-    console.log(metaData);
 
     renderPosts(data);
+
     updatePaginationControls();
   } catch (error) {
     console.error("Something went wrong.", error);
