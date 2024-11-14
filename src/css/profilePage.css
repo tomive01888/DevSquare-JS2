@@ -55,6 +55,9 @@
 
 }
 
+
+/*_______________________________________________ BIO SECTION*/
+
 .bio-section {
     background-color: var(--container-bg);
     position: relative;
@@ -63,7 +66,6 @@
     border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
     padding: var(--em-large);
-    margin-bottom: var(--em-xlarge);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +86,45 @@
 
 }
 
-/*_______________________________________________ RADOP BUTTONS SELECTOR*/
+/*_______________________________________________ BIO SECTION*/
+
+#follow-section {
+    margin-bottom: var(--em-xlarge);
+
+}
+
+#follow-button {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    padding: var(--em-medium);
+    background-color: var(--blue-btn);
+    border-radius: var(--medium-border-radius);
+    border: none;
+    margin-bottom: var(--em-small);
+}
+
+#follow-button {
+    width: 100%;
+    background-color: var(--blue-btn-hov);
+}
+
+#follow-msg {
+    background-color: #e9e0e0;
+    outline: 2px solid var(--red-alert);
+    color: var(--red-alert);
+    display: none;
+    font-weight: 600;
+    bottom: -40px;
+    width: 100%;
+    background-color: white;
+    padding: var(--em-small);
+    border-radius: var(--small-border-radius);
+}
+
+
+/*_______________________________________________ RADIO BUTTONS SELECTOR*/
 .content-sections {
     background-color: var(--container-bg);
 
