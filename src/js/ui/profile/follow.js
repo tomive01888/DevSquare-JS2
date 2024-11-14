@@ -34,9 +34,8 @@ export function updateFollowButton(isFollowing, profileName) {
     } catch (error) {
       console.error("Error updating follow status:", error);
 
-      // Display error message
       followMsg.style.display = "block";
-      followMsg.textContent = "Error updating follow status. Please try again.";
+      followMsg.textContent = error;
 
       // Hide message after 4 seconds
       setTimeout(() => {
