@@ -10,7 +10,7 @@
 
 
 body {
-    background-color: #f4f4f9;
+    background-color: var(--body-bg);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -24,15 +24,14 @@ body {
     max-width: 70em;
     min-height: 100vh;
     margin: 0 auto;
-    margin-top: 5em;
-    padding: 2em;
+    margin-top: var(--em-xxlarge);
+    padding: var(--em-large);
     display: flex;
     flex-direction: column;
-    gap: 2em;
-
+    gap: var(--em-large);
 
     @media (max-width: 1025px) {
-        padding: 0.5em;
+        padding: var(--em-small);
 
     }
 }
@@ -42,20 +41,19 @@ body {
     max-width: 80em;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 2em;
+    padding: var(--em-large);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .max-small-container {
-    margin: 0 auto;
     width: 100%;
     max-width: 30em;
     height: max-content;
-    padding: 1em;
+    padding: var(--em-medium);
     border-radius: var(--medium-border-radius);
-    background-color: #d3d3d3;
+    background-color: var(--container-bg);
     box-shadow: var(--box-shadow);
 }
 
@@ -63,9 +61,9 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
-    padding: 1em;
+    padding: var(--em-medium);
     border-radius: var(--medium-border-radius);
-    background-color: #d3d3d3;
+    background-color: var(--container-bg);
     box-shadow: var(--box-shadow);
 }
 

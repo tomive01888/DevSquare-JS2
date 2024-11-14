@@ -30,61 +30,35 @@
           <div>
             <input type="hidden" type="number" name="id" />
           </div>
-          <label nafor="post-title">Title:</label>
-          <input
-            type="text"
-            id="post-title"
-            name="title"
-            placeholder="Enter post title"
-            required
-          />
 
-          <label for="post-content">Content:</label>
-          <textarea
-            id="post-content"
-            name="body"
-            placeholder="Write your post here..."
-            required
-          ></textarea>
+          <div>
+            <label nafor="post-title">Title:</label>
+            <input type="text" id="post-title" name="title" placeholder="Enter post title" required />
+          </div>
 
-          <label for="mediaUrl">Upload Image:</label>
-          <input
-            type="text"
-            id="mediaUrl"
-            name="mediaUrl"
-            placeholder="Post image url here"
-          />
+          <div>
+            <label for="post-content">Content:</label>
+            <textarea id="post-content" name="body" placeholder="Write your post here..." required></textarea>
+          </div>
 
-          <label for="mediaAlt">Image alternative text:</label>
-          <input
-            type="text"
-            id="mediaAlt"
-            name="mediaAlt"
-            placeholder="Enter alternative text here"
-          />
+          <div>
+            <label for="mediaUrl">Upload Image:</label>
+            <input type="text" id="mediaUrl" name="mediaUrl" placeholder="Post image url here" />
+          </div>
 
-          <label for="tags">Tag:</label>
-          <input
-            type="text"
-            id="tags"
-            name="tags"
-            placeholder="Enter tags here..."
-          />
+          <div>
+            <label for="mediaAlt">Image alternative text:</label>
+            <input type="text" id="mediaAlt" name="mediaAlt" placeholder="Enter alternative text here" />
+          </div>
 
-          <button class="submit" type="submit" id="publish-btn">
-            Update post
-          </button>
+          <div>
+            <label for="tags">Tag:</label> <input type="text" id="tags" name="tags" placeholder="Enter tags here..." />
+          </div>
+
+          <button class="submit" type="submit" id="publish-btn">Update post</button>
           <div class="button-group">
-            <button class="delete-post" type="button" name="deletePost">
-              Delete
-            </button>
-            <button
-              class="reset-form"
-              type="reset"
-              onclick="alert('Form has been reset')"
-            >
-              Reset form
-            </button>
+            <button class="delete-post" type="button" name="deletePost">Delete</button>
+            <button class="reset-form" type="reset" onclick="alert('Form has been reset')">Reset form</button>
           </div>
         </form>
       </div>

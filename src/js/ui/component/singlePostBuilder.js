@@ -39,10 +39,10 @@ export function createPostContent(post) {
   tagsElement.innerHTML = `Tags: <b> ${tags.length > 0 ? tags.join(", ") : "No tags available"}</b>`;
 
   const createdElement = document.createElement("p");
-  createdElement.innerHTML = `Created: <b> ${created.slice(0, 10)}</b>`;
+  createdElement.innerHTML = `Date: <b> ${created.slice(0, 10)}</b>`;
 
   const timeSinceElement = document.createElement("p");
-  timeSinceElement.innerHTML = `Time ago: <b>${timeSince} </b>`;
+  timeSinceElement.innerHTML = `Created since: <b>${timeSince} </b>`;
 
   postSection.appendChild(titleElement);
   postSection.appendChild(postImg);

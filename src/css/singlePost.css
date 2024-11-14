@@ -5,41 +5,47 @@
 }
 
 #post-container section {
-    border: 1px solid lightgray;
+    border: var(--border-lightgrey);
     border-radius: var(--large-border-radius);
-    padding: 1em;
+    padding: var(--em-medium);
     width: 100%;
     box-shadow: var(--box-shadow);
-    background-color: #ede8e8;
+    background-color: var(--container-bg);
 
 }
 
 #post-content h1 {
-    margin: 0.3em 0;
-    word-break: break-all;
+    margin: var(--em-small) 0;
+    word-break: normal;
+    hyphens: auto;
 }
 
 #post-content img {
     width: 100%;
     max-width: 50%;
-}
+    transition: max-width 450ms ease;
 
-#post-content p:first-child {
-    min-height: 150px;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        transition: max-width 450ms ease;
+
+    }
 }
 
 #post-content p {
-    padding: 0.4em;
+    padding: var(--em-small);
     word-break: break-all;
 
 
 }
 
 #post-content p:first-child {
-    padding: 0.4em;
-    border: 1px solid lightgray;
+    min-height: 150px;
+    padding: var(--em-small);
+    border: var(--border-lightgrey);
     border-radius: var(--small-border-radius);
-    background-color: #dfdfdf;
+    background-color: #f4efef;
 
 }
 
@@ -56,7 +62,7 @@
     background-color: #3d3d3d;
     border-radius: var(--small-border-radius);
     width: fit-content;
-    padding: 0.4em;
+    padding: var(--em-small);
     color: white;
 }
 
@@ -69,7 +75,7 @@
 }
 
 .authorLink p {
-    padding: 0.2em;
+    padding: var(--em-small);
 }
 
 #editorOptions {
@@ -85,16 +91,16 @@
     text-decoration: none;
     width: 100px;
     font-size: 14px;
-    padding: 10px;
+    padding: var(--em-small);
     border: none;
     border-radius: var(--small-border-radius);
-    background-color: #007bff;
+    background-color: var(--blue-btn);
 
 }
 
 #editorOptions a:hover,
 #editorOptions button:hover {
-    background-color: #0163cb;
+    background-color: var(--blue-btn-hov);
     color: white;
 
 }
@@ -110,12 +116,12 @@
 }
 
 .comment-wrapper {
-    background-color: #dfdfdf;
+    background-color: #f4efef;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 1em;
-    border: 1px solid lightgray;
+    padding: var(--em-medium);
+    border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
     box-shadow: var(--box-shadow);
 }
@@ -124,7 +130,7 @@
     display: flex;
     align-items: center;
     gap: 0.3em;
-    padding-bottom: 5px;
+    padding-bottom: var(--em-small);
     border-bottom: 1px solid rgb(186, 186, 186);
 }
 
@@ -136,5 +142,13 @@
 }
 
 .comment {
-    padding: 0.5em 0;
+    margin-top: var(--em-small);
+}
+
+#comments-area {
+    margin-bottom: var(--em-xxlarge);
+    padding: var(--em-medium);
+    outline: 1px solid lightgray;
+    border-radius: var(--medium-border-radius);
+    background-color: var(--container-bg);
 }

@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5em;
+    gap: var(--em-small);
 
 }
 
@@ -56,13 +56,14 @@
 }
 
 .bio-section {
+    background-color: var(--container-bg);
     position: relative;
     width: 100%;
     height: 200px;
-    border: 1px solid rgb(195, 195, 195);
+    border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
-    padding: 2em;
-    margin-bottom: 3em;
+    padding: var(--em-large);
+    margin-bottom: var(--em-xlarge);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,19 +86,21 @@
 
 /*_______________________________________________ RADOP BUTTONS SELECTOR*/
 .content-sections {
+    background-color: var(--container-bg);
+
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     box-shadow: var(--box-shadow);
-    padding: 1em;
-    border: 1px solid rgb(195, 195, 195);
+    padding: var(--em-medium);
+    border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
 
 }
 
 .radio-buttons {
     display: flex;
-    gap: 0.5em;
+    gap: var(--em-small);
     grid-column: 1 /span 2;
 
 }
@@ -113,7 +116,7 @@
     background-color: #007bff;
     text-align: center;
     font-size: 20px;
-    padding: 10px;
+    padding: var(--em-small);
     border-radius: var(--small-border-radius);
     cursor: pointer;
 }
@@ -131,7 +134,7 @@
     grid-column: 1 /span 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: var(--em-small);
 
     @media (max-width: 769px) {
         grid-template-columns: repeat(1, 1fr);
@@ -141,13 +144,13 @@
 }
 
 .content-section h3 {
-    margin-top: 1em;
+    margin-top: var(--em-medium);
 }
 
 /*_______________________________________________ UPDATE PROFILE*/
 
 #update-profile {
-    margin-top: 3em;
+    margin-top: var(--em-xlarge);
 }
 
 .content-section form {
@@ -160,8 +163,8 @@
 
 
 .flex-list {
-    padding: 0.5em;
-    border: 1px solid rgb(195, 195, 195);
+    padding: var(--em-small);
+    border: var(--border-lightgrey);
     height: 400px;
     overflow-y: scroll;
     background-color: rgb(216, 216, 216);
@@ -172,7 +175,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.5em;
+    gap: var(--em-small);
 
 }
 
@@ -182,7 +185,7 @@
 
 .user-profile {
     border-radius: var(--medium-border-radius);
-    padding: 0.5em;
+    padding: var(--em-small);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -208,7 +211,7 @@
 #start-new-post {
     border-radius: var(--medium-border-radius);
     box-shadow: var(--box-shadow);
-    border: 1px solid rgb(195, 195, 195);
+    border: var(--border-lightgrey);
     background-color: #007bff;
     place-items: center;
 
@@ -216,8 +219,7 @@
 
 #start-new-post a {
     border-radius: var(--medium-border-radius);
-
-    padding: 1em;
+    padding: var(--em-medium);
     cursor: pointer;
     display: block;
     width: 100%;
@@ -234,10 +236,11 @@
 
 /*_______________________________________________ VISIT SECTION*/
 #visit-section {
+    background-color: var(--container-bg);
     border-radius: var(--medium-border-radius);
     box-shadow: var(--box-shadow);
-    border: 1px solid rgb(195, 195, 195);
-    padding: 1em;
+    border: var(--border-lightgrey);
+    padding: var(--em-medium);
     min-height: 300px;
 
 }
@@ -245,12 +248,11 @@
 #profile-user-posts {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--em-medium);
     overflow-y: scroll;
     min-height: 250px;
-    border: 1px solid rgb(195, 195, 195);
-    padding: 10px;
-
+    border: var(--border-lightgrey);
+    padding: var(--em-small);
     background-color: rgb(216, 216, 216);
 
 
@@ -260,11 +262,11 @@
     position: relative;
     height: min-content;
     border-radius: var(--medium-border-radius);
-    padding: 0.5em;
+    padding: var(--em-small);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--em-small);
     background-color: rgb(254, 254, 254);
     cursor: pointer;
     text-decoration: none;
@@ -277,7 +279,7 @@
     position: absolute;
     right: 15px;
     display: flex;
-    gap: 0.5em;
+    gap: var(--em-small);
 
 }
 
@@ -299,7 +301,7 @@
 }
 
 #visit-users-posts {
-    margin: 0.5em 0;
+    margin: var(--em-small) 0;
 }
 
 .post p {
