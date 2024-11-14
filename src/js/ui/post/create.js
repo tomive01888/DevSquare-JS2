@@ -20,8 +20,6 @@ export async function onCreatePost(event) {
 
     const response = await createPost({ title, body, tags, media });
 
-    console.log("reterned data:", response);
-
     if (response) {
       alert("Successfully made a new post!");
       const data = await response;

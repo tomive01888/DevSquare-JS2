@@ -5,8 +5,6 @@ import { headers } from "../headers";
 
 export async function commentPost(id, comment) {
   const fetchUrl = `${API_SOCIAL_POSTS}/${id}/comment`;
-  console.log("fethcurl", fetchUrl);
-
   const bodyComment = { body: comment, replyToId: null };
 
   try {
