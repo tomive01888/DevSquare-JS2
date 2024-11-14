@@ -18,7 +18,6 @@
       </a>
       <a href="/">Home</a>
       <a id="goProfileBtn" href="/profile/">My Profile</a>
-      <a href="/auth/login/">Login</a>
       <button type="button" id="logout-button">Logout</button>
     </header>
     <section id="hero-profile" class="banner">
@@ -38,13 +37,27 @@
         <p class="bio">Bio:</p>
         <p id="bio-text"></p>
       </div>
-      <div id="follow-section"><button type="button" id="follow-button">F</button> <span id="follow-msg"></span></div>
+      <div id="follow-section">
+        <button type="button" id="follow-button">F</button>
+        <span id="follow-msg"></span>
+      </div>
       <div class="content-sections">
         <div class="radio-buttons">
-          <input type="radio" name="section" id="general" value="general-info" checked />
+          <input
+            type="radio"
+            name="section"
+            id="general"
+            value="general-info"
+            checked
+          />
           <label for="general"><h2>General</h2></label>
 
-          <input type="radio" name="section" id="editProfile" value="update-profile" />
+          <input
+            type="radio"
+            name="section"
+            id="editProfile"
+            value="update-profile"
+          />
           <label for="editProfile"><h2>Edit Profile</h2></label>
         </div>
 
@@ -63,29 +76,60 @@
           <h4>Update profile</h4>
           <form name="updateProfile">
             <div>
-              <input id="profile-editor" type="hidden" name="username" value="" />
+              <input
+                id="profile-editor"
+                type="hidden"
+                name="username"
+                value=""
+              />
             </div>
             <div>
               <label for="bio">Bio:</label>
-              <textarea name="bio" id="bio" rows="4" maxlength="280" placeholder="Write your bio here..."></textarea>
+              <textarea
+                name="bio"
+                id="bio"
+                rows="4"
+                maxlength="280"
+                placeholder="Write your bio here..."
+              ></textarea>
             </div>
 
             <div>
               <label for="avatarSrc">Avatar Image Source (URL):</label>
-              <input type="text" name="avatarSrc" id="avatarSrc" placeholder="Enter avatar image URL" />
+              <input
+                type="text"
+                name="avatarSrc"
+                id="avatarSrc"
+                placeholder="Enter avatar image URL"
+              />
             </div>
             <div>
               <label for="avatarAlt">Avatar Image Alt Text:</label>
-              <input type="text" name="avatarAlt" id="avatarAlt" placeholder="Enter avatar alt text" />
+              <input
+                type="text"
+                name="avatarAlt"
+                id="avatarAlt"
+                placeholder="Enter avatar alt text"
+              />
             </div>
 
             <div>
               <label for="bannerSrc">Banner Image Source (URL):</label>
-              <input type="text" name="bannerSrc" id="bannerSrc" placeholder="Enter banner image URL" />
+              <input
+                type="text"
+                name="bannerSrc"
+                id="bannerSrc"
+                placeholder="Enter banner image URL"
+              />
             </div>
             <div>
               <label for="bannerAlt">Banner Image Alt Text:</label>
-              <input type="text" name="bannerAlt" id="bannerAlt" placeholder="Enter banner alt text" />
+              <input
+                type="text"
+                name="bannerAlt"
+                id="bannerAlt"
+                placeholder="Enter banner alt text"
+              />
             </div>
             <button class="submit" type="submit">Submit</button>
           </form>

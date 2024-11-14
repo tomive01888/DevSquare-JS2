@@ -18,7 +18,6 @@
       </a>
       <a href="/">Home</a>
       <a id="goProfileBtn" href="/profile/">My Profile</a>
-      <a href="/auth/login/">Login</a>
       <button type="button" id="logout-button">Logout</button>
     </header>
 
@@ -29,33 +28,67 @@
         <form name="createPost">
           <div>
             <label nafor="title">Title:</label>
-            <input type="text" id="title" name="title" placeholder="Enter post title" required />
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter post title"
+              required
+            />
           </div>
 
           <div>
             <label for="body">Content:</label>
-            <textarea id="body" name="body" placeholder="Write your post here..." required></textarea>
+            <textarea
+              id="body"
+              name="body"
+              placeholder="Write your post here..."
+              required
+            ></textarea>
           </div>
 
           <div>
             <label for="mediaUrl">Upload Image:</label>
-            <input type="text" id="mediaUrl" name="mediaUrl" placeholder="Post image url here" />
+            <input
+              type="text"
+              id="mediaUrl"
+              name="mediaUrl"
+              placeholder="Post image url here"
+            />
           </div>
 
           <div>
             <label for="mediaAlt">Image alternative text:</label>
-            <input type="text" id="mediaAlt" name="mediaAlt" placeholder="Enter alternative text here" />
+            <input
+              type="text"
+              id="mediaAlt"
+              name="mediaAlt"
+              placeholder="Enter alternative text here"
+            />
           </div>
 
           <div>
             <label for="tags">Tag:</label>
-            <input type="text" id="tags" name="tags" placeholder="Enter tags here..." />
+            <input
+              type="text"
+              id="tags"
+              name="tags"
+              placeholder="Enter tags here..."
+            />
           </div>
 
           <button class="submit" type="submit" id="publish-btn">Publish</button>
           <div class="button-group">
-            <button class="goToPost" type="button" disabled>Go visit page</button>
-            <button class="reset-form" type="reset" onclick="alert('Form has been reset')">Reset form</button>
+            <button class="goToPost" type="button" disabled>
+              Go visit page
+            </button>
+            <button
+              class="reset-form"
+              type="reset"
+              onclick="alert('Form has been reset')"
+            >
+              Reset form
+            </button>
           </div>
         </form>
       </div>
