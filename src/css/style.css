@@ -43,6 +43,7 @@ body {
     margin: 0 auto;
     padding: var(--em-large);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -69,4 +70,45 @@ body {
 
 .hidden {
     display: none;
+}
+
+footer {
+    border-top: var(--border-lightgrey);
+    width: 100%;
+    padding: var(--em-medium);
+    opacity: 0.6;
+}
+
+footer img {
+    width: 100%;
+    max-width: 140px;
+}
+
+footer div:first-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+footer li img {
+    width: 100%;
+    max-width: 90px;
+
+}
+
+footer ul {
+    list-style: none;
+}
+
+.form-use img {
+    margin-top: var(--em-large);
+    width: 100%;
+    max-width: 200px;
+    opacity: 0.5;
+}
+
+#social-platform {
+    opacity: 0.5;
+
 }

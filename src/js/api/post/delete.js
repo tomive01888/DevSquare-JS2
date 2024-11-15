@@ -18,7 +18,6 @@ export async function deletePost(id) {
     });
 
     if (!response.ok) {
-      // Fetch error details only if available
       const errorData = await response.json().catch(() => ({}));
       throw new Error(errorData.message || "Failed to delete post.");
     }
