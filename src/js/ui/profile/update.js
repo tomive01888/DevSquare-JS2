@@ -60,5 +60,9 @@ export async function onUpdateProfile(event) {
     errorUpdateMsg.innerHTML = `<p>${error.message}</p>`;
     console.error("Failed to update profile:", error);
     alert("Failed to update profile. Please check the inputs are valid.");
+
+    setTimeout(() => {
+      errorUpdateMsg.innerHTML = "";
+    }, 6000);
   }
 }

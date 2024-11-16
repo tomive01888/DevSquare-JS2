@@ -1,12 +1,12 @@
-import { API_SOCIAL_POSTS } from "../constants";
-import { headers } from "../headers";
-
 /**
  * Sends a DELETE request to the API to remove a post by its ID.
  *
  * @param {string} id - The ID of the post to delete.
  * @returns {Promise<void>} - Resolves if deletion is successful; rejects with error otherwise.
  */
+
+import { API_SOCIAL_POSTS } from "../constants";
+import { headers } from "../headers";
 
 export async function deletePost(id) {
   const fetchUrl = `${API_SOCIAL_POSTS}/${id}`;

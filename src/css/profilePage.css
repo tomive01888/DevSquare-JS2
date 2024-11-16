@@ -1,13 +1,16 @@
+#profile-page {
+    margin: var(--em-large) 0;
+}
+
 .banner {
-    margin-top: 80px;
+    margin-top: 60px;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
-    min-height: 35em;
-    /* clip-path: polygon(0 0, 100% 0, 100% 93%, 0 81%); */
-    clip-path: polygon(0 0, 100% 0, 100% 92%, 78% 100%, 52% 93%, 26% 100%, 0 92%);
+    min-height: 38em;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 78% 100%, 50% 92%, 26% 100%, 0 92%);
 }
 
 .profile-wrapper {
@@ -21,10 +24,18 @@
     transform: translate(-50%, -50%);
     border-radius: var(--large-border-radius);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--em-small);
 
+}
+
+#anchor-edit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #2b83f6;
 }
 
 .profile-wrapper h1 {
@@ -53,15 +64,16 @@
     color: white;
 
 
+
 }
 
-
 /*_______________________________________________ BIO SECTION*/
-
 .bio-section {
+    margin: 0 auto;
     background-color: var(--container-bg);
     position: relative;
     width: 100%;
+    max-width: 40em;
     height: 200px;
     border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
@@ -80,20 +92,18 @@
 
 }
 
-.max-wrap {
-    width: 100%;
-    max-width: 50em;
+/*_______________________________________________ FOLLOW BUTTON*/
 
-}
-
-/*_______________________________________________ BIO SECTION*/
-
-#follow-section {
+#follow {
+    margin: 0 auto;
     margin-bottom: var(--em-xlarge);
+    width: 100%;
+    max-width: 40em;
 
 }
 
 #follow-button {
+    margin: 0 auto;
     color: white;
     font-size: 18px;
     font-weight: 900;
@@ -103,10 +113,10 @@
     border-radius: var(--medium-border-radius);
     border: none;
     margin-bottom: var(--em-small);
+    cursor: pointer;
 }
 
-#follow-button {
-    width: 100%;
+#follow-button:hover {
     background-color: var(--blue-btn-hov);
 }
 
@@ -124,13 +134,16 @@
 }
 
 
+
 /*_______________________________________________ RADIO BUTTONS SELECTOR*/
+
+#follow-section {
+    grid-column: 1 /span 2;
+}
+
 .content-sections {
     background-color: var(--container-bg);
-
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     box-shadow: var(--box-shadow);
     padding: var(--em-medium);
     border: var(--border-lightgrey);
@@ -141,8 +154,12 @@
 .radio-buttons {
     display: flex;
     gap: var(--em-small);
-    grid-column: 1 /span 2;
 
+}
+
+#user-posts {
+    text-wrap: wrap;
+    font-size: clamp(14px, 2vw, 24px);
 }
 
 .radio-buttons input {
@@ -162,42 +179,87 @@
 }
 
 .radio-buttons label:hover {
-    background-color: var(--blue-btn);
-}
-
-.radio-buttons input[type="radio"]:checked+label {
     background-color: var(--blue-btn-hov);
 }
 
+.radio-buttons input[type="radio"]:checked+label {
+    background-color: var(--blue-btn);
+    background-color: #125dad;
+}
+
+
+
 .content-section {
+    place-self: center;
     width: 100%;
     grid-column: 1 /span 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--em-small);
-
-    @media (max-width: 769px) {
-        grid-template-columns: repeat(1, 1fr);
-        transition: grid-template-columns 400ms ease;
-
-    }
 }
 
 .content-section h3 {
-    margin-top: var(--em-medium);
+    margin-top: var(--em-small);
 }
 
-/*_______________________________________________ UPDATE PROFILE*/
+/*_______________________________________________ VISIT SECTION*/
 
-#update-profile {
-    margin-top: var(--em-xlarge);
-}
-
-.content-section form {
-    margin: 0;
+#profile-user-posts {
+    margin-top: var(--em-large);
     grid-column: 1 /span 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--em-medium);
+    overflow-y: scroll;
+    height: 400px;
+    border: var(--border-lightgrey);
+    padding: var(--em-small);
+    background-color: rgb(216, 216, 216);
+}
+
+#profile-user-posts .post {
+    position: relative;
+    height: min-content;
+    border-radius: var(--medium-border-radius);
+    padding: var(--em-small);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--em-small);
+    background-color: rgb(254, 254, 254);
+    text-decoration: none;
+    color: black;
+    box-shadow: var(--box-shadow);
+
 
 }
+
+.postBtnWrapper {
+    width: fit-content;
+    position: absolute;
+    right: 15px;
+    display: flex;
+    gap: var(--em-small);
+
+
+}
+
+.postBtnWrapper .viewPost,
+.postBtnWrapper .editPost {
+    background-color: var(--blue-btn);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 3px 5px;
+    border-radius: var(--small-border-radius);
+
+}
+
+#profile-user-posts a:hover {
+    background-color: var(--blue-btn-hov);
+}
+
+
 
 /*_______________________________________________ FOLLOWER AND FOLLOWING LIST*/
 
@@ -207,6 +269,7 @@
     border: var(--border-lightgrey);
     height: 400px;
     overflow-y: scroll;
+    transition: height 400ms ease;
     background-color: rgb(216, 216, 216);
 }
 
@@ -225,7 +288,7 @@
 
 .user-profile {
     border-radius: var(--medium-border-radius);
-    padding: var(--em-small);
+    padding: var(--em-xsmall);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -233,18 +296,29 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
-    font-size: 18px;
     box-shadow: var(--box-shadow);
+    width: 95%;
+    transition: transform 200ms ease;
+
+}
+
+.user-profile:hover {
+    background-color: rgb(237, 229, 229);
+    transform: translateX(10px);
+    transition: transform 300ms ease;
 
 }
 
 .user-profile img {
+    object-fit: cover;
     width: 35px;
     height: 35px;
     border-radius: var(--small-border-radius);
     outline: 4px solid white;
 
 }
+
+
 
 /*_______________________________________________ START NEW POST*/
 
@@ -274,74 +348,18 @@
 }
 
 
-/*_______________________________________________ VISIT SECTION*/
-#visit-section {
-    background-color: var(--container-bg);
-    border-radius: var(--medium-border-radius);
+
+
+
+/*_______________________________________________ UPDATE PROFILE*/
+
+#update-profile {
+    margin-top: var(--em-xlarge);
+    width: 100%;
     box-shadow: var(--box-shadow);
-    border: var(--border-lightgrey);
     padding: var(--em-medium);
-    min-height: 300px;
-
-}
-
-#profile-user-posts {
-    display: flex;
-    flex-direction: column;
-    gap: var(--em-medium);
-    overflow-y: scroll;
-    min-height: 250px;
     border: var(--border-lightgrey);
-    padding: var(--em-small);
-    background-color: rgb(216, 216, 216);
-
-
-}
-
-#profile-user-posts .post {
-    position: relative;
-    height: min-content;
     border-radius: var(--medium-border-radius);
-    padding: var(--em-small);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: var(--em-small);
-    background-color: rgb(254, 254, 254);
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    box-shadow: var(--box-shadow);
-}
-
-.postBtnWrapper {
-    width: fit-content;
-    position: absolute;
-    right: 15px;
-    display: flex;
-    gap: var(--em-small);
-
-}
-
-.postBtnWrapper .viewPost,
-.postBtnWrapper .editPost {
-    background-color: var(--blue-btn);
-    color: white;
-
-    cursor: pointer;
-    text-decoration: none;
-    padding: 3px 5px;
-
-    border-radius: var(--small-border-radius);
-
-}
-
-#profile-user-posts a:hover {
-    background-color: var(--blue-btn-hov);
-}
-
-#visit-users-posts {
-    margin: var(--em-small) 0;
 }
 
 .post p {
@@ -349,11 +367,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
-    @media (max-width: 769px) {
-        width: 70%;
-
-    }
 
 }
 
@@ -371,4 +384,44 @@
 
 #error-update-msg:not(:empty) {
     display: block
+}
+
+@media (max-width: 768px) {
+    .banner {
+        margin-top: 105px;
+    }
+
+    .post p {
+        width: 95%;
+    }
+
+    .content-section {
+        grid-template-columns: repeat(1, 1fr);
+        transition: grid-template-columns 400ms ease;
+    }
+
+    .radio-buttons {
+        flex-direction: column;
+
+    }
+
+}
+
+@media (max-width: 425px) {
+    #profile-user-posts .post {
+        height: 60px;
+        font-size: 14px;
+        align-items: flex-start;
+    }
+
+    .postBtnWrapper {
+        right: 15px;
+        bottom: 5px;
+
+    }
+
+    .flex-list {
+        height: 325px;
+        transition: height 400ms ease;
+    }
 }

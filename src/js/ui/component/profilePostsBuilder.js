@@ -9,6 +9,8 @@
  * the appropriate page when clicked.
  */
 
+import { compareUsers } from "../../utilities/compareProfiles";
+
 export function displayPostsListStyle(posts) {
   const postContainer = document.getElementById("profile-user-posts");
   postContainer.innerHTML = "";
@@ -29,10 +31,9 @@ export function displayPostsListStyle(posts) {
     goToPost.href = `/post/?post=${post.id}`;
     postBtnWrapper.appendChild(goToPost);
 
-    const urlSearch = new URLSearchParams(window.location.search);
-    const userToCompare = urlSearch.get("profile");
-    const loggedUser = JSON.parse(localStorage.getItem("adminUser"));
-    if (loggedUser.name === userToCompare) {
+    const userToCompare = compareUsers(post.owner);
+
+    if (userToCompare === true) {
       const editBtn = document.createElement("a");
       editBtn.classList.add("editPost");
       editBtn.textContent = "✏️";

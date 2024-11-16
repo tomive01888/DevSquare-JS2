@@ -32,6 +32,11 @@ let metaData = null;
 export async function initializeHome() {
   try {
     const { data, meta } = await readPosts(limit, currentPage);
+
+    if (!data && !meta) {
+      throw new Error("Posts from API was not found. Try again some other time");
+    }
+
     metaData = meta;
 
     renderPosts(data);
@@ -39,6 +44,7 @@ export async function initializeHome() {
     updatePaginationControls();
   } catch (error) {
     console.error("Something went wrong.", error);
+    alert("Something went wrong");
   }
 }
 

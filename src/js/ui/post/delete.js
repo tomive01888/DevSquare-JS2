@@ -4,8 +4,6 @@
 
 import { deletePost } from "../../api/post/delete";
 
-const loggedUser = JSON.parse(localStorage.getItem("adminUser"));
-
 export function onDeletePost(event) {
   event.preventDefault();
 
@@ -16,7 +14,7 @@ export function onDeletePost(event) {
 
     if (deleteThisPost) {
       deletePost(postDataId);
-      window.location.href = `/profile/?profile=${loggedUser.name}`;
+      window.location.href = "/";
       alert("Post successfully deleted");
     } else {
       alert("Post deletion cancelled");

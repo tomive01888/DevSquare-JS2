@@ -6,6 +6,7 @@ import { onCommentPost } from "../../ui/post/comment";
 import { authGuard } from "../../utilities/authGuard";
 import { getMainComments } from "../../utilities/commentsSorter";
 import { goToProfilePage } from "../../ui/global/goMyProfile";
+import { onDeletePost } from "../../ui/post/delete";
 
 authGuard();
 setLogoutListener();
@@ -14,12 +15,28 @@ goToProfilePage();
 const urlSearch = new URLSearchParams(window.location.search);
 const idFromParams = urlSearch.get("post");
 
-const postData = await readPost(idFromParams);
+initSinglePost(idFromParams);
 
-createPostContent(postData.data);
+async function initSinglePost(id) {
+  try {
+    const postData = await readPost(id);
 
-const filteredMainComments = await getMainComments(postData.data.comments);
-createComment(filteredMainComments);
+    if (!postData || !postData.data) {
+      throw new Error("Post does not exist");
+    }
+
+    createPostContent(postData.data);
+
+    const filteredMainComments = getMainComments(postData.data.comments);
+    await createComment(filteredMainComments);
+  } catch (error) {
+    console.error("Error initializing single post:", error);
+    alert("This post no longer exists or an error occurred. Redirecting to the homepage.");
+    window.location.href = "/";
+  }
+}
 
 const commentForm = document.forms.comment;
 commentForm.addEventListener("submit", onCommentPost);
+
+

@@ -19,6 +19,7 @@ export async function onUpdatePost(event) {
 
     if (response) {
       alert("Successfully updated post");
+      window.location.href = `/post/?post=${id}`;
     } else {
       alert("Something went wrong, failed to update post.");
     }

@@ -1,4 +1,5 @@
 #posts-container {
+    width: 100%;
     column-count: 3;
     gap: var(--em-large);
     margin: var(--em-large) 0;
@@ -6,13 +7,10 @@
     @media (max-width: 1024px) {
         column-count: 2;
         padding: var(--em-small);
-
-
     }
 
     @media (max-width: 600px) {
         column-count: 1;
-
     }
 }
 
@@ -43,9 +41,13 @@
 }
 
 .post-article h2 {
+    display: flex;
+    flex-wrap: wrap;
     margin: var(--em-small) 0;
-    word-break: break-all;
     hyphens: auto;
+    word-break: break-all;
+
+
 }
 
 .post-article .temp-bg {
@@ -96,6 +98,7 @@
     width: 35px;
     height: 35px;
     border-radius: var(--small-border-radius);
+    object-fit: cover;
 }
 
 .post-info {
@@ -115,10 +118,12 @@
     display: grid;
     place-content: center;
     width: 100%;
-    height: 250px;
+    min-width: 250px;
+    height: 350px;
     background-color: var(--container-bg);
     border-radius: var(--large-border-radius);
     margin-bottom: var(--em-large);
+    box-shadow: var(--box-shadow);
 }
 
 /* paginating css */
@@ -156,7 +161,9 @@
     display: grid;
     place-items: center;
     border: none;
-    background-color: rgb(215, 215, 215);
+    background-color: var(--container-bg);
+    border: var(--border-lightgrey);
+    box-shadow: var(--box-shadow);
     cursor: pointer;
     border-radius: var(--small-border-radius);
     position: relative;
@@ -171,5 +178,5 @@
 
 .posts-paginator button span {
     position: absolute;
-    top: -10px;
+    top: -12px;
 }
