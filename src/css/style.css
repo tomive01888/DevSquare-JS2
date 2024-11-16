@@ -44,7 +44,7 @@ body {
 
 .form-use {
     width: 100%;
-    max-width: 80em;
+    max-width: 55em;
     min-height: 100vh;
     margin: 0 auto;
     padding: var(--em-large);
