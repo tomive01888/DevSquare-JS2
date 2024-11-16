@@ -60,7 +60,8 @@ form button {
 }
 
 .button-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0.4em;
 }
 
@@ -90,6 +91,7 @@ form button {
 
 .button-group button:first-child:disabled {
     background-color: grey;
+    -webkit-user-select: none;
     user-select: none;
     cursor: not-allowed;
 }
@@ -157,4 +159,29 @@ form button {
 
 #visitNewPostBtn.disabled {
     background-color: grey;
+}
+
+
+.new-post {
+    margin-top: var(--em-large);
+    width: 100%;
+    max-width: 40em;
+}
+
+.new-post a {
+    background-color: var(--blue-btn);
+    color: white;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: var(--em-small) var(--em-medium);
+    border: none;
+    border-radius: var(--small-border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+
+}
+
+.new-post a:hover {
+    background-color: var(--blue-btn-hov);
 }

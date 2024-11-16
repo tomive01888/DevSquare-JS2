@@ -1,4 +1,13 @@
-// API FRONT
+/**
+ * Posts a comment to a specific post by its ID.
+ *
+ * @async
+ * @function commentPost
+ * @param {string} id - The ID of the post to comment on.
+ * @param {string} comment - The content of the comment to post.
+ * @returns {Promise<Object>} The response data from the server.
+ * @throws {Error} If the request fails or the response is invalid.
+ */
 
 import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";

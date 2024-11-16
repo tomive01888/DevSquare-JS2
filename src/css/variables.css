@@ -1,12 +1,12 @@
 :root {
     --body-bg: rgb(245, 244, 244);
-    --container-bg: #ede8e8;
+    --container-bg: #f4eded;
 
     --small-border-radius: 5px;
     --medium-border-radius: 10px;
     --large-border-radius: 15px;
     --border-lightgrey: 1px solid rgb(186, 186, 186);
-    --box-shadow: 0 0 8px #8c8c8ca7;
+    --box-shadow: 0 0 8px #787878a7;
 
     --header-family: Arial, Helvetica, sans-serif;
     --body-family: Arial, Helvetica, sans-serif;
@@ -18,17 +18,11 @@
 
 
     --em-xsmall: 0.3em;
-    /*      var(--em-xsmall);    */
     --em-small: 0.5em;
-    /*      var(--em-small);     */
     --em-medium: 1em;
-    /*      var(--em-medium);    */
     --em-large: 2em;
-    /*      var(--em-large);     */
     --em-xlarge: 3em;
-    /*      var(--em-xlarge);    */
     --em-xxlarge: 4em;
-    /*      var(--em-xxlarge);   */
 
 
 }

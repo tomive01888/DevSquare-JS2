@@ -16,7 +16,21 @@ form.addEventListener("submit", onUpdatePost);
 const urlSearch = new URLSearchParams(window.location.search);
 const postId = urlSearch.get("post");
 
-const postData = await readPost(postId);
-await populateEditForm(postData);
+initEditPost(postId);
+async function initEditPost(id) {
+  try {
+    const postData = await readPost(id);
+
+    if (!postData || !postData.data) {
+      throw new Error("Post does not exist");
+    }
+
+    await populateEditForm(postData);
+  } catch (error) {
+    console.error("Error fetching post data:", error);
+    alert("This post no longer exists or an error occurred. Redirecting to the homepage.");
+    window.location.href = "/";
+  }
+}
 
 document.querySelector(".delete-post").addEventListener("click", onDeletePost);

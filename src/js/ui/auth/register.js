@@ -53,7 +53,10 @@ export async function onRegister(event) {
       email,
       password,
     });
-    console.log(data);
+
+    if (!data.ok) {
+      throw new Error("Sorry for the inconvenience, couldn't registering new user.");
+    }
 
     localStorage.setItem("token", data.data.accessToken);
 

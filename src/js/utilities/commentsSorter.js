@@ -6,7 +6,6 @@
  * @returns {Array} - An array of main comments (comments that do not reply to another comment).
  */
 
-export async function getMainComments(comments) {
-  const filter = comments.filter((comment) => comment.replyToId === null);
-  return filter;
+export function getMainComments(comments) {
+  return comments.filter((comment) => comment.replyToId === null);
 }

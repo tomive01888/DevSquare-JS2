@@ -10,6 +10,7 @@
  */
 
 import { timeSinceCreated } from "../../utilities/timeSinceCreated";
+import { onDeletePost } from "../post/delete";
 
 export function createPostContent(post) {
   const { id, title, body, media, author, tags, created } = post;
@@ -26,7 +27,6 @@ export function createPostContent(post) {
   titleElement.textContent = title;
 
   const postImg = document.createElement("img");
-  postImg.id = "postImg";
   postImg.src = media ? media.url : "";
   postImg.alt = media ? media.alt : "";
 
@@ -77,9 +77,15 @@ export function createPostContent(post) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete post";
-    deleteBtn.id = "deleteBtn";
+    deleteBtn.id = "delete-btn";
     deleteBtn.type = "button";
     deleteBtn.setAttribute("data-id", id);
+    deleteBtn.addEventListener("click", (event) => {
+      const deletePost = confirm("Do you really want to delete this post?");
+      if (!deletePost) return;
+
+      onDeletePost(event);
+    });
 
     const editBtn = document.createElement("a");
     editBtn.classList.add("edit-btn");

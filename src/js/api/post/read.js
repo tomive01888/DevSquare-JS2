@@ -81,6 +81,7 @@ export async function readPosts(limit = 12, page = 1, tag) {
  * @throws {Error} If the API request fails.
  */
 
+/*
 export async function readPostsByUser(username, limit = 12, page = 1, tag) {
   const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" });
 
@@ -104,4 +105,6 @@ export async function readPostsByUser(username, limit = 12, page = 1, tag) {
     console.error("Fetch error:", error);
     throw error;
   }
-} // Not in use
+} 
+*/
+// Not in use
