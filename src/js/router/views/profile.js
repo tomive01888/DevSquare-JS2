@@ -48,7 +48,7 @@ async function initProfilePage(user) {
 
   handleSectionDisplay(generalInfo.name);
 
-  displayPostsListStyle(posts);
+  displayPostsListStyle(posts, generalInfo.name);
 
   const form = document.forms.updateProfile;
   form.addEventListener("submit", onUpdateProfile);

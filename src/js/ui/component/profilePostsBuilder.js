@@ -11,9 +11,13 @@
 
 import { compareUsers } from "../../utilities/compareProfiles";
 
-export function displayPostsListStyle(posts) {
+export function displayPostsListStyle(posts, name) {
   const postContainer = document.getElementById("profile-user-posts");
   postContainer.innerHTML = "";
+
+  if (!posts || posts.length === 0) {
+    postContainer.textContent = `${name} has not created any posts yet.`;
+  }
 
   posts.forEach((post) => {
     const postElement = document.createElement("div");
