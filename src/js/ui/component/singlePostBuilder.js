@@ -15,7 +15,6 @@ import { onDeletePost } from "../post/delete";
 export function createPostContent(post) {
   const { id, title, body, media, author, tags, created } = post;
 
-  // upper half
   const timeSince = timeSinceCreated(created);
 
   const postContainer = document.getElementById("post-container");
@@ -51,7 +50,6 @@ export function createPostContent(post) {
   postSection.appendChild(createdElement);
   postSection.appendChild(timeSinceElement);
 
-  // Lower half
   const authorSection = document.createElement("section");
   authorSection.id = "author-section";
 

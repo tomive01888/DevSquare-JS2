@@ -67,7 +67,6 @@ function updatePaginationControls() {
   });
 }
 
-// Next
 export async function nextPage() {
   if (!metaData.isLastPage) {
     currentPage += 1;
@@ -75,7 +74,6 @@ export async function nextPage() {
   }
 }
 
-// Previous
 export async function prevPage() {
   if (!metaData.isFirstPage) {
     currentPage -= 1;
@@ -83,7 +81,6 @@ export async function prevPage() {
   }
 }
 
-// Input
 export async function goToPage() {
   const inputPage = parseInt(document.querySelector(".go-to").value, 10);
 

@@ -6,7 +6,6 @@ import { onCommentPost } from "../../ui/post/comment";
 import { authGuard } from "../../utilities/authGuard";
 import { getMainComments } from "../../utilities/commentsSorter";
 import { goToProfilePage } from "../../ui/global/goMyProfile";
-import { onDeletePost } from "../../ui/post/delete";
 
 authGuard();
 setLogoutListener();
@@ -38,5 +37,3 @@ async function initSinglePost(id) {
 
 const commentForm = document.forms.comment;
 commentForm.addEventListener("submit", onCommentPost);
-
-

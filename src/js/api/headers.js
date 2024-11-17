@@ -14,7 +14,7 @@ import { API_KEY } from "./constants";
 export function headers({ apiKey = false, authToken = false, contentType = false } = {}) {
   const headers = new Headers();
 
-  if (API_KEY) {
+  if (apiKey) {
     headers.append("X-Noroff-API-Key", API_KEY);
   }
 

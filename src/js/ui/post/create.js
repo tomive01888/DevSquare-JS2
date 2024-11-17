@@ -1,8 +1,10 @@
 /**
  * Passses data to the createPost function in api/post and handles the response
+ * @visitNewPost allows user to visit their newly created post that gets enabled upon successful creation of new post.
  */
 
 import { createPost } from "../../api/post/create";
+
 const visitNewPost = document.querySelector(".goToPost");
 
 export async function onCreatePost(event) {
