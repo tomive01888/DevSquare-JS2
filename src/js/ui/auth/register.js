@@ -17,35 +17,35 @@ export async function onRegister(event) {
 
   let valid = true;
 
-  // if (!name) {
-  //   document.getElementById("nameError").textContent = "Name is required!";
-  //   valid = false;
-  // } else if (!/^[\w]+$/.test(name)) {
-  //   document.getElementById("nameError").textContent =
-  //     "Invalid username. Only letters, numbers, and the underscore (_) are permitted.";
-  //   valid = false;
-  // }
+  if (!name) {
+    document.getElementById("nameError").textContent = "Name is required!";
+    valid = false;
+  } else if (!/^[\w]+$/.test(name)) {
+    document.getElementById("nameError").textContent =
+      "Invalid username. Only letters, numbers, and the underscore (_) are permitted.";
+    valid = false;
+  }
 
-  // if (!email) {
-  //   document.getElementById("emailError").textContent = "Email is required!";
-  //   valid = false;
-  // } else if (!/^[\w\-.]+@(stud\.)?noroff\.no$/.test(name)) {
-  //   document.getElementById("emailError").textContent =
-  //     "Please enter a valid email adress (noroff.no or stud.noroff.no).";
-  //   valid = false;
-  // }
+  if (!email) {
+    document.getElementById("emailError").textContent = "Email is required!";
+    valid = false;
+  } else if (!/^[\w\-.]+@(stud\.)?noroff\.no$/.test(email)) {
+    document.getElementById("emailError").textContent =
+      "Please enter a valid email adress (noroff.no or stud.noroff.no).";
+    valid = false;
+  }
 
-  // if (!password) {
-  //   document.getElementById("passwordError").textContent = "Password  is required!";
-  //   valid = false;
-  // } else if (password.length < 8) {
-  //   document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
-  //   valid = false;
-  // }
+  if (!password) {
+    document.getElementById("passwordError").textContent = "Password  is required!";
+    valid = false;
+  } else if (password.length < 8) {
+    document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
+    valid = false;
+  }
 
-  // if (!valid) {
-  //   return;
-  // }
+  if (!valid) {
+    return;
+  }
 
   try {
     const data = await register({
@@ -54,7 +54,7 @@ export async function onRegister(event) {
       password,
     });
 
-    if (!data.ok) {
+    if (!data) {
       throw new Error("Sorry for the inconvenience, couldn't registering new user.");
     }
 
@@ -62,6 +62,9 @@ export async function onRegister(event) {
     window.location.href = "/";
   } catch (error) {
     console.error("Registration failed:", error);
-    alert("Registration failed. Please try again.");
+    const errorContainer = document.querySelector(".error-container");
+    const errorMessage = document.querySelector("#error-msg");
+    errorContainer.style.display = "block";
+    errorMessage.textContent = error.message;
   }
 }
