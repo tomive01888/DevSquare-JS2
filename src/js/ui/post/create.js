@@ -5,7 +5,7 @@
 
 import { createPost } from "../../api/post/create";
 
-const visitNewPost = document.querySelector(".goToPost");
+const visitNewPost = document.querySelector(".go-to-post");
 
 export async function onCreatePost(event) {
   event.preventDefault();

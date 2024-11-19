@@ -58,10 +58,6 @@ export async function onRegister(event) {
       throw new Error("Sorry for the inconvenience, couldn't registering new user.");
     }
 
-    localStorage.setItem("token", data.data.accessToken);
-
-    const newUser = data.data;
-    localStorage.setItem("newUser", JSON.stringify(newUser));
     alert("Registration successful!");
     window.location.href = "/";
   } catch (error) {
