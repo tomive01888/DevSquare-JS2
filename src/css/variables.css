@@ -13,8 +13,9 @@
 
     --common-btn: #BD00A0;
     --common-btn-hov: #1F8DEE;
-    --red-alert: rgb(96, 96, 96);
-    --red-alert-hov: rgb(75, 75, 75);
+    --action-btn: rgb(74, 74, 74);
+    --action-btn-hov: rgb(60, 60, 60);
+    --red-alert: rgb(190, 40, 40);
 
     --standard-magenta: #BD00A0;
     --standard-blue: #1F8DEE;

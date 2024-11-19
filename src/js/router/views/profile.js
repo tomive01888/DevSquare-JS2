@@ -1,7 +1,9 @@
 import { setLogoutListener } from "../../ui/global/logout";
 import { goToProfilePage } from "../../ui/global/goMyProfile";
 import { initProfilePage } from "../../ui/component/profileActions";
+import { authGuard } from "../../utilities/authGuard";
 
+authGuard();
 setLogoutListener();
 goToProfilePage();
 

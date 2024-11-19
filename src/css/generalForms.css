@@ -53,12 +53,12 @@ form button {
 
 .common-btn {
     background-color: var(--common-btn);
-    transition: background-color 400ms ease;
+    transition: background-color 700ms ease;
 }
 
 .common-btn:hover {
     background-color: var(--common-btn-hov);
-    transition: background-color 200ms ease;
+    transition: background-color 400ms ease;
 }
 
 .button-group {
@@ -68,26 +68,26 @@ form button {
 }
 
 .delete-post {
-    background-color: var(--red-alert);
+    background-color: var(--action-btn);
 }
 
 .delete-post:hover {
-    background-color: var(--red-alert-hov);
+    background-color: var(--action-btn-hov);
 }
 
 .reset-form {
-    background-color: var(--red-alert);
+    background-color: var(--action-btn);
 }
 
 .reset-form:hover {
-    background-color: var(--red-alert-hov);
+    background-color: var(--action-btn-hov);
 }
 
-.goToPost {
+.go-to-post {
     background-color: rgb(116, 197, 116);
 }
 
-.goToPost:hover {
+.go-to-post:hover {
     background-color: rgb(89, 153, 89);
 }
 
@@ -131,13 +131,6 @@ form button {
     color: #fff;
     cursor: pointer;
     font-size: 16px;
-    background-color: var(--common-btn);
-
-}
-
-#auth .button:hover {
-    background-color: var(--common-btn-hov);
-
 
 }
 
@@ -148,8 +141,8 @@ form button {
     display: none;
     margin-top: var(--em-xsmall);
     padding: var(--em-small);
-    border: 2px solid var(--red-alert);
-    color: var(--red-alert);
+    border: 2px solid var(--action-btn);
+    color: var(--action-btn);
     border-radius: var(--small-border-radius);
     background-color: rgb(223, 219, 219);
 }

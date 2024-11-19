@@ -27,7 +27,7 @@ export function displayPostsListStyle(posts, name) {
     postTitle.textContent = post.title;
 
     const postBtnWrapper = document.createElement("div");
-    postBtnWrapper.classList.add("postBtnWrapper");
+    postBtnWrapper.classList.add("post-btn-wrapper");
 
     const goToPost = document.createElement("a");
     goToPost.classList.add("view-post");

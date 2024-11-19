@@ -176,13 +176,13 @@
     padding: var(--em-small);
     border-radius: var(--small-border-radius);
     cursor: pointer;
-    transition: background-color 400ms ease;
+    transition: background-color 700ms ease;
 
 }
 
 .radio-buttons label:hover {
     background-color: var(--common-btn-hov);
-    transition: background-color 200ms ease;
+    transition: background-color 400ms ease;
 
 }
 
@@ -238,19 +238,17 @@
 
 }
 
-.postBtnWrapper {
+.post-btn-wrapper {
     width: fit-content;
     position: absolute;
     right: 15px;
     display: flex;
     gap: var(--em-small);
 
-
 }
 
-
-.postBtnWrapper .view-post,
-.postBtnWrapper .edit-post {
+.post-btn-wrapper .view-post,
+.post-btn-wrapper .edit-post {
     width: 30px;
     height: 30px;
     background-color: var(--common-btn);
@@ -330,30 +328,31 @@
 /*_______________________________________________ START NEW POST*/
 
 #start-new-post {
-    border-radius: var(--medium-border-radius);
-    box-shadow: var(--box-shadow);
-    border: var(--border-lightgrey);
-    background-color: var(--common-btn);
-    place-items: center;
-    transition: background-color 400ms ease;
+    width: 100%;
+    max-width: 80%;
 
 }
 
 #start-new-post a {
     border-radius: var(--medium-border-radius);
     padding: var(--em-medium);
+    box-shadow: var(--box-shadow);
     cursor: pointer;
     display: block;
     width: 100%;
     color: white;
     font-size: 18px;
     text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    background-color: var(--common-btn);
+    transition: background-color 700ms ease;
 
 }
 
-#start-new-post:hover {
+#start-new-post a:hover {
     background-color: var(--common-btn-hov);
-    transition: background-color 200ms ease;
+    transition: background-color 400ms ease;
 
 }
 
@@ -421,7 +420,7 @@
         align-items: flex-start;
     }
 
-    .postBtnWrapper {
+    .post-btn-wrapper {
         right: 15px;
         bottom: 5px;
 

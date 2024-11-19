@@ -54,14 +54,14 @@ header img {
   cursor: pointer;
   margin-left: var(--em-small);
   background-color: var(--common-btn);
-  transition: background-color 400ms ease;
+  transition: background-color 700ms ease;
 
 }
 
 #logout-button:hover,
 #logout-button:active {
   background-color: var(--common-btn-hov);
-  transition: background-color 200ms ease;
+  transition: background-color 400ms ease;
 }
 
 .deco-line {
