@@ -16,6 +16,9 @@ form.addEventListener("submit", onUpdatePost);
 const urlSearch = new URLSearchParams(window.location.search);
 const postId = urlSearch.get("post");
 
+const headTitle = document.getElementById("title-post");
+headTitle.textContent = `DevSquare - Editing post ${postId}`;
+
 initEditPost(postId);
 async function initEditPost(id) {
   try {

@@ -30,7 +30,7 @@ export function displayPostsListStyle(posts, name) {
     postBtnWrapper.classList.add("postBtnWrapper");
 
     const goToPost = document.createElement("a");
-    goToPost.classList.add("viewPost");
+    goToPost.classList.add("view-post");
     goToPost.textContent = "👁️";
     goToPost.href = `/post/?post=${post.id}`;
     postBtnWrapper.appendChild(goToPost);
@@ -38,10 +38,13 @@ export function displayPostsListStyle(posts, name) {
     const userToCompare = compareUsers(post.owner);
 
     if (userToCompare === true) {
+      const pencil = document.createElement("i");
+      pencil.className = "fas fa-pencil";
+
       const editBtn = document.createElement("a");
-      editBtn.classList.add("editPost");
-      editBtn.textContent = "✏️";
+      editBtn.classList.add("edit-post");
       editBtn.href = `/post/edit/?post=${post.id}`;
+      editBtn.appendChild(pencil);
       postBtnWrapper.appendChild(editBtn);
     }
 

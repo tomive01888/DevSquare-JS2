@@ -82,22 +82,22 @@
 
 #editorOptions a,
 #editorOptions button {
+    font-size: 16px;
     color: white;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     width: 100px;
-    size: 14px;
     padding: var(--em-small);
     border: none;
     border-radius: var(--small-border-radius);
-    background-color: var(--blue-btn);
+    background-color: var(--common-btn);
 
 }
 
 #editorOptions a:hover,
 #editorOptions button:hover {
-    background-color: var(--blue-btn-hov);
+    background-color: var(--common-btn-hov);
     color: white;
 
 }

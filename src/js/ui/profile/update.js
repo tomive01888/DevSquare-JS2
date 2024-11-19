@@ -52,8 +52,12 @@ export async function onUpdateProfile(event) {
   try {
     const result = await updateProfile(profileName, profileData);
     if (result) {
-      alert("You have updated your profile");
-      location.reload();
+      window.scrollTo({ top: -500, left: -500, behavior: "smooth" });
+      setTimeout(() => {
+        location.reload();
+      }, 710);
+    } else {
+      throw new Error("Couldn't update profile this time, try again in a couple minutes.");
     }
   } catch (error) {
     const errorUpdateMsg = document.getElementById("error-update-msg");

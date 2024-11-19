@@ -35,7 +35,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
-    color: #2b83f6;
+    color: #BD00A0;
 }
 
 .profile-wrapper h1 {
@@ -109,7 +109,7 @@
     font-weight: 900;
     width: 100%;
     padding: var(--em-medium);
-    background-color: var(--blue-btn);
+    background-color: var(--common-btn);
     border-radius: var(--medium-border-radius);
     border: none;
     margin-bottom: var(--em-small);
@@ -117,7 +117,7 @@
 }
 
 #follow-button:hover {
-    background-color: var(--blue-btn-hov);
+    background-color: var(--common-btn-hov);
 }
 
 #follow-msg {
@@ -170,21 +170,25 @@
     color: white;
     display: block;
     width: 100%;
-    background-color: var(--blue-btn);
+    background-color: var(--common-btn);
     text-align: center;
     font-size: 20px;
     padding: var(--em-small);
     border-radius: var(--small-border-radius);
     cursor: pointer;
+    transition: background-color 400ms ease;
+
 }
 
 .radio-buttons label:hover {
-    background-color: var(--blue-btn-hov);
+    background-color: var(--common-btn-hov);
+    transition: background-color 200ms ease;
+
 }
 
 .radio-buttons input[type="radio"]:checked+label {
-    background-color: var(--blue-btn);
-    background-color: #125dad;
+    background-color: var(--common-btn);
+    background-color: #960d7a;
 }
 
 
@@ -244,22 +248,25 @@
 
 }
 
-.postBtnWrapper .viewPost,
-.postBtnWrapper .editPost {
-    background-color: var(--blue-btn);
+
+.postBtnWrapper .view-post,
+.postBtnWrapper .edit-post {
+    width: 30px;
+    height: 30px;
+    background-color: var(--common-btn);
     color: white;
     cursor: pointer;
     text-decoration: none;
     padding: 3px 5px;
     border-radius: var(--small-border-radius);
+    display: grid;
+    place-items: center;
 
 }
 
 #profile-user-posts a:hover {
-    background-color: var(--blue-btn-hov);
+    background-color: var(--common-btn-hov);
 }
-
-
 
 /*_______________________________________________ FOLLOWER AND FOLLOWING LIST*/
 
@@ -326,8 +333,9 @@
     border-radius: var(--medium-border-radius);
     box-shadow: var(--box-shadow);
     border: var(--border-lightgrey);
-    background-color: var(--blue-btn);
+    background-color: var(--common-btn);
     place-items: center;
+    transition: background-color 400ms ease;
 
 }
 
@@ -343,13 +351,11 @@
 
 }
 
-#start-new-post a:hover {
-    background-color: var(--blue-btn-hov);
+#start-new-post:hover {
+    background-color: var(--common-btn-hov);
+    transition: background-color 200ms ease;
+
 }
-
-
-
-
 
 /*_______________________________________________ UPDATE PROFILE*/
 
@@ -360,6 +366,7 @@
     padding: var(--em-medium);
     border: var(--border-lightgrey);
     border-radius: var(--medium-border-radius);
+    background-color: var(--container-bg);
 }
 
 .post p {

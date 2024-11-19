@@ -17,7 +17,7 @@
 .post-article {
     break-inside: avoid;
     width: 100%;
-    max-width: 580px;
+    max-width: 340px;
     display: flex;
     flex-direction: column;
     gap: var(--em-small);
@@ -37,17 +37,14 @@
     transform: scale(1.02);
     transition: transform 100ms ease;
 
-
 }
 
 .post-article h2 {
     display: flex;
     flex-wrap: wrap;
     margin: var(--em-small) 0;
+    word-break: break-word;
     hyphens: auto;
-    word-break: break-all;
-
-
 }
 
 .post-article .temp-bg {
