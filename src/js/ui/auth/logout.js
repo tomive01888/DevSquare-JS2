@@ -4,5 +4,6 @@
 
 export function onLogout() {
   localStorage.clear();
+  sessionStorage.clear();
   window.location.href = "/auth/login/";
 }
