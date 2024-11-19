@@ -25,13 +25,24 @@
 import { readPosts } from "../../api/post/read";
 import { renderPosts } from "./homePostsBuilder";
 
-let currentPage = 1;
+const urlSearch = new URLSearchParams(window.location.search);
+let currentPage = urlSearch.get("page") ? parseInt(urlSearch.get("page"), 10) : 1;
+
+if (isNaN(currentPage) || currentPage < 1) {
+  currentPage = 1;
+}
+
 const limit = 12;
 let metaData = null;
 
 export async function initializeHome() {
   try {
     const { data, meta } = await readPosts(limit, currentPage);
+
+    if (currentPage > meta.pageCount) {
+      alert("You have ventured too far. Taking you back to page 1.");
+      window.location.href = "/";
+    }
 
     if (!data && !meta) {
       throw new Error("Posts from API was not found. Try again some other time");
@@ -42,10 +53,16 @@ export async function initializeHome() {
     renderPosts(data);
 
     updatePaginationControls();
+    updateUrlWithPage(currentPage);
   } catch (error) {
-    console.error("Something went wrong.", error);
-    alert("Something went wrong");
+    console.error("Something went wrong:", error);
   }
+}
+
+function updateUrlWithPage(page) {
+  const newUrl = new URL(window.location);
+  newUrl.searchParams.set("page", page);
+  window.history.pushState({}, "", newUrl);
 }
 
 function updatePaginationControls() {
@@ -71,6 +88,7 @@ export async function nextPage() {
   if (!metaData.isLastPage) {
     currentPage += 1;
     await initializeHome();
+    updateUrlWithPage(currentPage);
   }
 }
 
@@ -78,17 +96,15 @@ export async function prevPage() {
   if (!metaData.isFirstPage) {
     currentPage -= 1;
     await initializeHome();
+    updateUrlWithPage(currentPage);
   }
 }
 
-export async function goToPage() {
-  const inputPage = parseInt(document.querySelector(".go-to").value, 10);
-
-  if (isNaN(inputPage) || inputPage < 1 || inputPage > metaData.pageCount) {
-    alert("You have ventured too far. Taking you back to page 1.");
-    currentPage = 1;
-  } else {
-    currentPage = inputPage;
+export async function goToPage(pageInput) {
+  if (!isNaN(pageInput) && pageInput >= 1 && pageInput <= metaData.pageCount) {
+    currentPage = pageInput;
   }
+
   await initializeHome();
+  updateUrlWithPage(currentPage);
 }

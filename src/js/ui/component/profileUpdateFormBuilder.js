@@ -96,11 +96,11 @@ export function createUpdateProfileForm() {
   form.appendChild(bannerAltDiv);
 
   const submitButton = document.createElement("button");
-  submitButton.classList.add("submit");
+  submitButton.classList.add("common-btn");
   submitButton.type = "submit";
   submitButton.textContent = "Submit";
-  form.appendChild(submitButton);
 
+  form.appendChild(submitButton);
   section.appendChild(form);
 
   const errorMsgDiv = document.createElement("div");

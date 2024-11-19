@@ -6,6 +6,7 @@ import { goToProfilePage } from "../../ui/global/goMyProfile";
 authGuard();
 setLogoutListener();
 goToProfilePage();
+
 initializeHome();
 
 document.querySelectorAll(".next-posts").forEach((button) => {
@@ -18,7 +19,7 @@ document.querySelectorAll(".prev-posts").forEach((button) => {
 
 document.querySelectorAll(".go-to").forEach((input) => {
   input.addEventListener("change", () => {
-    const pageInput = parseInt(input.value);
+    const pageInput = parseInt(input.value, 10);
     goToPage(pageInput);
   });
 });

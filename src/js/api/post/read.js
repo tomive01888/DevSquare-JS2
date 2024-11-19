@@ -46,7 +46,7 @@ export async function readPost(id) {
 // export async function readPosts(limit = 12, page = 1, tag) {}
 
 export async function readPosts(limit = 12, page = 1, tag) {
-  const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" });
+  const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" }); // { limit: limit, page: page, _author: "true", _comments: "true", _tag : tag }
 
   const fetchUrl = `${API_SOCIAL_POSTS}/?${params.toString()}`;
 

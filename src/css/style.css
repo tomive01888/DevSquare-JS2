@@ -7,6 +7,7 @@
 @import url(header.css);
 @import url(singlePost.css);
 @import url(profilePage.css);
+@import url(firstTimeModal.css);
 
 * {
     scroll-behavior: smooth;
@@ -99,7 +100,7 @@ footer div:first-child {
 
 footer li img {
     width: 100%;
-    max-width: 90px;
+    max-width: 130px;
 
 }
 
@@ -123,6 +124,37 @@ footer ul li {
 
 }
 
+#cover-up {
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 99999;
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--em-small);
+
+}
+
+#cover-up * {
+    color: white;
+}
+
+#cover-up p {
+    color: white;
+    font-size: 18px;
+}
+
+#cover-up-logo {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgb(234, 227, 227);
+    border-radius: var(--medium-border-radius);
+    padding: var(--em-medium);
+}
+
 @media (max-width: 768px) {
     footer div:first-child {
         flex-direction: column;
@@ -135,6 +167,17 @@ footer ul li {
         margin-top: 8em;
         padding: var(--em-small);
     }
+
+    .form-use {
+        padding: var(--em-small);
+
+    }
+
+    .max-medium-container {
+        padding: var(--em-small);
+
+    }
+
 }
 
 @media (max-width: 425px) {

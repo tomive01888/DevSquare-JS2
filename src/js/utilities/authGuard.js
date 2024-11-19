@@ -6,9 +6,16 @@
  * logged in to view the page and is redirected to the login page.
  */
 
+import { displayRestrictedCoverUp } from "../ui/component/restrictedAccess";
+
 export function authGuard() {
   if (!localStorage.token) {
-    alert("You must be logged in to view this page");
-    window.location.href = "/auth/login/";
+    displayRestrictedCoverUp();
+    setTimeout(() => {
+      alert(
+        "Access restricted: You must be logged in to view this page. Registration is required if you don't already have an account."
+      );
+      window.location.href = "/auth/";
+    }, 1200);
   }
 }

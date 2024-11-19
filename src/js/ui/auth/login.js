@@ -15,8 +15,8 @@ export async function onLogin(event) {
       password,
     });
 
-    localStorage.setItem("token", data.data.accessToken);
     const { accessToken, ...userData } = data.data;
+    localStorage.setItem("token", accessToken);
     localStorage.setItem("adminUser", JSON.stringify(userData));
 
     alert("login successfull");

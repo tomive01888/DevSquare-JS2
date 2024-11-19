@@ -11,7 +11,7 @@ const form = document.forms.createPost;
 
 form.addEventListener("submit", onCreatePost);
 
-const visitNewPost = document.querySelector(".goToPost");
+const visitNewPost = document.querySelector(".go-to-post");
 const resetBtn = document.querySelector(".reset-form");
 resetBtn.addEventListener("click", () => {
   visitNewPost.disabled = true;

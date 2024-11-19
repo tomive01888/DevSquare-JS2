@@ -51,12 +51,14 @@ form button {
     font-size: 16px;
 }
 
-.submit {
-    background-color: var(--blue-btn);
+.common-btn {
+    background-color: var(--common-btn);
+    transition: background-color 400ms ease;
 }
 
-.submit:hover {
-    background-color: var(--blue-btn-hov);
+.common-btn:hover {
+    background-color: var(--common-btn-hov);
+    transition: background-color 200ms ease;
 }
 
 .button-group {
@@ -169,7 +171,7 @@ form button {
 }
 
 .new-post a {
-    background-color: var(--blue-btn);
+    background-color: var(--common-btn);
     color: white;
     display: block;
     text-decoration: none;
@@ -183,5 +185,5 @@ form button {
 }
 
 .new-post a:hover {
-    background-color: var(--blue-btn-hov);
+    background-color: var(--common-btn-hov);
 }
