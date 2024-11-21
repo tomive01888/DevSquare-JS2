@@ -38,6 +38,7 @@ export async function initProfilePage(user) {
 
   if (comparingUsers === true) {
     document.getElementById("follow").classList.toggle("hidden");
+    document.getElementById("start-new-post").classList.toggle("hidden");
     const mainElement = document.getElementById("profile-page");
     document.getElementById("anchor-edit").classList.toggle("hidden");
     const newSection = createUpdateProfileForm();

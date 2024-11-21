@@ -114,10 +114,13 @@
     border: none;
     margin-bottom: var(--em-small);
     cursor: pointer;
+    transition: background-color 700ms ease;
+
 }
 
 #follow-button:hover {
     background-color: var(--common-btn-hov);
+    transition: background-color 400ms ease;
 }
 
 #follow-msg {
