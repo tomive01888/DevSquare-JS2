@@ -57,9 +57,13 @@ export async function onRegister(event) {
     if (!data) {
       throw new Error("Sorry for the inconvenience, couldn't registering new user.");
     }
+    console.log(data);
 
-    alert("Registration successful!");
-    window.location.href = "/";
+    const goLogin = confirm(`User, ${data.data.name}, was successfully registered. Do you want to continue to login?`);
+
+    if (goLogin) {
+      window.location.href = "/auth/login/";
+    }
   } catch (error) {
     console.error("Registration failed:", error);
     const errorContainer = document.querySelector(".error-container");
