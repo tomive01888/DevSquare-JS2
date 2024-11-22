@@ -7,7 +7,8 @@
  * @param {Event} event - The event object from the form submission.
  * @returns {Promise<void>} - Resolves when the function completes.
  */
-import { commentPost } from "../../api/profile/comment";
+
+import { commentPost } from "../../api/post/comment";
 
 export async function onCommentPost(event) {
   event.preventDefault();
