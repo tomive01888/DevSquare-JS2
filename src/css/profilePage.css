@@ -238,7 +238,6 @@
     color: black;
     box-shadow: var(--box-shadow);
 
-
 }
 
 .post p {
@@ -401,7 +400,7 @@
     }
 
     .post p {
-        width: 80%;
+        width: 72%;
     }
 
     .content-section {
@@ -421,6 +420,10 @@
         height: 65px;
         font-size: 14px;
         align-items: flex-end;
+    }
+
+    .post p {
+        width: 90%;
     }
 
     .post-btn-wrapper {
