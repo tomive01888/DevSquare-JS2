@@ -241,6 +241,14 @@
 
 }
 
+.post p {
+    width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
 .post-btn-wrapper {
     width: fit-content;
     position: absolute;
@@ -371,14 +379,6 @@
     background-color: var(--container-bg);
 }
 
-.post p {
-    width: 80%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-}
-
 #error-update-msg {
     grid-column: 1 /span 2;
     display: none;
@@ -401,7 +401,7 @@
     }
 
     .post p {
-        width: 95%;
+        width: 80%;
     }
 
     .content-section {
@@ -418,14 +418,14 @@
 
 @media (max-width: 425px) {
     #profile-user-posts .post {
-        height: 60px;
+        height: 65px;
         font-size: 14px;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 
     .post-btn-wrapper {
         right: 15px;
-        bottom: 5px;
+        top: 3px;
 
     }
 
