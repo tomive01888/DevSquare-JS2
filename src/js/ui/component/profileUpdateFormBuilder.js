@@ -64,6 +64,7 @@ export function createUpdateProfileForm() {
   inputAvatarAlt.type = "text";
   inputAvatarAlt.name = "avatarAlt";
   inputAvatarAlt.id = "avatarAlt";
+  inputAvatarAlt.maxLength = 120;
   inputAvatarAlt.placeholder = "Enter avatar alt text";
   avatarAltDiv.appendChild(labelAvatarAlt);
   avatarAltDiv.appendChild(inputAvatarAlt);
@@ -90,6 +91,7 @@ export function createUpdateProfileForm() {
   inputBannerAlt.type = "text";
   inputBannerAlt.name = "bannerAlt";
   inputBannerAlt.id = "bannerAlt";
+  inputBannerAlt.maxLength = 120;
   inputBannerAlt.placeholder = "Enter banner alt text";
   bannerAltDiv.appendChild(labelBannerAlt);
   bannerAltDiv.appendChild(inputBannerAlt);

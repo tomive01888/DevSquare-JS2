@@ -28,7 +28,7 @@ export async function updatePost(id, { title, body, tags, media }) {
     postBody.tags = tags;
   }
 
-  if (!media || media.url || media.url.trim() === "") {
+  if (!media || !media.url || media.url.trim() === "") {
     postBody.media = null;
   } else {
     postBody.media = media;
@@ -43,11 +43,27 @@ export async function updatePost(id, { title, body, tags, media }) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
+      throw errorData;
+    }
+    const data = await response.json();
+    return { success: true, data };
+  } catch (error) {
+    console.error("Error creating post:", error);
+
+    if (error.errors && error.status && error.statusCode) {
+      return {
+        success: false,
+        status: error.status,
+        statusCode: error.statusCode,
+        errors: error.errors,
+      };
     }
 
-    return await response.json();
-  } catch (error) {
-    throw error;
+    return {
+      success: false,
+      status: "Network Error",
+      statusCode: 500,
+      errors: [{ message: error.message || "An unknown error occurred." }],
+    };
   }
 }

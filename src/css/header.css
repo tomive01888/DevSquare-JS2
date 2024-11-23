@@ -19,8 +19,6 @@ header {
   justify-content: space-between;
   align-items: center;
 
-
-
 }
 
 nav {
@@ -35,10 +33,7 @@ nav a {
   color: #000;
   font-size: 18px;
 
-  @media (max-width: 425px) {
-    font-size: 14px;
 
-  }
 }
 
 header img {
@@ -95,12 +90,20 @@ header img {
 @media (max-width: 768px) {
   header {
     height: fit-content;
+    padding: var(--em-small) var(--em-small);
+
   }
 
   .max-size-header {
     flex-direction: column;
-    gap: 1em;
+    justify-content: center;
 
+  }
+}
+
+@media (max-width: 424px) {
+  nav a {
+    font-size: 14px;
   }
 
 }

@@ -67,6 +67,6 @@ export async function onUpdateProfile(event) {
 
     setTimeout(() => {
       errorUpdateMsg.innerHTML = "";
-    }, 6000);
+    }, 8000);
   }
 }

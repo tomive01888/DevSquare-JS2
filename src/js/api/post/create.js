@@ -28,13 +28,28 @@ export async function createPost({ title, body, tags, media }) {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`${errorData.statusCode}: ${errorData.status}. ${errorData.message}`);
+      throw errorData;
     }
 
     const data = await response.json();
-    return data;
+    return { success: true, data: data.data };
   } catch (error) {
     console.error("Error creating post:", error);
-    throw error;
+
+    if (error.errors && error.status && error.statusCode) {
+      return {
+        success: false,
+        status: error.status,
+        statusCode: error.statusCode,
+        errors: error.errors,
+      };
+    }
+
+    return {
+      success: false,
+      status: "Network Error",
+      statusCode: 500,
+      errors: [{ message: error.message || "An unknown error occurred." }],
+    };
   }
 }

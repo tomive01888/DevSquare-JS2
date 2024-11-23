@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="title-post">Hubsters</title>
+    <title id="title-post">DevSquare - Edit post</title>
     <script type="module" src="/src/app.js"></script>
   </head>
 
@@ -48,7 +48,13 @@
 
           <div>
             <label for="mediaAlt">Image alternative text:</label>
-            <input type="text" id="mediaAlt" name="mediaAlt" placeholder="Enter alternative text here" />
+            <input
+              type="text"
+              id="mediaAlt"
+              name="mediaAlt"
+              maxlength="300"
+              placeholder="Enter alternative text here"
+            />
           </div>
 
           <div>
@@ -61,6 +67,7 @@
             <button class="delete-post" type="button" name="deletePost">Delete</button>
           </div>
         </form>
+        <div class="error-container"></div>
       </div>
       <div class="new-post"><a href="/post/create/">Create new post</a></div>
     </main>
