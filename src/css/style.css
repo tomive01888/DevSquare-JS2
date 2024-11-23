@@ -8,6 +8,7 @@
 @import url(singlePost.css);
 @import url(profilePage.css);
 @import url(firstTimeModal.css);
+@import url(footer.css);
 
 * {
     scroll-behavior: smooth;
@@ -55,6 +56,13 @@ body {
     justify-content: center;
 }
 
+.form-use img {
+    margin-top: var(--em-large);
+    width: 100%;
+    max-width: 200px;
+    opacity: 0.5;
+}
+
 .max-small-container {
     width: 100%;
     max-width: 30em;
@@ -75,48 +83,9 @@ body {
     box-shadow: var(--box-shadow);
 }
 
-
-footer {
-    border-top: var(--border-lightgrey);
+h1 img {
     width: 100%;
-    padding: var(--em-medium);
-    opacity: 0.6;
-}
-
-footer img {
-    width: 100%;
-    max-width: 140px;
-}
-
-footer div:first-child {
-    margin-top: var(--em-large);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-
-}
-
-footer li img {
-    width: 100%;
-    max-width: 130px;
-
-}
-
-footer ul {
-    list-style: none;
-}
-
-footer ul li {
-    text-wrap: pretty;
-}
-
-.form-use img {
-    margin-top: var(--em-large);
-    width: 100%;
-    max-width: 200px;
-    opacity: 0.5;
+    max-width: 400px;
 }
 
 #social-platform {
@@ -164,7 +133,7 @@ footer ul li {
     }
 
     .regular-use {
-        margin-top: 8em;
+        margin-top: var(--em-xxlarge);
         padding: var(--em-small);
     }
 

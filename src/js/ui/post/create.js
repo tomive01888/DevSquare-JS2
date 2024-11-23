@@ -6,6 +6,7 @@
 import { createPost } from "../../api/post/create";
 
 const visitNewPost = document.querySelector(".go-to-post");
+const errorContainer = document.querySelector(".error-container");
 
 export async function onCreatePost(event) {
   event.preventDefault();
@@ -22,9 +23,32 @@ export async function onCreatePost(event) {
 
     const response = await createPost({ title, body, tags, media });
 
-    if (response) {
+    if (response.success === false) {
+      errorContainer.innerHTML = "";
+      response.errors.forEach((error) => {
+        const errorMsg = document.createElement("div");
+        errorMsg.classList.add("error-message");
+
+        const errorTxt = document.createElement("p");
+        errorTxt.classList.add("error-txt");
+        errorTxt.textContent = error.message;
+
+        const closeBtn = document.createElement("button");
+        closeBtn.type = "button";
+        closeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
+        closeBtn.addEventListener("click", () => {
+          errorMsg.remove();
+        });
+
+        errorMsg.appendChild(errorTxt);
+        errorMsg.appendChild(closeBtn);
+        errorContainer.appendChild(errorMsg);
+      });
+    }
+
+    if (response.success === true) {
       alert("Successfully made a new post!");
-      const data = await response;
+      const data = response;
       visitNewPost.disabled = false;
       visitNewPost.addEventListener("click", () => {
         window.location.href = `/post/?post=${data.data.id}`;

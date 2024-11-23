@@ -139,16 +139,32 @@ form button {
 .error-message {
     font-size: 14px;
     display: none;
-    margin-top: var(--em-xsmall);
+    margin-top: var(--em-small);
     padding: var(--em-small);
     border: 2px solid var(--red-alert);
     color: var(--red-alert);
     border-radius: var(--small-border-radius);
     background-color: rgb(223, 219, 219);
+    position: relative;
 }
 
 .error-message:not(:empty) {
     display: block
+}
+
+.error-message p {
+    max-width: 90%;
+}
+
+.error-message button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: var(--red-alert);
+    cursor: pointer;
 }
 
 
