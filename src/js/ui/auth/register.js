@@ -7,6 +7,10 @@ import { register } from "../../api/auth/register";
 export async function onRegister(event) {
   event.preventDefault();
 
+  document.querySelectorAll(".error-message").forEach((errorElement) => {
+    errorElement.classList.add("hidden");
+  });
+
   document.getElementById("nameError").textContent = "";
   document.getElementById("emailError").textContent = "";
   document.getElementById("passwordError").textContent = "";
@@ -17,29 +21,37 @@ export async function onRegister(event) {
 
   let valid = true;
 
+  const nameError = document.getElementById("nameError");
   if (!name) {
-    document.getElementById("nameError").textContent = "Name is required!";
+    nameError.textContent = "Name is required!";
+    nameError.classList.remove("hidden");
     valid = false;
   } else if (!/^[\w]+$/.test(name)) {
-    document.getElementById("nameError").textContent =
-      "Invalid username. Only letters, numbers, and the underscore (_) are permitted.";
+    nameError.textContent = "Invalid username. Only letters, numbers and the underscore (_) are permitted.";
+    nameError.classList.remove("hidden");
     valid = false;
   }
 
+  const emailError = document.getElementById("emailError");
   if (!email) {
-    document.getElementById("emailError").textContent = "Email is required!";
+    emailError.textContent = "Email is required!";
+    emailError.classList.remove("hidden");
     valid = false;
   } else if (!/^[\w\-.]+@(stud\.)?noroff\.no$/.test(email)) {
-    document.getElementById("emailError").textContent =
-      "Please enter a valid email adress (noroff.no or stud.noroff.no).";
+    emailError.textContent = "Please enter a valid email adress (noroff.no or stud.noroff.no).";
+    emailError.classList.remove("hidden");
     valid = false;
   }
 
+  const passwordError = document.getElementById("passwordError");
   if (!password) {
-    document.getElementById("passwordError").textContent = "Password  is required!";
+    passwordError.textContent = "Password  is required!";
+    passwordError.classList.remove("hidden");
     valid = false;
   } else if (password.length < 8) {
-    document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
+    passwordError.classList.remove("hidden");
+
+    passwordError.textContent = "Password must be at least 8 characters long.";
     valid = false;
   }
 
@@ -57,8 +69,6 @@ export async function onRegister(event) {
     if (!data) {
       throw new Error("Sorry for the inconvenience, couldn't registering new user.");
     }
-    console.log(data);
-
     const goLogin = confirm(`User, ${data.data.name}, was successfully registered. Do you want to continue to login?`);
 
     if (goLogin) {
@@ -67,8 +77,9 @@ export async function onRegister(event) {
   } catch (error) {
     console.error("Registration failed:", error);
     const errorContainer = document.querySelector(".error-container");
-    const errorMessage = document.querySelector("#error-msg");
-    errorContainer.style.display = "block";
+    const errorMessage = document.getElementById("error-msg");
+    errorMessage.classList.remove("hidden");
+    errorContainer.classList.remove("hidden");
     errorMessage.textContent = error.message;
   }
 }

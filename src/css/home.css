@@ -1,117 +1,110 @@
 #posts-container {
-    width: 100%;
-    column-count: 3;
-    gap: var(--em-large);
-    margin: var(--em-large) 0;
+  column-count: 3;
+  /* gap: var(--em-large);
+  margin: var(--em-large) 0; */
 
-    @media (max-width: 1024px) {
-        column-count: 2;
-        padding: var(--em-small);
-    }
+  @media (max-width: 1024px) {
+    column-count: 2;
+  }
 
-    @media (max-width: 600px) {
-        column-count: 1;
-    }
+  @media (max-width: 600px) {
+    column-count: 1;
+  }
 }
 
 .post-article {
-    break-inside: avoid;
-    width: 100%;
-    max-width: 340px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--em-small);
-    text-decoration: none;
-    color: black;
-    padding: var(--em-small);
-    background-color: var(--container-bg);
-    border: var(--border-lightgrey);
-    border-radius: var(--large-border-radius);
-    transition: transform 300ms ease;
-    margin-bottom: var(--em-xlarge);
-    box-shadow: var(--box-shadow);
+  break-inside: avoid;
+}
 
+/* .post-article {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--em-small);
+  text-decoration: none;
+  color: black;
+  padding: var(--em-small);
+  background-color: #f4eded;
+  border: var(--border-lightgrey);
+  border-radius: var(--large-border-radius);
+  transition: transform 300ms ease;
+  margin-bottom: var(--em-xlarge);
+  box-shadow: var(--box-shadow);
 }
 
 .post-article:hover {
-    transform: scale(1.02);
-    transition: transform 100ms ease;
-
+  transform: scale(1.02);
+  transition: transform 100ms ease;
 }
 
 .post-article h2 {
-    display: flex;
-    flex-wrap: wrap;
-    margin: var(--em-small) 0;
-    word-break: break-word;
-    hyphens: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--em-small) 0;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .post-article .temp-bg {
-    width: 100%;
-    min-height: clamp(100px, 20vw, 160px);
-    background-color: rgb(193, 193, 193);
-    border-radius: var(--medium-border-radius);
-    display: block;
-    border: none;
-
+  width: 100%;
+  min-height: clamp(100px, 20vw, 160px);
+  background-color: rgb(193, 193, 193);
+  border-radius: var(--medium-border-radius);
+  display: block;
+  border: none;
 }
 
 .post-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: var(--medium-border-radius);
-    border: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--medium-border-radius);
+  border: none;
 }
 
-
 .intel-wrapper {
-    display: flex;
-    justify-content: space-between;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .intel-wrapper .profile-user {
-    display: flex;
-    align-items: center;
-    gap: var(--em-small);
+  display: flex;
+  align-items: center;
+  gap: var(--em-small);
 }
 
 #comments-length span {
-    margin-right: var(--em-small);
-    font-size: 20px;
-
+  margin-right: var(--em-small);
+  font-size: 20px;
 }
 
 #comments-length span b {
-    font-size: 20px;
-
+  font-size: 20px;
 }
 
 .post-article .avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: var(--small-border-radius);
-    object-fit: cover;
+  width: 35px;
+  height: 35px;
+  border-radius: var(--small-border-radius);
+  object-fit: cover;
 }
 
 .post-info {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1025px) {
     font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-
-    @media (max-width: 1025px) {
-        font-size: 14px;
-
-    }
-}
+  }
+} */
 
 /* filler posts */
 
-.filler-post {
+/* .filler-post {
     display: grid;
     place-content: center;
     width: 100%;
@@ -121,11 +114,11 @@
     border-radius: var(--large-border-radius);
     margin-bottom: var(--em-large);
     box-shadow: var(--box-shadow);
-}
+} */
 
 /* paginating css */
 
-.posts-paginator {
+/* .posts-paginator {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,4 +169,4 @@
 .posts-paginator button span {
     position: absolute;
     top: -12px;
-}
+} */

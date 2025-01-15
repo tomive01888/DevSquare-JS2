@@ -8,12 +8,14 @@
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body>
+  <body class="body-custom">
     <main class="form-use">
-      <div class="max-small-container">
-        <h1>Register</h1>
+      <section
+        class="flex flex-col content-center items-center gap-5 h-full w-full max-w-96 p-5 rounded-lg bg-neutral-100 shadow-lg"
+      >
+        <h1 class="text-dynamic_h1">Register</h1>
 
-        <form name="register" novalidate>
+        <form name="register" novalidate class="form">
           <div>
             <label for="name">Name:</label>
             <input
@@ -25,8 +27,9 @@
               pattern="^[\w]+$"
               title="Please enter a username using only letters and numbers"
               placeholder="Enter your name"
+              class="form-input"
             />
-            <span id="nameError" class="error-message"></span>
+            <span id="nameError" class="error-message hidden"></span>
           </div>
 
           <div>
@@ -39,8 +42,9 @@
               pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
               title="Please enter a valid noroff.no or stud.noroff.no address"
               placeholder="Enter your email"
+              class="form-input"
             />
-            <span id="emailError" class="error-message"></span>
+            <span id="emailError" class="error-message hidden"></span>
           </div>
 
           <div>
@@ -52,28 +56,37 @@
               minlength="8"
               placeholder="Enter your password"
               required
+              class="form-input"
             />
-            <span id="passwordError" class="error-message"></span>
+            <span id="passwordError" class="error-message hidden"></span>
           </div>
 
-          <button class="common-btn" type="submit">Register</button>
-          <div class="error-container">
+          <button id="submit-register" class="base-button" type="submit">Register</button>
+
+          <div class="error-container hidden">
             <span id="error-msg" class="error-message"></span>
           </div>
         </form>
-        <p>Already have an account? <a href="/auth/login/">Login here</a></p>
-      </div>
-      <img src="/images/noroff-logo.png" alt="noroff logo" />
-      <p id="social-platform">Social platform for students</p>
+
+        <p>
+          Already have an account?
+          <a href="/auth/login/" class="text-blue-500 text-pretty hover:underline">Login here</a>
+        </p>
+      </section>
+
+      <img src="/images/noroff-logo.png" alt="noroff logo" class="opacity-50 w-full max-w-60 mt-6" />
+      <p class="opacity-50">Social platform for students</p>
     </main>
 
-    <footer>
-      <div>
-        <img src="/images/noroff-logo.png" alt="noroff logo" />
-        <ul>
-          <li><img src="/images/DevSquare.png" alt="Dev Square Logo" /></li>
-          <li>Group project</li>
-          <li>Created by Taner, Senbet and Tom Andre</li>
+    <footer class="border-t border-gray-300 w-full p-4 opacity-60">
+      <div class="mt-6 w-full flex justify-between items-end">
+        <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
+        <ul class="list-none">
+          <li>
+            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+          </li>
+          <li class="break-words">Group project</li>
+          <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>
         </ul>
       </div>
     </footer>

@@ -8,65 +8,114 @@
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body class="body">
-    <header>
-      <div class="max-size-header">
-        <a href="/">
-          <img src="/images/DevSquare.png" alt="Dev Square Logo" />
+  <body
+    class="bg-[url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-top bg-cover bg-no-repeat bg-fixed flex flex-col justify-start items-center w-full min-h-screen"
+  >
+    <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
+      <div
+        class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
+      >
+        <a href="/" class="hidden md:block">
+          <img src="/images/DevSquare.png" alt="Dev Square Logo" class="h-10" />
         </a>
-        <nav>
-          <a class="deco-line" href="/">Home</a>
-          <a class="deco-line" id="go-profile-btn" href="/profile/">My Profile</a>
-          <button type="button" id="logout-button">Logout</button>
+        <nav class="flex items-center gap-2">
+          <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
+          <a
+            class="deco-line text-center w-24 text-lg text-black no-underline hover:underline"
+            id="go-profile-btn"
+            href="/profile/"
+            >My Profile</a
+          >
+          <button
+            type="button"
+            id="logout-button"
+            class="px-4 py-2 text-white font-bold bg-magenta rounded-full ml-2 cursor-pointer hover:bg-blue-700 transition-colors duration-700"
+          >
+            Logout
+          </button>
         </nav>
       </div>
     </header>
 
     <main class="regular-use">
       <section id="hero-section">
-        <h1><img src="/images/DevSquare.png" alt="Dev Square Logo" /></h1>
+        <h1><img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-sm" /></h1>
       </section>
       <section id="home-section">
-        <div id="top-paginator" class="posts-paginator">
-          <button type="button" class="prev-posts"><span>&#8249;</span></button>
-          <button type="button" class="next-posts"><span>&#8250;</span></button>
+        <div id="top-paginator" class="flex items-center justify-center gap-4">
+          <button
+            type="button"
+            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer prev-posts"
+          >
+            <span class="text-2xl">&#8249;</span>
+          </button>
+          <button
+            type="button"
+            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer next-posts"
+          >
+            <span class="text-2xl">&#8250;</span>
+          </button>
 
-          <div>
-            <label for="post">Page</label>
-            <input class="go-to" type="number" id="post" name="post" min="1" />
-            <p class="max-page">of</p>
+          <div class="flex items-center gap-3">
+            <label for="post" class="whitespace-nowrap">Page</label>
+            <input class="w-14 text-center text-lg p-1 go-to" type="number" id="post" name="post" min="1" />
+            <p class="whitespace-nowrap max-page">of</p>
           </div>
         </div>
 
-        <div id="posts-container">
-          <div class="filler-post"><div class="loader"></div></div>
-          <div class="filler-post"><div class="loader"></div></div>
-          <div class="filler-post"><div class="loader"></div></div>
-          <div class="filler-post"><div class="loader"></div></div>
-          <div class="filler-post"><div class="loader"></div></div>
-          <div class="filler-post"><div class="loader"></div></div>
+        <div id="posts-container" class="w-full gap-5 my-8 p-0">
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
+          <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
+            <div class="loader"></div>
+          </div>
         </div>
 
-        <div id="bottom-paginator" class="posts-paginator">
-          <button type="button" class="prev-posts"><span>&#8249;</span></button>
-          <button type="button" class="next-posts"><span>&#8250;</span></button>
+        <div id="bottom-paginator" class="flex items-center justify-center gap-4 mt-6">
+          <button
+            type="button"
+            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer prev-posts"
+          >
+            <span class="text-2xl">&#8249;</span>
+          </button>
+          <button
+            type="button"
+            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer next-posts"
+          >
+            <span class="text-2xl">&#8250;</span>
+          </button>
 
-          <div>
-            <label for="post2">Page</label>
-            <input class="go-to" type="number" id="post2" name="post2" />
-            <p class="max-page"></p>
+          <div class="flex items-center gap-3">
+            <label for="post2" class="whitespace-nowrap">Page</label>
+            <input class="w-14 text-center text-lg p-1 go-to" type="number" id="post2" name="post2" />
+            <p class="whitespace-nowrap max-page"></p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div>
-        <img src="/images/noroff-logo.png" alt="noroff logo" />
-        <ul>
-          <li><img src="/images/DevSquare.png" alt="Dev Square Logo" /></li>
-          <li>Group project</li>
-          <li>Created by Taner, Senbet and Tom Andre</li>
+    <footer class="border-t border-gray-300 w-full p-4 opacity-60">
+      <div class="mt-6 w-full flex justify-between items-end">
+        <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
+        <ul class="list-none">
+          <li>
+            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+          </li>
+          <li class="break-words">Group project</li>
+          <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>
         </ul>
       </div>
     </footer>
