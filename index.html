@@ -8,9 +8,7 @@
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body
-    class="bg-[url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-top bg-cover bg-no-repeat bg-fixed flex flex-col justify-start items-center w-full min-h-screen"
-  >
+  <body class="body-custom scroll-smooth">
     <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
       <div
         class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
@@ -45,25 +43,31 @@
         <div id="top-paginator" class="flex items-center justify-center gap-4">
           <button
             type="button"
-            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer prev-posts"
+            class="h-8 w-10 grid relative border rounded-md border-gray-300 bg-gray-100 shadow-lg cursor-pointer prev-posts hover:bg-gray-200"
           >
-            <span class="text-2xl">&#8249;</span>
+            <span class="text-3xl absolute left-1/2 -translate-x-1/2 bottom-0.5 transform">&#8249;</span>
           </button>
           <button
             type="button"
-            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer next-posts"
+            class="h-8 w-10 grid relative border rounded-md border-gray-300 bg-gray-100 shadow-lg cursor-pointer next-posts hover:bg-gray-200"
           >
-            <span class="text-2xl">&#8250;</span>
+            <span class="text-3xl absolute left-1/2 -translate-x-1/2 bottom-0.5 transform">&#8250;</span>
           </button>
 
           <div class="flex items-center gap-3">
-            <label for="post" class="whitespace-nowrap">Page</label>
-            <input class="w-14 text-center text-lg p-1 go-to" type="number" id="post" name="post" min="1" />
+            <label for="post" class="whitespace-nowrap drop-shadow-lg">Page</label>
+            <input
+              class="w-14 text-center text-lg p-1 go-to rounded-sm shadow-lg"
+              type="number"
+              id="post"
+              name="post"
+              min="1"
+            />
             <p class="whitespace-nowrap max-page">of</p>
           </div>
         </div>
 
-        <div id="posts-container" class="w-full gap-5 my-8 p-0">
+        <div id="posts-container" class="w-full gap-5 my-8 p-0 columns-1 md:columns-2 lg:columns-3">
           <div class="grid place-content-center w-full min-w-[250px] h-[350px] bg-gray-100 rounded-lg mb-6 shadow-md">
             <div class="loader"></div>
           </div>
@@ -87,20 +91,25 @@
         <div id="bottom-paginator" class="flex items-center justify-center gap-4 mt-6">
           <button
             type="button"
-            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer prev-posts"
+            class="h-8 w-10 grid relative border rounded-md border-gray-300 bg-gray-100 shadow-lg cursor-pointer prev-posts hover:bg-gray-200"
           >
-            <span class="text-2xl">&#8249;</span>
+            <span class="text-3xl absolute left-1/2 -translate-x-1/2 bottom-0.5 transform">&#8249;</span>
           </button>
           <button
             type="button"
-            class="h-8 w-10 grid place-items-center border border-gray-300 rounded-small bg-gray-100 shadow-sm cursor-pointer next-posts"
+            class="h-8 w-10 grid relative border rounded-md border-gray-300 bg-gray-100 shadow-lg cursor-pointer next-posts hover:bg-gray-200"
           >
-            <span class="text-2xl">&#8250;</span>
+            <span class="text-3xl absolute left-1/2 -translate-x-1/2 bottom-0.5 transform">&#8250;</span>
           </button>
 
           <div class="flex items-center gap-3">
             <label for="post2" class="whitespace-nowrap">Page</label>
-            <input class="w-14 text-center text-lg p-1 go-to" type="number" id="post2" name="post2" />
+            <input
+              class="w-14 text-center text-lg p-1 go-to rounded-sm shadow-lg"
+              type="number"
+              id="post2"
+              name="post2"
+            />
             <p class="whitespace-nowrap max-page"></p>
           </div>
         </div>
@@ -108,7 +117,7 @@
     </main>
 
     <footer class="border-t border-gray-300 w-full p-4 opacity-60">
-      <div class="mt-6 w-full flex justify-between items-end">
+      <div class="mt-6 w-full flex justify-center gap-8 items-center md:justify-between md:flex-row flex-col">
         <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
         <ul class="list-none">
           <li>

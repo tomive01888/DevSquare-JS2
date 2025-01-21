@@ -14,6 +14,10 @@ form.addEventListener("submit", onCreatePost);
 const visitNewPost = document.querySelector(".go-to-post");
 const resetBtn = document.querySelector(".reset-form");
 resetBtn.addEventListener("click", () => {
+  const allErrorMessages = document.querySelectorAll(".error-message");
+  allErrorMessages.forEach((message) => {
+    message.remove();
+  });
   visitNewPost.disabled = true;
 });
 

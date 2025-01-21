@@ -12,13 +12,16 @@
 export function createUpdateProfileForm() {
   const section = document.createElement("section");
   section.id = "update-profile";
+  section.classList.add("mt-xl", "w-full", "shadow-lg", "p-4", "border-gray", "bg-neutral-100", "rounded-lg");
 
   const h4 = document.createElement("h4");
   h4.textContent = "Update profile";
+  h4.classList.add("text-dynamic_h4");
   section.appendChild(h4);
 
   const form = document.createElement("form");
   form.name = "updateProfile";
+  form.classList.add("form");
 
   const hiddenDiv = document.createElement("div");
   const inputUsername = document.createElement("input");
@@ -33,11 +36,14 @@ export function createUpdateProfileForm() {
   const labelBio = document.createElement("label");
   labelBio.setAttribute("for", "bio");
   labelBio.textContent = "Bio:";
+  labelBio.classList.add("w-full");
+
   const textarea = document.createElement("textarea");
+  textarea.classList.add("form-textarea");
   textarea.name = "bio";
   textarea.id = "bio";
   textarea.rows = 4;
-  textarea.maxLength = 280;
+  textarea.maxLength = 160;
   textarea.placeholder = "Write your bio here...";
   bioDiv.appendChild(labelBio);
   bioDiv.appendChild(textarea);
@@ -45,9 +51,11 @@ export function createUpdateProfileForm() {
 
   const avatarSrcDiv = document.createElement("div");
   const labelAvatarSrc = document.createElement("label");
+  labelAvatarSrc.classList.add("w-full");
   labelAvatarSrc.setAttribute("for", "avatarSrc");
   labelAvatarSrc.textContent = "Avatar Image Source (URL):";
   const inputAvatarSrc = document.createElement("input");
+  inputAvatarSrc.classList.add("form-input");
   inputAvatarSrc.type = "text";
   inputAvatarSrc.name = "avatarSrc";
   inputAvatarSrc.id = "avatarSrc";
@@ -58,9 +66,11 @@ export function createUpdateProfileForm() {
 
   const avatarAltDiv = document.createElement("div");
   const labelAvatarAlt = document.createElement("label");
+  labelAvatarAlt.classList.add("w-full");
   labelAvatarAlt.setAttribute("for", "avatarAlt");
   labelAvatarAlt.textContent = "Avatar Image Alt Text:";
   const inputAvatarAlt = document.createElement("input");
+  inputAvatarAlt.classList.add("form-input");
   inputAvatarAlt.type = "text";
   inputAvatarAlt.name = "avatarAlt";
   inputAvatarAlt.id = "avatarAlt";
@@ -72,9 +82,11 @@ export function createUpdateProfileForm() {
 
   const bannerSrcDiv = document.createElement("div");
   const labelBannerSrc = document.createElement("label");
+  labelBannerSrc.classList.add("w-full");
   labelBannerSrc.setAttribute("for", "bannerSrc");
   labelBannerSrc.textContent = "Banner Image Source (URL):";
   const inputBannerSrc = document.createElement("input");
+  inputBannerSrc.classList.add("form-input");
   inputBannerSrc.type = "text";
   inputBannerSrc.name = "bannerSrc";
   inputBannerSrc.id = "bannerSrc";
@@ -85,9 +97,11 @@ export function createUpdateProfileForm() {
 
   const bannerAltDiv = document.createElement("div");
   const labelBannerAlt = document.createElement("label");
+  labelBannerAlt.classList.add("w-full");
   labelBannerAlt.setAttribute("for", "bannerAlt");
   labelBannerAlt.textContent = "Banner Image Alt Text:";
   const inputBannerAlt = document.createElement("input");
+  inputBannerAlt.classList.add("form-input");
   inputBannerAlt.type = "text";
   inputBannerAlt.name = "bannerAlt";
   inputBannerAlt.id = "bannerAlt";
@@ -98,6 +112,7 @@ export function createUpdateProfileForm() {
   form.appendChild(bannerAltDiv);
 
   const submitButton = document.createElement("button");
+  submitButton.classList.add("base-button");
   submitButton.classList.add("common-btn");
   submitButton.type = "submit";
   submitButton.textContent = "Submit";

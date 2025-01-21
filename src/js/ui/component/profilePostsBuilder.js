@@ -21,16 +21,30 @@ export function displayPostsListStyle(posts, name) {
 
   posts.forEach((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("post");
+    postElement.classList.add(
+      "h-12",
+      "relative",
+      "rounded-md",
+      "p-2",
+      "flex",
+      "justify-start",
+      "items-center",
+      "gap-4",
+      "bg-white",
+      "no-underline",
+      "text-black",
+      "shadow-lg"
+    );
 
     const postTitle = document.createElement("p");
     postTitle.textContent = post.title;
+    postTitle.classList.add("w-full", "max-w-[85%]", "overflow-hidden", "text-ellipsis", "whitespace-nowrap");
 
     const postBtnWrapper = document.createElement("div");
-    postBtnWrapper.classList.add("post-btn-wrapper");
+    postBtnWrapper.classList.add("w-fit", "absolute", "right-4", "flex", "gap-2");
 
     const goToPost = document.createElement("a");
-    goToPost.classList.add("view-post");
+    goToPost.classList.add("post-icon-base");
     goToPost.textContent = "👁️";
     goToPost.href = `/post/?post=${post.id}`;
     postBtnWrapper.appendChild(goToPost);
@@ -42,7 +56,7 @@ export function displayPostsListStyle(posts, name) {
       pencil.className = "fas fa-pencil";
 
       const editBtn = document.createElement("a");
-      editBtn.classList.add("edit-post");
+      editBtn.classList.add("post-icon-base");
       editBtn.href = `/post/edit/?post=${post.id}`;
       editBtn.appendChild(pencil);
       postBtnWrapper.appendChild(editBtn);

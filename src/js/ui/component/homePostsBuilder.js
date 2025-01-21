@@ -20,7 +20,7 @@ export function renderPosts(posts, pageCount) {
   posts.forEach((post) => {
     const postElement = document.createElement("a");
     postElement.className =
-      "post-article max-w-[340px] w-full flex flex-col gap-4 p-4 bg-[#E6E7E8] border border-neutral-300 rounded-lg shadow-lg transition-transform duration-300 ease-in-out mb-12";
+      "break-inside-avoid max-w-[340px] w-full flex flex-col gap-4 p-4 bg-neutral-100 border border-neutral-300 rounded-lg shadow-lg transition-transform duration-300 ease-in-out mb-12";
 
     postElement.href = `/post/?post=${post.id}`;
 

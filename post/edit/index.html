@@ -5,45 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="title-post">DevSquare - Edit post</title>
     <link rel="icon" href="/images/DS.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script type="module" src="/src/app.js"></script>
   </head>
 
-  <body>
-    <header>
-      <div class="max-size-header">
-        <a href="/">
-          <img src="/images/DevSquare.png" alt="Dev Square Logo" />
+  <body class="body-custom">
+    <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
+      <div
+        class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
+      >
+        <a href="/" class="hidden md:block">
+          <img src="/images/DevSquare.png" alt="Dev Square Logo" class="h-10" />
         </a>
-        <nav>
-          <a class="deco-line" href="/">Home</a>
-          <a class="deco-line" id="go-profile-btn" href="/profile/">My Profile</a>
-          <button type="button" id="logout-button">Logout</button>
+        <nav class="flex items-center gap-2">
+          <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
+          <a
+            class="deco-line text-center w-24 text-lg text-black no-underline hover:underline"
+            id="go-profile-btn"
+            href="/profile/"
+            >My Profile</a
+          >
+          <button
+            type="button"
+            id="logout-button"
+            class="px-4 py-2 text-white font-bold bg-magenta rounded-full ml-2 cursor-pointer hover:bg-blue-700 transition-colors duration-700"
+          >
+            Logout
+          </button>
         </nav>
       </div>
     </header>
 
     <main class="form-use">
-      <div class="max-medium-container">
-        <h1>Edit Post</h1>
+      <div class="md:mx-auto w-full sm:max-w-[80%] p-4 rounded-md bg-neutral-100 shadow-lg">
+        <h1 class="text-dynamic_h1">Edit Post</h1>
 
-        <form name="editPost">
+        <form name="editPost" class="form">
           <div>
             <input type="hidden" name="id" />
           </div>
 
           <div>
             <label nafor="post-title">Title:</label>
-            <input type="text" id="post-title" name="title" placeholder="Enter post title" required />
+            <input
+              type="text"
+              id="post-title"
+              name="title"
+              placeholder="Enter post title"
+              required
+              class="form-input"
+            />
           </div>
 
           <div>
             <label for="post-content">Content:</label>
-            <textarea id="post-content" name="body" placeholder="Write your post here..." required></textarea>
+            <textarea
+              id="post-content"
+              name="body"
+              placeholder="Write your post here..."
+              required
+              class="form-textarea"
+            ></textarea>
           </div>
 
           <div>
             <label for="mediaUrl">Upload Image:</label>
-            <input type="text" id="mediaUrl" name="mediaUrl" placeholder="Post image url here" />
+            <input type="text" id="mediaUrl" name="mediaUrl" placeholder="Post image url here" class="form-input" />
           </div>
 
           <div>
@@ -54,31 +81,42 @@
               name="mediaAlt"
               maxlength="300"
               placeholder="Enter alternative text here"
+              class="form-input"
             />
           </div>
 
           <div>
             <label for="tags">Tag:</label>
-            <input type="text" id="tags" name="tags" placeholder="Enter tags here..." />
+            <input type="text" id="tags" name="tags" placeholder="Enter tags here..." class="form-input" />
           </div>
 
-          <button class="common-btn" type="submit" id="publish-btn">Update post</button>
-          <div class="button-group">
-            <button class="delete-post" type="button" name="deletePost">Delete</button>
+          <button class="base-button" type="submit" id="publish-btn">Update post</button>
+          <div>
+            <button
+              class="delete-post w-full text-lg bg-gray-500 text-white p-2 rounded-md cursor-pointer hover:bg-red-500 transition-colors duration-700"
+              type="button"
+              name="deletePost"
+            >
+              Delete
+            </button>
           </div>
         </form>
         <div class="error-container"></div>
       </div>
-      <div class="new-post"><a href="/post/create/">Create new post</a></div>
+      <div class="base-button max-w-[80%] mt-5 p-0">
+        <a href="/post/create/" class="block w-full h-full p-2">Create new post</a>
+      </div>
     </main>
 
-    <footer>
-      <div>
-        <img src="/images/noroff-logo.png" alt="noroff logo" />
-        <ul>
-          <li><img src="/images/DevSquare.png" alt="Dev Square Logo" /></li>
-          <li>Group project</li>
-          <li>Created by Taner, Senbet and Tom Andre</li>
+    <footer class="border-t border-gray-300 w-full p-4 opacity-60">
+      <div class="mt-6 w-full flex justify-center gap-8 items-center md:justify-between md:flex-row flex-col">
+        <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
+        <ul class="list-none">
+          <li>
+            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+          </li>
+          <li class="break-words">Group project</li>
+          <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>
         </ul>
       </div>
     </footer>

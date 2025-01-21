@@ -26,14 +26,25 @@ export async function createComment(comments) {
     const { author, body } = comment;
 
     const commentWrapper = document.createElement("div");
-    commentWrapper.classList.add("comment-wrapper");
+    commentWrapper.classList.add(
+      "relative",
+      "bg-neutral-100",
+      "flex",
+      "flex-col",
+      "w-full",
+      "p-2",
+      "border-gray-300",
+      "rounded-md",
+      "shadow-lg"
+    );
 
     const profileCommenter = document.createElement("div");
-    profileCommenter.classList.add("profile-commenter");
+    profileCommenter.classList.add("flex", "items-center", "gap-2", "pd-2", "border-gray-300");
 
     const img = document.createElement("img");
     img.src = author.avatar.url;
     img.alt = `${author.name}'s profile picture`;
+    img.classList.add("w-8", "h-8", "object-cover", "rounded");
 
     const nameParagraph = document.createElement("p");
     nameParagraph.textContent = author.name;
@@ -41,13 +52,14 @@ export async function createComment(comments) {
     const timeAgo = timeSinceCreated(comment.created);
     const timeCreated = document.createElement("p");
     timeCreated.id = "time";
+    timeCreated.classList.add("absolute", "top-2", "right-2", "text-sm", "text-gray");
     timeCreated.textContent = timeAgo;
 
     profileCommenter.appendChild(img);
     profileCommenter.appendChild(nameParagraph);
 
     const commentParagraph = document.createElement("p");
-    commentParagraph.classList.add("comment");
+    commentParagraph.classList.add("mt-2");
     commentParagraph.innerHTML = body.replace(/\n/g, "<br>");
 
     commentWrapper.appendChild(profileCommenter);

@@ -24,14 +24,14 @@ export async function onUpdatePost(event) {
       errorContainer.innerHTML = "";
       response.errors.forEach((error) => {
         const errorMsg = document.createElement("div");
-        errorMsg.classList.add("error-message");
+        errorMsg.classList.add("error-message", "relative");
 
         const errorTxt = document.createElement("p");
-        errorTxt.classList.add("error-txt");
         errorTxt.textContent = error.message;
 
         const closeBtn = document.createElement("button");
         closeBtn.type = "button";
+        closeBtn.classList.add("absolute", "right-2", "bottom-[25%]");
         closeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
         closeBtn.addEventListener("click", () => {
           errorMsg.remove();

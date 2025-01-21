@@ -21,16 +21,40 @@ export function createPostContent(post) {
 
   const postSection = document.createElement("section");
   postSection.id = "post-content";
+  postSection.classList.add(
+    "border-2",
+    "rounded-md",
+    "w-full",
+    "shadow-lg",
+    "bg-neutral-100",
+    "transition-padding",
+    "duration-500",
+    "ease-in",
+    "p-2",
+    "md:p-4"
+  );
 
   const titleElement = document.createElement("h1");
   titleElement.textContent = title;
+  titleElement.classList.add("text-dynamic_h1", "break-normal", "hyphens-auto");
 
   const postImg = document.createElement("img");
   postImg.src = media ? media.url : "";
   postImg.alt = media ? media.alt : "";
+  postImg.classList.add(
+    "w-full",
+    "md:max-w-[40%]",
+    "min-h-48",
+    "transition-width",
+    "duration-500",
+    "ease-in-out",
+    "max-w-full"
+  );
 
   const bodyDiv = document.createElement("div");
+  bodyDiv.classList.add("w-full", "min-h-36", "my-2", "border", "border-gray-300", "p-2", "rounded");
   const bodyParagraph = document.createElement("p");
+  bodyParagraph.classList.add("break-normal", "hyphens-auto", "w-full");
   bodyParagraph.textContent = body;
   bodyDiv.appendChild(bodyParagraph);
 
@@ -52,18 +76,29 @@ export function createPostContent(post) {
 
   const authorSection = document.createElement("section");
   authorSection.id = "author-section";
+  authorSection.classList.add(
+    "flex",
+    "justify-start",
+    "items-start",
+    "gap-4",
+    "flex-col",
+    "sm:flex-row",
+    "sm:justify-between"
+  );
 
   const authorLink = document.createElement("a");
-  authorLink.classList.add("authorLink");
+  authorLink.classList.add("flex", "items-center", "gap-2", "bg-[#3d3d3d]", "rounded", "w-fit", "p-2", "text-white");
   authorLink.href = `/profile/?profile=${author.name}`;
 
   const authorAvatar = document.createElement("img");
+  authorAvatar.classList.add("object-cover", "outline-white", "w-11", "h-11", "rounded");
   authorAvatar.id = "profile-avatar";
   authorAvatar.src = author.avatar.url;
   authorAvatar.alt = `${author.name}'s avatar`;
 
   const authorNameElement = document.createElement("p");
   authorNameElement.id = "profile-name";
+  authorNameElement.classList.add("p-2");
   authorNameElement.textContent = author.name;
   authorSection.appendChild(authorLink);
 
@@ -71,10 +106,22 @@ export function createPostContent(post) {
   if (author.name === localName.name) {
     const editorDiv = document.createElement("div");
     editorDiv.id = "editorOptions";
-    editorDiv.classList.add("hidden");
+    editorDiv.classList.remove("hidden");
+    editorDiv.classList.add("flex", "gap-2");
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete post";
+    deleteBtn.classList.add(
+      "w-fit",
+      " bg-gray-500",
+      "text-white",
+      "p-2",
+      "rounded-md",
+      "cursor-pointer",
+      "hover:bg-red-500",
+      "transition-colors",
+      " duration-700"
+    );
     deleteBtn.id = "delete-btn";
     deleteBtn.type = "button";
     deleteBtn.setAttribute("data-id", id);
@@ -89,6 +136,7 @@ export function createPostContent(post) {
     editBtn.classList.add("edit-btn");
     editBtn.href = `/post/edit/?post=${id}`;
     editBtn.textContent = "Edit post";
+    editBtn.classList.add("base-button", "w-fit");
 
     editorDiv.appendChild(editBtn);
     editorDiv.appendChild(deleteBtn);

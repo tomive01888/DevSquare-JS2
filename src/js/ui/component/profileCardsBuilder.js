@@ -24,12 +24,32 @@ export async function createProfileLink(profiles, emptyMessage, container) {
 
   profiles.forEach((profile) => {
     const link = document.createElement("a");
-    link.classList.add("user-profile");
+    link.classList.add(
+      "rounded-md",
+      "p-2",
+      "flex",
+      "items-center",
+      "gap-2.5",
+      "bg-white",
+      "cursor-pointer",
+      "no-underline",
+      "text-black",
+      "shadow-lg",
+      "w-[95%]",
+      "transition-transform",
+      "duration-200",
+      "ease-in-out",
+      "hover:bg-gray-200",
+      "hover:translate-x-2",
+      "hover:transition-transform",
+      "hover:duration-300"
+    );
     link.href = `/profile/?profile=${profile.name}`;
 
     const img = document.createElement("img");
     img.src = profile.avatar.url;
     img.alt = profile.name;
+    img.classList.add("object-cover", "w-[35px]", "h-[35px]", "rounded-sm", "outline", "outline-4", "outline-white");
 
     const paragraph = document.createElement("p");
     paragraph.textContent = profile.name;

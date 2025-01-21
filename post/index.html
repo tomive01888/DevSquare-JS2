@@ -7,40 +7,58 @@
     <link rel="icon" href="/images/DS.png" />
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <header>
-      <div class="max-size-header">
-        <a href="/">
-          <img src="/images/DevSquare.png" alt="Dev Square Logo" />
+  <body class="body-custom">
+    <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
+      <div
+        class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
+      >
+        <a href="/" class="hidden md:block">
+          <img src="/images/DevSquare.png" alt="Dev Square Logo" class="h-10" />
         </a>
-        <nav>
-          <a class="deco-line" href="/">Home</a>
-          <a class="deco-line" id="go-profile-btn" href="/profile/">My Profile</a>
-          <button type="button" id="logout-button">Logout</button>
+        <nav class="flex items-center gap-2">
+          <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
+          <a
+            class="deco-line text-center w-24 text-lg text-black no-underline hover:underline"
+            id="go-profile-btn"
+            href="/profile/"
+            >My Profile</a
+          >
+          <button
+            type="button"
+            id="logout-button"
+            class="px-4 py-2 text-white font-bold bg-magenta rounded-full ml-2 cursor-pointer hover:bg-blue-700 transition-colors duration-700"
+          >
+            Logout
+          </button>
         </nav>
       </div>
     </header>
 
     <main class="regular-use">
-      <div id="post-container"></div>
+      <div id="post-container" class="w-full flex flex-col gap-8"></div>
 
-      <section id="comment-section">
-        <form name="comment" id="commentBox">
+      <section id="comment-section" class="w-full">
+        <form name="comment" id="commentBox" class="mt-4">
           <label for="comment">Comment here:</label>
-          <textarea name="commentBox" id="comment" maxlength="280"></textarea>
-          <button class="common-btn" type="submit">Comment</button>
+          <textarea name="commentBox" id="comment" maxlength="280" class="form-textarea"></textarea>
+          <button class="base-button mb-4" type="submit">Comment</button>
         </form>
-        <div id="comments-area"></div>
+        <div
+          id="comments-area"
+          class="flex flex-col gap-4 mb-20 p-2 md:p-4 outline-gray-300 rounded-md bg-neutral-100/80 transition-padding duration-500 eas-in"
+        ></div>
       </section>
     </main>
 
-    <footer>
-      <div>
-        <img src="/images/noroff-logo.png" alt="noroff logo" />
-        <ul>
-          <li><img src="/images/DevSquare.png" alt="Dev Square Logo" /></li>
-          <li>Group project</li>
-          <li>Created by Taner, Senbet and Tom Andre</li>
+    <footer class="border-t border-gray-300 w-full p-4 opacity-60">
+      <div class="mt-6 w-full flex justify-center gap-8 items-center md:justify-between md:flex-row flex-col">
+        <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
+        <ul class="list-none">
+          <li>
+            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+          </li>
+          <li class="break-words">Group project</li>
+          <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>
         </ul>
       </div>
     </footer>
