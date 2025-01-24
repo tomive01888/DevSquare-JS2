@@ -5,13 +5,7 @@ const plugin = require("tailwindcss/plugin");
 export default {
   content: ["./**/*.{html,js,ts,css}", "!./node_modules/**/*"],
   theme: {
-    extend: {
-      colors: {
-        magenta: {
-          DEFAULT: "#a900a7",
-          500: "#a900a7",
-        },
-      },
+    extend: {      
       fontSize: {
         dynamic_h1: "clamp(1.5rem, 2vw + 1rem, 1.75rem)",
         dynamic_h2: "clamp(1.25rem, 1.8vw + 0.8rem, 1.5rem)",
