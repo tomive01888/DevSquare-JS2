@@ -7,7 +7,7 @@
 @layer components {
   /* General custom containers ---------------*/
   .body-custom {
-    @apply bg-[var(--body-bg)] bg-[url(https://images.unsplash.com/photo-1634017759716-1784f7c57795?q=80&w=1235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-top bg-cover bg-no-repeat bg-fixed flex justify-start items-center w-full min-h-screen flex-col;
+    @apply bg-[url("https://images.unsplash.com/photo-1634017759716-1784f7c57795?q=80&w=1235&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-top bg-cover bg-no-repeat bg-fixed flex justify-start items-center w-full min-h-screen flex-col;
   }
   .regular-use {
     @apply w-full max-w-[70em] min-h-[100vh] mx-auto p-2 lg:p-4 flex flex-col items-center gap-4 mt-20;
