@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="headTitle">DevSquare - A social student platform</title>
-    <link rel="icon" href="/images/DS.png" />
+    <link rel="icon" href="/images/DS2.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script type="module" src="/src/app.js"></script>
   </head>
   <body class="body-custom scroll-smooth">
-    <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
+    <header class="fixed top-0 left-0 w-full bg-gray-300 h-14 shadow-lg z-[9999] p-2 md:px-8">
       <div
         class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
       >
         <a href="/" class="hidden md:block">
-          <img src="/images/DevSquare.png" alt="Dev Square Logo" class="h-10" />
+          <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="h-10" />
         </a>
         <nav class="flex items-center gap-2">
           <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
@@ -24,36 +24,30 @@
             href="/profile/"
             >My Profile</a
           >
-          <button
-            type="button"
-            id="logout-button"
-            class="px-4 py-2 text-white font-bold bg-magenta rounded-full ml-2 cursor-pointer hover:bg-blue-700 transition-colors duration-700"
-          >
-            Logout
-          </button>
+          <button type="button" id="logout-button" class="px-4 py-2 font-semibold base-button">Logout</button>
         </nav>
       </div>
     </header>
 
-    <section
-      id="hero-profile"
-      class="mt-14 w-full bg-no-repeat bg-center bg-cover relative min-h-[38em] polygon-custom"
-    >
+    <section id="hero-profile" class="mt-14 w-full bg-no-repeat bg-center bg-cover relative min-h-[38em]">
       <div
         class="absolute bg-black/55 w-full max-w-[25em] h-48 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 transform rounded-md flex justify-center items-center gap-2"
       >
         <img id="avatar" src="" alt="" class="w-24 h-24 bg-cover rounded-md" />
-        <h1 id="profile-name" class="text-dynamic_h3 text-white"></h1>
-        <a href="#update-profile" id="anchor-edit" class="hidden absolute top-2 right-2 text-white hover:underline"
+        <h1 id="profile-name" class="text-dynamic_h3 text-white font-semibold"></h1>
+        <a
+          href="#update-profile"
+          id="anchor-edit"
+          class="hidden absolute top-2 right-2 text-[var(--primary-color)] font-semibold hover:underline"
           >edit profile</a
         >
       </div>
       <div
-        class="flex justify-evenly absolute bottom-[160px] left-1/2 -translate-x-1/2 w-full max-w-[25em] p-2 bg-black/50 rounded-md text-white"
+        class="flex justify-evenly absolute bottom-[160px] left-1/2 -translate-x-1/2 w-full max-w-[25em] p-2 bg-black/50 rounded-md text-black font-semibold"
       >
-        <p id="followers-count"></p>
-        <p id="following-count"></p>
-        <p id="posts-count"></p>
+        <p id="followers-count" class="text-white"></p>
+        <p id="following-count" class="text-white"></p>
+        <p id="posts-count" class="text-white"></p>
       </div>
     </section>
 
@@ -66,22 +60,26 @@
       </div>
 
       <div id="follow" class="m-auto mb-8 w-full max-w-[40em]">
-        <button type="button" id="follow-button" class="base-button">F</button>
+        <button type="button" id="follow-button" class="base-button w-full font-semibold">F</button>
         <span
           id="follow-msg"
           class="outline-red-500 hidden font-medium -bottom-9 w-full bg-white p-2 rounded-md"
         ></span>
       </div>
 
-      <div class="content-sections bg-neutral-100 rounded-lg shadow-lg p-4 w-full">
+      <div class="content-sections bg-neutral-100 rounded-lg shadow-lg p-4 w-full mt-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
           <input type="radio" name="section" id="general" value="follow-section" checked class="hidden" />
-          <label for="general" class="block text-white w-full base-button text-center text-lg p-2 cursor-pointer"
+          <label
+            for="general"
+            class="block text-black font-semibold w-full base-button text-center text-lg p-2 cursor-pointer"
             ><h2>Follow list</h2></label
           >
 
           <input type="radio" name="section" id="editProfile" value="visit-section" class="hidden" />
-          <label for="editProfile" class="block text-white w-full base-button text-center text-lg p-2 cursor-pointer"
+          <label
+            for="editProfile"
+            class="block text-black font-semibold w-full base-button text-center text-lg p-2 cursor-pointer"
             ><h2 id="user-posts">Posts</h2></label
           >
         </div>
@@ -93,7 +91,7 @@
           <article>
             <h3 class="text-dynamic_h3 mt-2">Followed by</h3>
             <div
-              class="p-2 border-1 border-gray-600 h-96 overflow-y-scroll bg-neutral-100 transition-[height] duration-400 ease-in-out;"
+              class="p-2 border-black h-96 overflow-y-scroll bg-neutral-300 rounded-sm transition-[height] duration-400 ease-in-out;"
             >
               <div id="followers-list" class="flex flex-col content-start gap-2"></div>
             </div>
@@ -101,7 +99,7 @@
           <article>
             <h3 class="text-dynamic_h3 mt-2">Follows</h3>
             <div
-              class="p-2 border-1 border-gray-600 h-96 overflow-y-scroll bg-neutral-100 transition-[height] duration-400 ease-in-out;"
+              class="p-2 border-gray-600 h-96 overflow-y-scroll bg-neutral-300 rounded-sm transition-[height] duration-400 ease-in-out;"
             >
               <div id="following-list" class="flex flex-col content-start gap-2"></div>
             </div>
@@ -117,7 +115,9 @@
       </div>
 
       <div id="start-new-post" class="hidden w-full place-items-center">
-        <a href="/post/create/" class="base-button block max-w-[80%]">Start creating a new post now!</a>
+        <a href="/post/create/" class="base-button block max-w-[80%] font-semibold w-full shadow-lg"
+          >Start creating a new post now!</a
+        >
       </div>
     </main>
 
@@ -126,7 +126,7 @@
         <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
         <ul class="list-none">
           <li>
-            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+            <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
           </li>
           <li class="break-words">Group project</li>
           <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>

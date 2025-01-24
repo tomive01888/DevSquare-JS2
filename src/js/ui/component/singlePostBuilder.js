@@ -113,14 +113,14 @@ export function createPostContent(post) {
     deleteBtn.textContent = "Delete post";
     deleteBtn.classList.add(
       "w-fit",
-      " bg-gray-500",
+      "bg-gray-500",
       "text-white",
       "p-2",
       "rounded-md",
       "cursor-pointer",
       "hover:bg-red-500",
       "transition-colors",
-      " duration-700"
+      "duration-700"
     );
     deleteBtn.id = "delete-btn";
     deleteBtn.type = "button";

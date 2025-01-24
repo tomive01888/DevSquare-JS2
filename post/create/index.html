@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hubsters -Create a new post</title>
-    <link rel="icon" href="/images/DS.png" />
+    <link rel="icon" href="/images/DS2.png" />
     <script type="module" src="/src/app.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   </head>
   <body class="body-custom">
-    <header class="fixed top-0 left-0 w-full bg-gray-100 h-14 shadow-md z-[9999] p-2 md:px-8">
+    <header class="fixed top-0 left-0 w-full bg-gray-300 h-14 shadow-md z-[9999] p-2 md:px-8">
       <div
         class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
       >
         <a href="/" class="hidden md:block">
-          <img src="/images/DevSquare.png" alt="Dev Square Logo" class="h-10" />
+          <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="h-10" />
         </a>
         <nav class="flex items-center gap-2">
           <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
@@ -24,20 +24,14 @@
             href="/profile/"
             >My Profile</a
           >
-          <button
-            type="button"
-            id="logout-button"
-            class="px-4 py-2 text-white font-bold bg-magenta rounded-full ml-2 cursor-pointer hover:bg-blue-700 transition-colors duration-700"
-          >
-            Logout
-          </button>
+          <button type="button" id="logout-button" class="px-4 py-2 font-semibold base-button">Logout</button>
         </nav>
       </div>
     </header>
 
     <main class="form-use">
       <div class="mx-auto w-full max-w-[80%] p-4 rounded-md bg-neutral-100 shadow-lg">
-        <h1 class="text-dynamic_h1">Create New Post</h1>
+        <h1 class="text-dynamic_h1 font-bold text-center">Create New Post</h1>
 
         <form name="createPost" class="form">
           <div>
@@ -77,17 +71,17 @@
             <input type="text" id="tags" name="tags" placeholder="Enter tags here..." class="form-input" />
           </div>
 
-          <button class="base-button" type="submit" id="publish-btn">Publish</button>
+          <button class="base-button font-semibold text-black" type="submit" id="publish-btn">Publish</button>
           <div class="grid grid-cols-2 gap-4">
             <button
-              class="go-to-post disabled:bg-gray-500 disabled:cursor-not-allowed disabled:select-none bg-green-400 text-white p-2 rounded-md cursor-pointer hover:bg-green-600 transition-colors duration-700"
+              class="go-to-post text-white p-2 disabled:bg-gray-500 font-semibold disabled:cursor-not-allowed disabled:select-none bg-green-400 rounded-md cursor-pointer hover:bg-green-600 transition-colors duration-700"
               type="button"
               disabled
             >
               Go visit page
             </button>
             <button
-              class="reset-form bg-gray-500 text-white p-2 rounded-md cursor-pointer hover:bg-red-500 transition-colors duration-700"
+              class="reset-form bg-gray-500 font-semibold text-white p-2 rounded-md cursor-pointer hover:bg-red-500 transition-colors duration-700"
               type="reset"
               onclick="alert('Form has been reset')"
             >
@@ -104,7 +98,7 @@
         <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
         <ul class="list-none">
           <li>
-            <img src="/images/DevSquare.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+            <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
           </li>
           <li class="break-words">Group project</li>
           <li class="break-words">Created by Taner, Senbet, and Tom Andre</li>

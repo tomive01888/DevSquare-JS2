@@ -112,8 +112,7 @@ export function createUpdateProfileForm() {
   form.appendChild(bannerAltDiv);
 
   const submitButton = document.createElement("button");
-  submitButton.classList.add("base-button");
-  submitButton.classList.add("common-btn");
+  submitButton.classList.add("base-button", "font-semibold", "w-full", "max-w-28", "self-end");
   submitButton.type = "submit";
   submitButton.textContent = "Submit";
 

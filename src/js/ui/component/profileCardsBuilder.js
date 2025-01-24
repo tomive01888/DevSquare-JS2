@@ -25,22 +25,22 @@ export async function createProfileLink(profiles, emptyMessage, container) {
   profiles.forEach((profile) => {
     const link = document.createElement("a");
     link.classList.add(
-      "rounded-md",
+      "w-[95%]",
+      "transition-transform",
+      "duration-200",
+      "bg-white",
       "p-2",
       "flex",
       "items-center",
       "gap-2.5",
-      "bg-white",
       "cursor-pointer",
       "no-underline",
       "text-black",
       "shadow-lg",
-      "w-[95%]",
-      "transition-transform",
-      "duration-200",
       "ease-in-out",
-      "hover:bg-gray-200",
-      "hover:translate-x-2",
+      "rounded-md",
+      "hover:bg-gray-100",
+      "hover:translate-x-3",
       "hover:transition-transform",
       "hover:duration-300"
     );
