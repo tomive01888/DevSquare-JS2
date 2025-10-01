@@ -5,6 +5,7 @@ import { setLogoutListener } from "../../ui/global/logout.mjs";
 import { goToProfilePage } from "../../ui/global/goMyProfile.mjs";
 import { onDeletePost } from "../../ui/post/delete.mjs";
 import { populateEditForm } from "../../ui/component/populateEditForm.mjs";
+import { showToast } from "../../ui/component/toastService.mjs";
 
 authGuard();
 setLogoutListener();
@@ -31,7 +32,7 @@ async function initEditPost(id) {
     await populateEditForm(postData);
   } catch (error) {
     console.error("Error fetching post data:", error);
-    alert("This post no longer exists or an error occurred. Redirecting to the homepage.");
+    showToast("This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
     window.location.href = "/";
   }
 }

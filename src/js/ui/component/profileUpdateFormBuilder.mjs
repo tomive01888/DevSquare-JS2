@@ -16,7 +16,7 @@ export function createUpdateProfileForm() {
 
   const h4 = document.createElement("h4");
   h4.textContent = "Update profile";
-  h4.classList.add("text-dynamic_h4");
+  h4.classList.add("text-lg");
   section.appendChild(h4);
 
   const form = document.createElement("form");

@@ -22,7 +22,7 @@ export function renderPosts(posts, pageCount) {
     postElement.className =
       "break-inside-avoid max-w-[340px] w-full flex flex-col gap-4 p-4 bg-neutral-300/75 border border-neutral-400 rounded-lg shadow-lg transition-transform duration-300 ease-in-out mb-12";
 
-    postElement.href = `/post/?post=${post.id}`;
+    postElement.href = `/post/?id=${post.id}`;
 
     const imgSrc = post.media && post.media.url ? post.media.url : "";
     const imgAlt = post.media && post.media.alt ? post.media.alt : "";

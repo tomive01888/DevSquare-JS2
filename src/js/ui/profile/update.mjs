@@ -5,12 +5,13 @@
  * input values for bio, avatar, and banner, and constructs a profile data object. If at least
  * one field is filled, it sends the updated profile data to the server using the `updateProfile`
  * function. If the update is successful, the page is reloaded. If no fields are filled or an error occurs,
- * an alert is displayed to the user.
+ * a notification is displayed to the user.
  *
  * @param {Event} event - The event object representing the form submission.
  */
 
 import { updateProfile } from "../../api/profile/update";
+import { showToast } from "../component/toastService.mjs";
 
 export async function onUpdateProfile(event) {
   event.preventDefault();
@@ -45,7 +46,7 @@ export async function onUpdateProfile(event) {
   }
 
   if (Object.keys(profileData).length === 0) {
-    alert("At least one field must be filled out.");
+    showToast("At least one field must be filled out.");
     return;
   }
 
@@ -55,6 +56,7 @@ export async function onUpdateProfile(event) {
       window.scrollTo({ top: -500, left: -500, behavior: "smooth" });
       setTimeout(() => {
         location.reload();
+        showToast("Updated profile.");
       }, 710);
     } else {
       throw new Error("Couldn't update profile this time, try again in a couple minutes.");
@@ -63,7 +65,7 @@ export async function onUpdateProfile(event) {
     const errorUpdateMsg = document.getElementById("error-update-msg");
     errorUpdateMsg.innerHTML = `<p>${error.message}</p>`;
     console.error("Failed to update profile:", error);
-    alert("Failed to update profile. Please check the inputs are valid.");
+    showToast("Failed to update profile. Please check the inputs are valid.", "error");
 
     setTimeout(() => {
       errorUpdateMsg.innerHTML = "";

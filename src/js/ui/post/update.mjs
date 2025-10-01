@@ -3,9 +3,9 @@
  */
 
 import { updatePost } from "../../api/post/update";
+import { redirectWithToast, showToast } from "../component/toastService.mjs";
 
 const errorContainer = document.querySelector(".error-container");
-
 export async function onUpdatePost(event) {
   event.preventDefault();
   const id = event.target.id.value.trim();
@@ -44,10 +44,9 @@ export async function onUpdatePost(event) {
     }
 
     if (response.success === true) {
-      alert("Successfully updated post");
-      window.location.href = `/post/?post=${id}`;
+      redirectWithToast(`/post/?id=${id}`, "Successfully updated post", "success");
     } else {
-      alert("Something went wrong, failed to update post.");
+      showToast("Something went wrong, failed to update post.", "error");
     }
   } catch (error) {
     console.error("Error updating post:", error);

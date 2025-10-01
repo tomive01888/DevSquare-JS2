@@ -9,6 +9,7 @@
  */
 
 import { commentPost } from "../../api/post/comment";
+import { showToast } from "../component/toastService.mjs";
 
 export async function onCommentPost(event) {
   event.preventDefault();
@@ -16,7 +17,7 @@ export async function onCommentPost(event) {
   const comment = event.target.commentBox?.value.trim();
   if (!comment) {
     console.error("No comment provided.");
-    alert("Please enter a comment before posting.");
+    showToast("Please enter a comment before posting.");
     return;
   }
 
@@ -29,10 +30,10 @@ export async function onCommentPost(event) {
       location.reload();
     } else {
       console.warn("Comment was not posted.");
-      alert("Something went wrong. Comment was not posted. Try again!");
+      showToast("Something went wrong. Comment was not posted. Try again!", "error");
     }
   } catch (error) {
     console.error("An error occurred while posting the comment:", error);
-    alert("Something went wrong. Please try again later.");
+    showToast("Something went wrong. Please try again later.", "error");
   }
 }

@@ -24,6 +24,7 @@
 
 import { readPosts } from "../../api/post/read";
 import { renderPosts } from "./homePostsBuilder.mjs";
+import { showToast } from "./toastService.mjs";
 
 const urlSearch = new URLSearchParams(window.location.search);
 let currentPage = urlSearch.get("page") ? parseInt(urlSearch.get("page"), 10) : 1;
@@ -40,7 +41,7 @@ export async function initializeHome() {
     const { data, meta } = await readPosts(limit, currentPage);
 
     if (currentPage > meta.pageCount) {
-      alert("You have ventured too far. Taking you back to page 1.");
+      showToast("You have ventured too far. Taking you back to page 1.");
       window.location.href = "/";
     }
 

@@ -1,8 +1,9 @@
+import { login } from "../../api/auth/login.mjs";
+import { redirectWithToast } from "../component/toastService.mjs";
+
 /**
  * This function should pass data to the login function in api/auth and handle the response
  */
-import { login } from "../../api/auth/login.mjs";
-
 export async function onLogin(event) {
   event.preventDefault();
 
@@ -19,8 +20,7 @@ export async function onLogin(event) {
     localStorage.setItem("token", accessToken);
     localStorage.setItem("adminUser", JSON.stringify(userData));
 
-    alert("login successfull");
-    window.location.href = "/";
+    redirectWithToast("/", "Welcome! You are logged in.", "success");
   } catch (error) {
     console.error("Login failed:", error);
     const errorContainer = document.querySelector(".error-container");

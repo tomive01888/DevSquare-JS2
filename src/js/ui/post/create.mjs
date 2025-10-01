@@ -1,13 +1,13 @@
-/**
- * Passses data to the createPost function in api/post and handles the response
- * @visitNewPost allows user to visit their newly created post that gets enabled upon successful creation of new post.
- */
-
 import { createPost } from "../../api/post/create";
+import { showToast } from "../component/toastService.mjs";
 
 const visitNewPost = document.querySelector(".go-to-post");
 const errorContainer = document.querySelector(".error-container");
 
+/**
+ * Passses data to the createPost function in api/post and handles the response
+ * @visitNewPost allows user to visit their newly created post that gets enabled upon successful creation of new post.
+ */
 export async function onCreatePost(event) {
   event.preventDefault();
 
@@ -47,15 +47,15 @@ export async function onCreatePost(event) {
     }
 
     if (response.success === true) {
-      alert("Successfully made a new post!");
+      showToast("Successfully made a new post!", "success");
       const data = response;
       visitNewPost.disabled = false;
       visitNewPost.addEventListener("click", () => {
-        window.location.href = `/post/?post=${data.data.id}`;
+        window.location.href = `/post/?id=${data.data.id}`;
       });
     } else {
       visitNewPost.disabled = true;
-      alert("Something went wrong, failed to create post.");
+      showToast("Something went wrong, failed to create post.", "error");
     }
   } catch (error) {
     console.error("Error creating post:", error);

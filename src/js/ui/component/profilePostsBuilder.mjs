@@ -46,7 +46,7 @@ export function displayPostsListStyle(posts, name) {
     const goToPost = document.createElement("a");
     goToPost.classList.add("post-icon-base");
     goToPost.textContent = "👁️";
-    goToPost.href = `/post/?post=${post.id}`;
+    goToPost.href = `/post/?id=${post.id}`;
     postBtnWrapper.appendChild(goToPost);
 
     const userToCompare = compareUsers(post.owner);
@@ -57,7 +57,7 @@ export function displayPostsListStyle(posts, name) {
 
       const editBtn = document.createElement("a");
       editBtn.classList.add("post-icon-base");
-      editBtn.href = `/post/edit/?post=${post.id}`;
+      editBtn.href = `/post/edit/?id=${post.id}`;
       editBtn.appendChild(pencil);
       postBtnWrapper.appendChild(editBtn);
     }

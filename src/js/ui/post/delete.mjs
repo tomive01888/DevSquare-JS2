@@ -3,6 +3,7 @@
  */
 
 import { deletePost } from "../../api/post/delete";
+import { showToast } from "../component/toastService.mjs";
 
 export function onDeletePost(event) {
   event.preventDefault();
@@ -15,9 +16,9 @@ export function onDeletePost(event) {
     if (deleteThisPost) {
       deletePost(postDataId);
       window.location.href = "/";
-      alert("Post successfully deleted");
+      showToast("Post successfully deleted", "success");
     } else {
-      alert("Post deletion cancelled");
+      showToast("Post deletion cancelled", "error");
       return;
     }
   }

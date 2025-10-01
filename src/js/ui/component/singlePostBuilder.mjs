@@ -36,7 +36,7 @@ export function createPostContent(post) {
 
   const titleElement = document.createElement("h1");
   titleElement.textContent = title;
-  titleElement.classList.add("text-dynamic_h1", "break-normal", "hyphens-auto");
+  titleElement.classList.add("text-3xl", "break-normal", "hyphens-auto", "my-3");
 
   const postImg = document.createElement("img");
   postImg.src = media ? media.url : "";
@@ -134,7 +134,7 @@ export function createPostContent(post) {
 
     const editBtn = document.createElement("a");
     editBtn.classList.add("edit-btn");
-    editBtn.href = `/post/edit/?post=${id}`;
+    editBtn.href = `/post/edit/?id=${id}`;
     editBtn.textContent = "Edit post";
     editBtn.classList.add("base-button", "w-fit");
 
