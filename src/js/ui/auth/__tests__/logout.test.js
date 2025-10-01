@@ -1,5 +1,5 @@
 import { onLogout } from "../logout";
-import { describe, test, expect, beforeEach, vi } from "vitest";
+import { describe, test, expect, beforeEach } from "vitest";
 
 describe("onLogout", () => {
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe("onLogout", () => {
       };
     })();
 
-    Object.defineProperty(global, "localStorage", {
+    Object.defineProperty(globalThis, "localStorage", {
       value: localStorageMock,
     });
     localStorage.setItem("token", "mockedToken");

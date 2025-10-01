@@ -16,7 +16,6 @@ export function handleSectionDisplay(user) {
   usersPostTitle.textContent = `View ${user}'s posts:`;
 
   const radioButtons = document.querySelectorAll('input[name="section"]');
-  const labels = document.querySelectorAll("label[for]");
   const sections = document.querySelectorAll(".content-section");
 
   const updateSections = () => {

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { createPost } from "../create";
 
-global.fetch = vi.fn();
+globalThis.fetch = vi.fn();
 
 describe("createPost", () => {
   beforeEach(() => {

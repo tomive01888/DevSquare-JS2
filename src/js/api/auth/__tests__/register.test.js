@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { register } from "../register";
 
-global.fetch = vi.fn();
+globalThis.fetch = vi.fn();
 
 describe("register", () => {
   it("should return a user object when registration is successful", async () => {

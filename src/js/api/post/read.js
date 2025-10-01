@@ -7,7 +7,7 @@
  */
 // export async function readPost(id) {}
 
-import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from "../constants";
+import { API_SOCIAL_POSTS } from "../constants";
 import { headers } from "../headers";
 
 export async function readPost(id) {
@@ -45,7 +45,7 @@ export async function readPost(id) {
  */
 // export async function readPosts(limit = 12, page = 1, tag) {}
 
-export async function readPosts(limit = 12, page = 1, tag) {
+export async function readPosts(limit = 12, page = 1) {
   const params = new URLSearchParams({ limit: limit, page: page, _author: "true", _comments: "true" }); // { limit: limit, page: page, _author: "true", _comments: "true", _tag : tag }
 
   const fetchUrl = `${API_SOCIAL_POSTS}/?${params.toString()}`;

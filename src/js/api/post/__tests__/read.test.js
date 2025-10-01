@@ -8,7 +8,7 @@ describe("API Functions", () => {
 
   test("readPost fetches a single post by ID", async () => {
     const mockData = { id: 1, title: "Test Post" };
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockData),
@@ -20,7 +20,7 @@ describe("API Functions", () => {
   });
 
   test("readPost throws error if fetch fails", async () => {
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: false,
       })
@@ -31,7 +31,7 @@ describe("API Functions", () => {
 
   test("readPosts fetches posts with pagination", async () => {
     const mockData = { data: [{ id: 1, title: "Test Post" }], meta: {} };
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockData),
@@ -43,7 +43,7 @@ describe("API Functions", () => {
   });
 
   test("readPosts throws error if fetch fails", async () => {
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: false,
       })
@@ -54,7 +54,7 @@ describe("API Functions", () => {
 
   test("readPostsByUser fetches posts by username", async () => {
     const mockData = { data: [{ id: 1, title: "Test Post" }], meta: {} };
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockData),
@@ -66,7 +66,7 @@ describe("API Functions", () => {
   });
 
   test("readPostsByUser throws error if fetch fails", async () => {
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: false,
       })

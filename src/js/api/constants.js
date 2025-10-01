@@ -1,19 +1,11 @@
-// Use Postman, or JavaScript to get your API key
-// In Workflow we will learn how to secure this information
-export const API_KEY = "4642c20d-b0b6-45dd-85a2-4e43bf57c602";
+export const API_BASE = import.meta.env.VITE_API_KEY;
 
-export const API_BASE = "https://v2.api.noroff.dev";
-
+// Auth endpoints
 export const API_AUTH = `${API_BASE}/auth`;
-
 export const API_AUTH_LOGIN = `${API_AUTH}/login`;
-
 export const API_AUTH_REGISTER = `${API_AUTH}/register`;
 
-export const API_AUTH_KEY = `${API_AUTH}/create-api-key`;
-
+// Social endpoints
 export const API_SOCIAL = `${API_BASE}/social`;
-
 export const API_SOCIAL_POSTS = `${API_SOCIAL}/posts`;
-
 export const API_SOCIAL_PROFILES = `${API_SOCIAL}/profiles`;
