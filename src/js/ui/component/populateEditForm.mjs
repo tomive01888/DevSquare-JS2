@@ -5,7 +5,6 @@
  * the post's current title, body, media URL, media alt text, and tags. It is used when loading
  * a post into the edit form for modification.
  */
-
 export async function populateEditForm(postData) {
   document.forms.editPost.id.value = postData.data.id;
   document.forms.editPost.title.value = postData.data.title;

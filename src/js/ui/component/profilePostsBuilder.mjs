@@ -1,3 +1,5 @@
+import { compareUsers } from "../../utilities/compareProfiles.mjs";
+
 /**
  * Displays a list of posts in a specified container with options to view or edit each post.
  *
@@ -8,12 +10,9 @@
  * whether the currently logged-in user matches the profile being viewed. The link redirects the user to
  * the appropriate page when clicked.
  */
-
-import { compareUsers } from "../../utilities/compareProfiles.mjs";
-
 export function displayPostsListStyle(posts, name) {
   const postContainer = document.getElementById("profile-user-posts");
-  postContainer.innerHTML = "";
+  postContainer.replaceChildren();
 
   if (!posts || posts.length === 0) {
     postContainer.textContent = `${name} has not created any posts yet.`;

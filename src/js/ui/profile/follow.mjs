@@ -1,3 +1,7 @@
+import { followOrUnfollow } from "../../api/profile/follow";
+import { readProfile } from "../../api/profile/read";
+import { createProfileLink } from "../component/profileCardsBuilder.mjs";
+
 /**
  * Updates the follow button state and functionality.
  * Toggles between "Follow" and "Unfollow" based on the current follow state and handles errors.
@@ -5,11 +9,6 @@
  * @param {boolean} isFollowing - Current follow state, true if the user is following the profile.
  * @param {string} profileName - The username of the profile being followed or unfollowed.
  */
-
-import { followOrUnfollow } from "../../api/profile/follow";
-import { readProfile } from "../../api/profile/read";
-import { createProfileLink } from "../component/profileCardsBuilder.mjs";
-
 export function updateFollowButton(isFollowing, profileName) {
   const followButton = document.getElementById("follow-button");
   const followMsg = document.getElementById("follow-msg");

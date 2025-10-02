@@ -1,3 +1,5 @@
+import { API_KEY } from "./constants.mjs";
+
 /**
  * Generates HTTP headers for API requests, allowing conditional inclusion of API key,
  * authorization token, and content type.
@@ -8,9 +10,6 @@
  * @param {boolean} [options.contentType=false] - Set to `true` to include "Content-Type: application/json" in the headers.
  * @returns {Headers} A Headers instance with the specified headers included.
  */
-
-import { API_KEY } from "./constants.mjs";
-
 export function headers({ apiKey = false, authToken = false, contentType = false } = {}) {
   const headers = new Headers();
 

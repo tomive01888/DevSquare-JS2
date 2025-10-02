@@ -5,7 +5,6 @@
  * @param {Array} comments - An array of comment objects, where each object contains properties such as `id`, `replyToId`, `content`, etc.
  * @returns {Array} - An array of main comments (comments that do not reply to another comment).
  */
-
 export function getMainComments(comments) {
   return comments.filter((comment) => comment.replyToId === null);
 }

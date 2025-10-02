@@ -7,7 +7,6 @@
  *                   - "{X} hours ago" for hours
  *                   - "{X} minutes ago" for minutes
  */
-
 export function timeSinceCreated(postTimestamp) {
   const postDate = new Date(postTimestamp);
   const now = new Date();

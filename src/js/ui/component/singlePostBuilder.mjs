@@ -1,3 +1,6 @@
+import { timeSinceCreated } from "../../utilities/timeSinceCreated.mjs";
+import { onDeletePost } from "../post/delete.mjs";
+
 /**
  * Renders and structures HTML elements to display a post's content including title, body, image, author details, tags, and timestamps.
  *
@@ -8,31 +11,18 @@
  *
  * @param {Object} post - The data object containing the post details to be displayed.
  */
-
-import { timeSinceCreated } from "../../utilities/timeSinceCreated.mjs";
-import { onDeletePost } from "../post/delete.mjs";
-
 export function createPostContent(post) {
   const { id, title, body, media, author, tags, created } = post;
-
   const timeSince = timeSinceCreated(created);
 
   const postContainer = document.getElementById("post-container");
 
+  postContainer.replaceChildren();
+
   const postSection = document.createElement("section");
   postSection.id = "post-content";
-  postSection.classList.add(
-    "border-2",
-    "rounded-md",
-    "w-full",
-    "shadow-lg",
-    "bg-neutral-100",
-    "transition-padding",
-    "duration-500",
-    "ease-in",
-    "p-2",
-    "md:p-4"
-  );
+  postSection.className =
+    "border-1 rounded-md w-full shadow-lg bg-neutral-100 transition-padding duration-500 ease-in p-2 md:p-4";
 
   const titleElement = document.createElement("h1");
   titleElement.textContent = title;
@@ -59,13 +49,25 @@ export function createPostContent(post) {
   bodyDiv.appendChild(bodyParagraph);
 
   const tagsElement = document.createElement("p");
-  tagsElement.innerHTML = `Tags: <b> ${tags.length > 0 ? tags.join(", ") : "No tags available"}</b>`;
+  const tagsLabel = document.createTextNode("Tags: ");
+  const tagsBold = document.createElement("b");
+  tagsBold.textContent = tags.length > 0 ? tags.join(", ") : "No tags available";
+  tagsElement.appendChild(tagsLabel);
+  tagsElement.appendChild(tagsBold);
 
   const createdElement = document.createElement("p");
-  createdElement.innerHTML = `Date: <b> ${created.slice(0, 10)}</b>`;
+  const createdLabel = document.createTextNode("Date: ");
+  const createdBold = document.createElement("b");
+  createdBold.textContent = created.slice(0, 10);
+  createdElement.appendChild(createdLabel);
+  createdElement.appendChild(createdBold);
 
   const timeSinceElement = document.createElement("p");
-  timeSinceElement.innerHTML = `Created since: <b>${timeSince} </b>`;
+  const timeLabel = document.createTextNode("Created since: ");
+  const timeBold = document.createElement("b");
+  timeBold.textContent = timeSince;
+  timeSinceElement.appendChild(timeLabel);
+  timeSinceElement.appendChild(timeBold);
 
   postSection.appendChild(titleElement);
   postSection.appendChild(postImg);
@@ -111,20 +113,10 @@ export function createPostContent(post) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete post";
-    deleteBtn.classList.add(
-      "w-fit",
-      "bg-gray-500",
-      "text-white",
-      "p-2",
-      "rounded-md",
-      "cursor-pointer",
-      "hover:bg-red-500",
-      "transition-colors",
-      "duration-700"
-    );
+    deleteBtn.className =
+      "w-fit font-semibold bg-gray-500 text-white p-2 rounded-md cursor-pointer hover:bg-red-500 transition-colors duration-700";
     deleteBtn.id = "delete-btn";
     deleteBtn.type = "button";
-    deleteBtn.setAttribute("data-id", id);
     deleteBtn.addEventListener("click", (event) => {
       const deletePost = confirm("Do you really want to delete this post?");
       if (!deletePost) return;
@@ -133,7 +125,7 @@ export function createPostContent(post) {
     });
 
     const editBtn = document.createElement("a");
-    editBtn.classList.add("edit-btn");
+    editBtn.className = "edit-btn font-semibold";
     editBtn.href = `/post/edit/?id=${id}`;
     editBtn.textContent = "Edit post";
     editBtn.classList.add("base-button", "w-fit");
@@ -149,6 +141,4 @@ export function createPostContent(post) {
 
   postContainer.appendChild(postSection);
   postContainer.appendChild(authorSection);
-
-  return;
 }

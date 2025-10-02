@@ -10,7 +10,7 @@
     @apply w-full max-w-[70em] min-h-[100vh] mx-auto p-2 lg:p-4 flex flex-col items-center gap-4 mt-20;
   }
   .form-use {
-    @apply w-full max-w-5xl min-h-screen mx-auto p-2 md:p-4 flex flex-col items-center justify-center mt-16;
+    @apply w-full max-w-5xl min-h-[75vh] mx-auto p-2 md:p-4 flex flex-col items-center justify-start mt-16;
   }
 
   .post-icon-base {

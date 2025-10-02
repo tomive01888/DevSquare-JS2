@@ -1,3 +1,6 @@
+import { API_SOCIAL_PROFILES } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Fetches a user's profile data, including their posts, following, and followers.
  *
@@ -9,10 +12,6 @@
  *
  * @throws {Error} Throws an error with the server's status code and message if the fetch fails.
  */
-
-import { API_SOCIAL_PROFILES } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function readProfile(username) {
   const params = new URLSearchParams({ _posts: true, _following: true, _followers: true });
   const fetchUrl = `${API_SOCIAL_PROFILES}/${username}/?${params.toString()}`;
@@ -34,5 +33,3 @@ export async function readProfile(username) {
     throw error;
   }
 }
-
-// export async function readProfiles(limit, page) {}

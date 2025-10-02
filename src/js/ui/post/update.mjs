@@ -1,9 +1,9 @@
+import { updatePost } from "../../api/post/update";
+import { redirectWithToast, showToast } from "../component/toastService.mjs";
+
 /**
  * Passses data to the createPost function in api/post and handles the response
  */
-
-import { updatePost } from "../../api/post/update";
-import { redirectWithToast, showToast } from "../component/toastService.mjs";
 
 const errorContainer = document.querySelector(".error-container");
 export async function onUpdatePost(event) {
@@ -21,7 +21,7 @@ export async function onUpdatePost(event) {
     const response = await updatePost(id, { title, body, tags, media });
 
     if (response.success === false) {
-      errorContainer.innerHTML = "";
+      errorContainer.replaceChildren();
       response.errors.forEach((error) => {
         const errorMsg = document.createElement("div");
         errorMsg.classList.add("error-message", "relative");
@@ -32,7 +32,11 @@ export async function onUpdatePost(event) {
         const closeBtn = document.createElement("button");
         closeBtn.type = "button";
         closeBtn.classList.add("absolute", "right-2", "bottom-[25%]");
-        closeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
+
+        const icon = document.createElement("i");
+        icon.classList.add("fa-solid", "fa-x");
+
+        closeBtn.appendChild(icon);
         closeBtn.addEventListener("click", () => {
           errorMsg.remove();
         });

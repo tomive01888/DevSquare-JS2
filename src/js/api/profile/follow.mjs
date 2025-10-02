@@ -1,3 +1,6 @@
+import { API_SOCIAL_PROFILES } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Sends a follow or unfollow request to the API for a given profile name.
  *
@@ -7,10 +10,6 @@
  * @throws {Error} Throws an error if the action is invalid or if the request fails.
  * @returns {Promise<Object>} The response data from the API if the request is successful.
  */
-
-import { API_SOCIAL_PROFILES } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function followOrUnfollow(name, action) {
   if (!action || (action.toLowerCase() !== "follow" && action.toLowerCase() !== "unfollow")) {
     throw new Error("Invalid action. Please use 'follow' or 'unfollow'.");

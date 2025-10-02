@@ -8,11 +8,20 @@
  * This form is made to be used on a user's own profile page. It includes text inputs, a textarea for the bio,
  * and placeholders to guide the user. Additionally, the function appends an error message container for validation feedback.
  */
-
 export function createUpdateProfileForm() {
   const section = document.createElement("section");
   section.id = "update-profile";
-  section.classList.add("mt-xl", "w-full", "shadow-lg", "p-4", "border-gray", "bg-neutral-100", "rounded-lg");
+  section.classList.add(
+    "mt-xl",
+    "w-full",
+    "max-w-xl",
+    "shadow-lg",
+    "p-4",
+    "border-gray",
+    "bg-neutral-100",
+    "rounded-lg",
+    "mb-16"
+  );
 
   const h4 = document.createElement("h4");
   h4.textContent = "Update profile";

@@ -1,3 +1,17 @@
+import { readPosts } from "../../api/post/read";
+import { renderPosts } from "./homePostsBuilder.mjs";
+import { redirectWithToast } from "./toastService.mjs";
+
+const urlSearch = new URLSearchParams(window.location.search);
+let currentPage = urlSearch.get("page") ? parseInt(urlSearch.get("page"), 10) : 1;
+
+if (isNaN(currentPage) || currentPage < 1) {
+  currentPage = 1;
+}
+
+const limit = 12;
+let metaData = null;
+
 /**
  * @module pagination
  *
@@ -21,21 +35,6 @@
  * This function calls the `updatePaginationControls` function to adjust the UI based on current pagination state.
  *
  */
-
-import { readPosts } from "../../api/post/read";
-import { renderPosts } from "./homePostsBuilder.mjs";
-import { redirectWithToast } from "./toastService.mjs";
-
-const urlSearch = new URLSearchParams(window.location.search);
-let currentPage = urlSearch.get("page") ? parseInt(urlSearch.get("page"), 10) : 1;
-
-if (isNaN(currentPage) || currentPage < 1) {
-  currentPage = 1;
-}
-
-const limit = 12;
-let metaData = null;
-
 export async function initializeHome() {
   try {
     const { data, meta } = await readPosts(limit, currentPage);

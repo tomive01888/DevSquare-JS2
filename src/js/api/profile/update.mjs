@@ -1,3 +1,6 @@
+import { API_SOCIAL_PROFILES } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Updates a user's profile data, including their avatar, banner, and bio information.
  *
@@ -17,10 +20,6 @@
  *
  * @throws {Error} Throws an error with the server's status code and message if the update fails.
  */
-
-import { API_SOCIAL_PROFILES } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function updateProfile(username, { avatar, banner, bio }) {
   const fetchUrl = `${API_SOCIAL_PROFILES}/${username}`;
 

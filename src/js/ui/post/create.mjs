@@ -24,7 +24,7 @@ export async function onCreatePost(event) {
     const response = await createPost({ title, body, tags, media });
 
     if (response.success === false) {
-      errorContainer.innerHTML = "";
+      errorContainer.replaceChildren();
       response.errors.forEach((error) => {
         const errorMsg = document.createElement("div");
         errorMsg.classList.add("error-message", "relative");
@@ -35,7 +35,12 @@ export async function onCreatePost(event) {
         const closeBtn = document.createElement("button");
         closeBtn.type = "button";
         closeBtn.classList.add("absolute", "right-2", "bottom-[25%]");
-        closeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
+
+        const icon = document.createElement("i");
+        icon.classList.add("fa-solid", "fa-x");
+
+        closeBtn.appendChild(icon);
+
         closeBtn.addEventListener("click", () => {
           errorMsg.remove();
         });

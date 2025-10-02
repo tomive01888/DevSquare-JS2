@@ -1,3 +1,6 @@
+import { updateProfile } from "../../api/profile/update";
+import { showToast } from "../component/toastService.mjs";
+
 /**
  * Handles the profile update form submission and sends the updated data to the server.
  *
@@ -9,10 +12,6 @@
  *
  * @param {Event} event - The event object representing the form submission.
  */
-
-import { updateProfile } from "../../api/profile/update";
-import { showToast } from "../component/toastService.mjs";
-
 export async function onUpdateProfile(event) {
   event.preventDefault();
 
@@ -63,12 +62,12 @@ export async function onUpdateProfile(event) {
     }
   } catch (error) {
     const errorUpdateMsg = document.getElementById("error-update-msg");
-    errorUpdateMsg.innerHTML = `<p>${error.message}</p>`;
+    errorUpdateMsg.textContent = error.message;
     console.error("Failed to update profile:", error);
     showToast("Failed to update profile. Please check the inputs are valid.", "error");
 
     setTimeout(() => {
-      errorUpdateMsg.innerHTML = "";
+      errorUpdateMsg.replaceChildren();
     }, 8000);
   }
 }

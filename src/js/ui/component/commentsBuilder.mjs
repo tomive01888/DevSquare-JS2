@@ -60,7 +60,12 @@ export async function createComment(comments) {
 
     const commentParagraph = document.createElement("p");
     commentParagraph.classList.add("mt-2");
-    commentParagraph.innerHTML = body.replace(/\n/g, "<br>");
+    body.split("\n").forEach((line, index) => {
+      commentParagraph.appendChild(document.createTextNode(line));
+      if (index < body.split("\n").length - 1) {
+        commentParagraph.appendChild(document.createElement("br"));
+      }
+    });
 
     commentWrapper.appendChild(profileCommenter);
     commentWrapper.appendChild(commentParagraph);

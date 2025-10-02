@@ -1,3 +1,6 @@
+import { API_SOCIAL_POSTS } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Updates an existing post by sending updated data to the API.
  *
@@ -12,10 +15,6 @@
  * @returns {Promise<Object>} The updated post data from the API.
  * @throws {Error} If the API request fails.
  */
-
-import { API_SOCIAL_POSTS } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function updatePost(id, { title, body, tags, media }) {
   const fetchUrl = `${API_SOCIAL_POSTS}/${id}`;
 

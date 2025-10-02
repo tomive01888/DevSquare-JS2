@@ -1,3 +1,6 @@
+import { API_SOCIAL_POSTS } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Posts a comment to a specific post by its ID.
  *
@@ -8,10 +11,6 @@
  * @returns {Promise<Object>} The response data from the server.
  * @throws {Error} If the request fails or the response is invalid.
  */
-
-import { API_SOCIAL_POSTS } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function commentPost(id, comment) {
   const fetchUrl = `${API_SOCIAL_POSTS}/${id}/comment`;
   const bodyComment = { body: comment, replyToId: null };

@@ -1,21 +1,22 @@
-/**
- * Sends request to deletePost with parameter ID.
- */
-
 import { deletePost } from "../../api/post/delete";
 import { redirectWithToast, showToast } from "../component/toastService.mjs";
 
+/**
+ * Sends request to deletePost with parameter ID.
+ */
 export function onDeletePost(event) {
   event.preventDefault();
 
-  const postDataId = event.target.getAttribute("data-id");
+  const postId = new URLSearchParams(window.location.search).get("id");
 
-  if (postDataId) {
+  if (postId) {
     const deleteThisPost = confirm("Wanna delete this post?");
 
     if (deleteThisPost) {
-      deletePost(postDataId);
-      redirectWithToast("/", "Post successfully deleted", "success");
+      deletePost(postId);
+      setTimeout(() => {
+        redirectWithToast("/", "Post successfully deleted", "success");
+      }, 500);
     } else {
       showToast("Post deletion cancelled", "error");
       return;

@@ -8,7 +8,6 @@ import { showToast } from "../ui/component/toastService.mjs";
  * local storage. If the token is not present, the user is notified that they must be
  * logged in to view the page and is redirected to the login page.
  */
-
 export function authGuard() {
   if (!localStorage.token) {
     displayRestrictedCoverUp();

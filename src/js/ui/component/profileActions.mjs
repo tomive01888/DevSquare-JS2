@@ -1,3 +1,15 @@
+import { readProfile } from "../../api/profile/read";
+import { compareUsers } from "../../utilities/compareProfiles.mjs";
+import { checkFollowingStatus } from "../../utilities/isFollowingUser.mjs";
+import { handleSectionDisplay } from "../../utilities/profileSectionHandler.mjs";
+import { updateFollowButton } from "../profile/follow.mjs";
+import { createProfileLink } from "./profileCardsBuilder.mjs";
+import { displayPostsListStyle } from "./profilePostsBuilder.mjs";
+import { createUpdateProfileForm } from "./profileUpdateFormBuilder.mjs";
+import { onUpdateProfile } from "../profile/update.mjs";
+import { createProfileHero } from "./profileHeroBuilder.mjs";
+import { populateProfileInfo } from "./populateProfilePage.mjs";
+
 /**
  * Initializes the profile page by fetching user data, rendering profile information, and setting up interactions.
  *
@@ -16,31 +28,26 @@
  * @returns {Promise<void>} - Resolves when the profile page is fully initialized.
  *
  */
-
-import { readProfile } from "../../api/profile/read";
-import { compareUsers } from "../../utilities/compareProfiles.mjs";
-import { checkFollowingStatus } from "../../utilities/isFollowingUser.mjs";
-import { handleSectionDisplay } from "../../utilities/profileSectionHandler.mjs";
-import { updateFollowButton } from "../profile/follow.mjs";
-import { populateProfileInfo } from "./populateProfilePage.mjs";
-import { createProfileLink } from "./profileCardsBuilder.mjs";
-import { displayPostsListStyle } from "./profilePostsBuilder.mjs";
-import { createUpdateProfileForm } from "./profileUpdateFormBuilder.mjs";
-import { onUpdateProfile } from "../profile/update.mjs";
-
 export async function initProfilePage(user) {
   const data = await readProfile(user);
   const { posts, following, followers, ...generalInfo } = data;
 
   populateProfileInfo(generalInfo);
 
+  const mainElement = document.getElementById("profile-page");
+  const oldSection = document.getElementById("hero-profile");
+  if (oldSection) oldSection.remove();
+
+  const profileHero = createProfileHero(generalInfo);
+  mainElement.prepend(profileHero);
+
   const comparingUsers = compareUsers(user);
 
   if (comparingUsers === true) {
     document.getElementById("follow").classList.toggle("hidden");
     document.getElementById("start-new-post").classList.toggle("hidden");
-    const mainElement = document.getElementById("profile-page");
     document.getElementById("anchor-edit").classList.toggle("hidden");
+
     const newSection = createUpdateProfileForm();
     mainElement.appendChild(newSection);
 
@@ -51,12 +58,12 @@ export async function initProfilePage(user) {
       console.error("Form not found: updateProfile");
     }
   }
+
   const isFollowing = checkFollowingStatus(followers);
   updateFollowButton(isFollowing, generalInfo.name);
   createProfileLink(followers, `${generalInfo.name} currently has no followers`, "followers");
   createProfileLink(following, `${generalInfo.name} is not following anybody currently`, "following");
 
   handleSectionDisplay(generalInfo.name);
-
   displayPostsListStyle(posts, generalInfo.name);
 }

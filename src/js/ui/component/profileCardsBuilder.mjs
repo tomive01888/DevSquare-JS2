@@ -9,7 +9,7 @@
 export async function createProfileLink(profiles, emptyMessage, container) {
   const targetContainer = document.getElementById(container === "followers" ? "followers-list" : "following-list");
 
-  targetContainer.innerHTML = "";
+  targetContainer.replaceChildren();
 
   if (!targetContainer) {
     console.error(`Container with ID "${container === "followers" ? "followers-list" : "following-list"}" not found.`);

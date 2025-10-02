@@ -1,3 +1,6 @@
+import { API_SOCIAL_POSTS } from "../constants.mjs";
+import { headers } from "../headers.mjs";
+
 /**
  * Creates a new post by sending the data to the API.
  *
@@ -13,10 +16,6 @@
  */
 // export async function createPost({ title, body, tags, media }) {}
 // src/js/api/post.js
-
-import { API_SOCIAL_POSTS } from "../constants.mjs";
-import { headers } from "../headers.mjs";
-
 export async function createPost({ title, body, tags, media }) {
   const fetchUrl = API_SOCIAL_POSTS;
   try {

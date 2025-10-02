@@ -1,9 +1,8 @@
+import { register } from "../../api/auth/register";
+
 /**
  * This function should pass data to the register function in api/auth and handle the response
  */
-
-import { register } from "../../api/auth/register";
-
 export async function onRegister(event) {
   event.preventDefault();
 

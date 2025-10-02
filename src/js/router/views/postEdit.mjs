@@ -5,7 +5,7 @@ import { setLogoutListener } from "../../ui/global/logout.mjs";
 import { goToProfilePage } from "../../ui/global/goMyProfile.mjs";
 import { onDeletePost } from "../../ui/post/delete.mjs";
 import { populateEditForm } from "../../ui/component/populateEditForm.mjs";
-import { showToast } from "../../ui/component/toastService.mjs";
+import { redirectWithToast } from "../../ui/component/toastService.mjs";
 
 authGuard();
 setLogoutListener();
@@ -15,7 +15,9 @@ const form = document.forms.editPost;
 form.addEventListener("submit", onUpdatePost);
 
 const urlSearch = new URLSearchParams(window.location.search);
-const postId = urlSearch.get("post");
+const postId = urlSearch.get("id");
+
+document.title = `Editing ${postId} - DevSquare`;
 
 const headTitle = document.getElementById("title-post");
 headTitle.textContent = `DevSquare - Editing post ${postId}`;
@@ -32,8 +34,7 @@ async function initEditPost(id) {
     await populateEditForm(postData);
   } catch (error) {
     console.error("Error fetching post data:", error);
-    showToast("This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
-    window.location.href = "/";
+    redirectWithToast("/", "This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
   }
 }
 

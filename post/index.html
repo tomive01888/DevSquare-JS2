@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevSquare - Noroff FED2 JS2 CA</title>
-    <link rel="icon" href="/images/DS2.png" />
+    <title>DevSquare</title>
+    <link rel="icon" href="/images/ds2.png" />
     <script type="module" src="/src/app.mjs"></script>
   </head>
   <body class="body-custom">
@@ -13,7 +13,7 @@
         class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
       >
         <a href="/" class="hidden md:block">
-          <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="h-10" />
+          <img src="/images/devsquare2.png" alt="Dev Square Logo" class="h-10" />
         </a>
         <nav class="flex items-center gap-2">
           <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
@@ -23,24 +23,38 @@
             href="/profile/"
             >My Profile</a
           >
-          <button type="button" id="logout-button" class="px-4 py-2 text-white font-bold base-button">Logout</button>
+          <button type="button" id="logout-button" class="px-4 py-2 font-bold base-button">Logout</button>
         </nav>
       </div>
     </header>
 
     <main class="regular-use">
-      <div id="post-container" class="w-full flex flex-col gap-8"></div>
+      <div id="post-container" class="w-full flex flex-col gap-8">
+        <div class="w-full h-[70vh] animate-pulse bg-white rounded-sm flex justify-center items-center">
+          <div
+            class="inline-block h-16 w-16 animate-spin rounded-full border-8 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-black"
+            role="status"
+          >
+            <span
+              class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+              >Loading...</span
+            >
+          </div>
+        </div>
 
-      <section id="comment-section" class="w-full">
-        <form name="comment" id="commentBox" class="mt-4">
-          <label for="comment">Comment here:</label>
-          <textarea name="commentBox" id="comment" maxlength="280" class="form-textarea"></textarea>
-          <button class="base-button mb-4" type="submit">Comment</button>
-        </form>
+        <div class="w-36 py-5 rounded bg-gray-700 text-white text-center font-semibold">User</div>
+      </div>
+
+      <section class="w-full">
+        <div id="comment-section" class="w-full">
+          <div class="w-full h-36 bg-white rounded-md"></div>
+        </div>
         <div
           id="comments-area"
-          class="flex flex-col gap-4 mb-20 p-2 md:p-4 outline-gray-300 rounded-md bg-neutral-100/80 transition-padding duration-500 eas-in"
-        ></div>
+          class="flex flex-col min-h-10 gap-4 mb-20 p-2 mt-13 md:p-4 outline-gray-300 rounded-md bg-neutral-100/80 transition-padding duration-500 eas-in"
+        >
+          No commments on this thread.
+        </div>
       </section>
     </main>
 
@@ -49,7 +63,7 @@
         <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
         <ul class="list-none">
           <li>
-            <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+            <img src="/images/devsquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
           </li>
           <li class="break-words">Group project</li>
           <li class="break-words">Created by Taner, Senbet and Tom Andre</li>

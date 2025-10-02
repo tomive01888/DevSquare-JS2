@@ -10,7 +10,6 @@ goToProfilePage();
 const urlSearch = new URLSearchParams(window.location.search);
 const profileName = urlSearch.get("profile");
 
-const headTitle = document.getElementById("headTitle");
-headTitle.textContent = `DevSquare - ${profileName}'s page`;
+document.title = `${profileName}'s page - DevSquare`;
 
 initProfilePage(profileName);

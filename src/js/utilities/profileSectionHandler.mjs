@@ -10,7 +10,6 @@
  * - Restores the selected radio button and section visibility on page load.
  * - Updates a user-specific title element with the provided username.
  */
-
 export function handleSectionDisplay(user) {
   const usersPostTitle = document.getElementById("user-posts");
   usersPostTitle.textContent = `View ${user}'s posts:`;

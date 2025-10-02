@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title id="headTitle">DevSquare - A social student platform</title>
-    <link rel="icon" href="/images/DS2.png" />
+    <link rel="icon" href="/images/ds2.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script type="module" src="/src/app.mjs"></script>
   </head>
@@ -14,14 +14,11 @@
         class="max-w-[65em] mx-auto w-full flex justify-between items-center md:flex-row flex-col md:justify-between md:items-center md:gap-5"
       >
         <a href="/" class="hidden md:block">
-          <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="h-10 bg-cover" />
+          <img src="/images/devsquare2.png" alt="Dev Square Logo" class="h-10 w-auto" />
         </a>
         <nav class="flex items-center gap-2">
           <a class="deco-line text-center w-24 text-lg text-black no-underline hover:underline" href="/">Home</a>
-          <a
-            class="deco-line text-center w-24 text-lg text-black no-underline hover:underline"
-            id="go-profile-btn"
-            href="/profile/"
+          <a class="deco-line text-center w-24 text-lg text-black underline" id="go-profile-btn" href="/profile/"
             >My Profile</a
           >
           <button type="button" id="logout-button" class="px-4 py-2 font-semibold base-button">Logout</button>
@@ -29,35 +26,37 @@
       </div>
     </header>
 
-    <section
-      id="hero-profile"
-      class="mt-14 w-full max-w-screen-xl rounded-lg bg-no-repeat bg-center bg-cover relative min-h-[38em]"
-    >
-      <div
-        class="absolute bg-black/55 sm:w-full sm:max-w-[25em] h-48 left-2 right-2 sm:left-1/2 top-1/2 -translate-y-1/2 sm:-translate-x-1/2 transform rounded-md flex justify-center items-center gap-2"
-      >
-        <img id="avatar" src="" alt="" class="w-24 h-24 bg-cover rounded-md" />
-        <h1 id="profile-name" class="text-xl text-white font-semibold"></h1>
-        <a
-          href="#update-profile"
-          id="anchor-edit"
-          class="hidden absolute top-2 right-2 text-[var(--primary-color)] font-semibold hover:underline"
-          >edit profile</a
-        >
-
-        <div
-          class="flex flex-col sm:flex-row items-center justify-evenly absolute -bottom-28 sm:-bottom-14 w-full sm:max-w-[25em] p-2 bg-black/50 rounded-md text-black font-semibold"
-        >
-          <p id="followers-count" class="text-white"></p>
-          <p id="following-count" class="text-white"></p>
-          <p id="posts-count" class="text-white"></p>
-        </div>
-      </div>
-    </section>
-
     <main class="regular-use" id="profile-page">
+      <section
+        id="hero-profile"
+        class="mt-14 w-full max-w-screen-xl rounded-lg bg-no-repeat bg-center bg-cover relative min-h-[38em]"
+      >
+        <div id="hero-profile-skeleton" class="w-full max-w-screen-xl rounded-lg relative min-h-[38em] bg-black/40">
+          <div
+            class="absolute bg-black/55 sm:w-full sm:max-w-[25em] h-48 left-2 right-2 sm:left-1/2 top-1/2 -translate-y-1/2 sm:-translate-x-1/2 transform rounded-md flex justify-center items-center gap-2 animate-pulse"
+          >
+            <!-- Avatar skeleton -->
+            <div class="w-24 h-24 bg-gray-700 rounded-md"></div>
+
+            <!-- Name skeleton -->
+            <div class="w-32 h-6 bg-gray-700 rounded-md"></div>
+
+            <!-- Edit link skeleton (optional, hidden) -->
+            <div class="hidden absolute top-2 right-2 w-16 h-4 bg-gray-600 rounded-md"></div>
+
+            <!-- Stats container -->
+            <div
+              class="flex flex-col sm:flex-row items-center justify-evenly absolute -bottom-28 sm:-bottom-14 w-full sm:max-w-[25em] p-2 bg-black/50 rounded-md gap-2"
+            >
+              <div class="w-20 h-4 bg-gray-700 rounded-md"></div>
+              <div class="w-20 h-4 bg-gray-700 rounded-md"></div>
+              <div class="w-20 h-4 bg-gray-700 rounded-md"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div
-        class="m-auto bg-neutral-100 relative w-full max-w-[40em] h-52 border-gray-400 rounded-lg p-5 flex justify-center items-center shadow-lg"
+        class="mx-auto my-4 bg-neutral-100 relative w-full max-w-xl h-52 border-gray-400 rounded-lg p-5 flex justify-center items-center shadow-lg"
       >
         <p class="absolute top-5 left-5">Bio:</p>
         <p id="bio-text"></p>
@@ -97,7 +96,17 @@
             <div
               class="p-2 border-black h-96 overflow-y-scroll bg-neutral-300 rounded-sm transition-[height] duration-400 ease-in-out;"
             >
-              <div id="followers-list" class="flex flex-col content-start gap-2"></div>
+              <div id="followers-list" class="flex flex-col content-start gap-2">
+                <div
+                  class="inline-block place-self-center h-16 w-16 animate-spin rounded-full border-8 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-black"
+                  role="status"
+                >
+                  <span
+                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                    >Loading...</span
+                  >
+                </div>
+              </div>
             </div>
           </article>
           <article>
@@ -105,7 +114,17 @@
             <div
               class="p-2 border-gray-600 h-96 overflow-y-scroll bg-neutral-300 rounded-sm transition-[height] duration-400 ease-in-out;"
             >
-              <div id="following-list" class="flex flex-col content-start gap-2"></div>
+              <div id="following-list" class="flex flex-col content-start gap-2">
+                <div
+                  class="inline-block place-self-center h-16 w-16 animate-spin rounded-full border-8 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-black"
+                  role="status"
+                >
+                  <span
+                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                    >Loading...</span
+                  >
+                </div>
+              </div>
             </div>
           </article>
         </section>
@@ -118,7 +137,7 @@
         </section>
       </div>
 
-      <div id="start-new-post" class="hidden w-full place-items-center">
+      <div id="start-new-post" class="hidden w-full place-items-center my-8">
         <a href="/post/create/" class="base-button block max-w-[80%] font-semibold w-full shadow-lg"
           >Start creating a new post now!</a
         >
@@ -130,7 +149,7 @@
         <img src="/images/noroff-logo.png" alt="noroff logo" class="w-full max-w-[140px]" />
         <ul class="list-none">
           <li>
-            <img src="/images/DevSquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
+            <img src="/images/devsquare2.png" alt="Dev Square Logo" class="w-full max-w-[130px]" />
           </li>
           <li class="break-words">Group project</li>
           <li class="break-words">Created by Taner, Senbet and Tom Andre</li>

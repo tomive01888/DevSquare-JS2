@@ -2,11 +2,11 @@ import { readPost } from "../../api/post/read";
 import { createComment } from "../../ui/component/commentsBuilder.mjs";
 import { createPostContent } from "../../ui/component/singlePostBuilder";
 import { setLogoutListener } from "../../ui/global/logout.mjs";
-import { onCommentPost } from "../../ui/post/comment.mjs";
 import { authGuard } from "../../utilities/authGuard";
 import { getMainComments } from "../../utilities/commentsSorter";
 import { goToProfilePage } from "../../ui/global/goMyProfile.mjs";
-import { showToast } from "../../ui/component/toastService.mjs";
+import { redirectWithToast } from "../../ui/component/toastService.mjs";
+import { createCommentForm } from "../../ui/component/commentFormBuilder.mjs";
 
 authGuard();
 setLogoutListener();
@@ -25,16 +25,19 @@ async function initSinglePost(id) {
       throw new Error("Post does not exist");
     }
 
+    document.title = `${postData.data.title} - DevSquare`;
+
     createPostContent(postData.data);
+
+    const commentSection = document.getElementById("comment-section");
+    commentSection.replaceChildren();
+    const commentForm = createCommentForm();
+    commentSection.appendChild(commentForm);
 
     const filteredMainComments = getMainComments(postData.data.comments);
     await createComment(filteredMainComments);
   } catch (error) {
     console.error("Error initializing single post:", error);
-    showToast("This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
-    window.location.href = "/";
+    redirectWithToast("/", "This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
   }
 }
-
-const commentForm = document.forms.comment;
-commentForm.addEventListener("submit", onCommentPost);
