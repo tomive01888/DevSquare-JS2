@@ -5,12 +5,10 @@
  *
  */
 export function goToProfilePage() {
-  document.addEventListener("DOMContentLoaded", () => {
-    const user = JSON.parse(localStorage.getItem("adminUser"));
+  const user = JSON.parse(localStorage.getItem("adminUser"));
 
-    const goToProfileBtn = document.getElementById("go-profile-btn");
-    goToProfileBtn.addEventListener("click", () => {
-      goToProfileBtn.href = `/profile/?profile=${user.name}`;
-    });
+  const goToProfileBtn = document.getElementById("go-profile-btn");
+  goToProfileBtn.addEventListener("click", () => {
+    goToProfileBtn.href = `/profile/?user=${user.name}`;
   });
 }

@@ -5,15 +5,13 @@ import { goToProfilePage } from "../js/ui/global/goMyProfile.mjs";
 import "../css/style.css";
 import "../js/ui/component/toastService.mjs";
 
-document.addEventListener("DOMContentLoaded", () => {
-  authGuard();
-  setLogoutListener();
-  goToProfilePage();
+authGuard();
+setLogoutListener();
+goToProfilePage();
 
-  const urlSearch = new URLSearchParams(window.location.search);
-  const profileName = urlSearch.get("profile");
+const urlSearch = new URLSearchParams(window.location.search);
+const profileName = urlSearch.get("user");
 
-  document.title = `${profileName}'s page - DevSquare`;
+document.title = `${profileName}'s page - DevSquare`;
 
-  initProfilePage(profileName);
-});
+initProfilePage(profileName);
