@@ -16,7 +16,7 @@ export async function onUpdateProfile(event) {
   event.preventDefault();
 
   const urlSearch = new URLSearchParams(window.location.search);
-  const profileName = urlSearch.get("profile");
+  const profileName = urlSearch.get("user");
 
   const bio = event.target.bio.value.trim();
   const avatarSrc = event.target.avatarSrc.value.trim();

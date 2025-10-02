@@ -44,7 +44,7 @@ export async function createProfileLink(profiles, emptyMessage, container) {
       "hover:transition-transform",
       "hover:duration-300"
     );
-    link.href = `/profile/?profile=${profile.name}`;
+    link.href = `/profile/?user=${profile.name}`;
 
     const img = document.createElement("img");
     img.src = profile.avatar.url;

@@ -90,7 +90,7 @@ export function createPostContent(post) {
 
   const authorLink = document.createElement("a");
   authorLink.classList.add("flex", "items-center", "gap-2", "bg-[#3d3d3d]", "rounded", "w-fit", "p-2", "text-white");
-  authorLink.href = `/profile/?profile=${author.name}`;
+  authorLink.href = `/profile/?user=${author.name}`;
 
   const authorAvatar = document.createElement("img");
   authorAvatar.classList.add("object-cover", "outline-white", "w-11", "h-11", "rounded");
