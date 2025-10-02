@@ -1,5 +1,5 @@
 import { displayRestrictedCoverUp } from "../ui/component/restrictedAccess.mjs";
-import { showToast } from "../ui/component/toastService.mjs";
+import { redirectWithToast } from "../ui/component/toastService.mjs";
 
 /**
  * Ensures the user is authenticated before allowing access to a page.
@@ -12,11 +12,11 @@ export function authGuard() {
   if (!localStorage.token) {
     displayRestrictedCoverUp();
     setTimeout(() => {
-      showToast(
+      redirectWithToast(
+        "/auth/",
         "Access restricted: You must be logged in to view this page. Registration is required if you don't already have an account.",
         "error"
       );
-      window.location.href = "/auth/";
     }, 1200);
   }
 }
