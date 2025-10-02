@@ -159,7 +159,7 @@ Read more in the link above about which requires authentication and more on url 
 
 🔗 **GitHub:** [tomive01888](https://github.com/tomive01888)
 
-Team collaboration with [Taner](https://github.com/tanersebat34) and [Senbet](https://github.com/senbet22) to design and make of [DevSquare](https://thedevsquare.netlify.app/)!
+Collaborated as part of a three-person team with [Taner](https://github.com/tanersebat34) and [Senbet](https://github.com/senbet22) to design and making of [DevSquare](https://thedevsquare.netlify.app/)!
 
 
 
