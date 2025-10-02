@@ -1,4 +1,4 @@
-import { updateProfile } from "../../api/profile/update";
+import { updateProfile } from "../../api/profile/update.mjs";
 import { showToast } from "../component/toastService.mjs";
 
 /**

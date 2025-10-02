@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 
 export default {
-  content: ["./**/*.{html,js,ts,css}", "!./node_modules/**/*"],
+  content: ["./index.html", "./auth/**/*.html", "./profile/**/*.html", "./post/**/*.html", "./src/**/*.{js,mjs}"],
   theme: {},
   plugins: [
     plugin(function ({ addUtilities }) {

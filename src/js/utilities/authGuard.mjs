@@ -11,12 +11,10 @@ import { redirectWithToast } from "../ui/component/toastService.mjs";
 export function authGuard() {
   if (!localStorage.token) {
     displayRestrictedCoverUp();
-    setTimeout(() => {
-      redirectWithToast(
-        "/auth/",
-        "Access restricted: You must be logged in to view this page. Registration is required if you don't already have an account.",
-        "error"
-      );
-    }, 1200);
+    redirectWithToast(
+      "/auth/",
+      "Access restricted: You must be logged in to view this page. Registration is required if you don't already have an account.",
+      "error"
+    );
   }
 }

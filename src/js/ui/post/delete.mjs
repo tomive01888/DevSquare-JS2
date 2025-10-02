@@ -1,4 +1,4 @@
-import { deletePost } from "../../api/post/delete";
+import { deletePost } from "../../api/post/delete.mjs";
 import { redirectWithToast, showToast } from "../component/toastService.mjs";
 
 /**

@@ -1,8 +1,8 @@
-import { setLogoutListener } from "../../ui/global/logout.mjs";
-import { onCreatePost } from "../../ui/post/create.mjs";
-import { authGuard } from "../../utilities/authGuard.mjs";
-import { goToProfilePage } from "../../ui/global/goMyProfile.mjs";
-
+import { goToProfilePage } from "../js/ui/global/goMyProfile.mjs";
+import { setLogoutListener } from "../js/ui/global/logout.mjs";
+import { authGuard } from "../js/utilities/authGuard.mjs";
+import { onCreatePost } from "../js/ui/post/create.mjs";
+import "../css/style.css";
 authGuard();
 setLogoutListener();
 goToProfilePage();

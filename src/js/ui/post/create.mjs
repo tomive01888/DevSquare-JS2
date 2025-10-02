@@ -1,4 +1,4 @@
-import { createPost } from "../../api/post/create";
+import { createPost } from "../../api/post/create.mjs";
 import { showToast } from "../component/toastService.mjs";
 
 const visitNewPost = document.querySelector(".go-to-post");

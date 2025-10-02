@@ -1,4 +1,4 @@
-import { commentPost } from "../../api/post/comment";
+import { commentPost } from "../../api/post/comment.mjs";
 import { showToast } from "../component/toastService.mjs";
 
 /**

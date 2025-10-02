@@ -1,3 +1,5 @@
+import { timeSinceCreated } from "../../utilities/timeSinceCreated.mjs";
+
 /**
  * Creates and displays comments for a post.
  *
@@ -10,9 +12,6 @@
  * It clears the current content, checks for empty or missing comments, and populates the section with styled elements
  * representing each comment, including the author's profile picture, name, time since creation, and the comment body.
  */
-
-import { timeSinceCreated } from "../../utilities/timeSinceCreated.mjs";
-
 export async function createComment(comments) {
   const commentsArea = document.getElementById("comments-area");
   commentsArea.textContent = "";

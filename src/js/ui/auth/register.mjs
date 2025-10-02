@@ -1,4 +1,4 @@
-import { register } from "../../api/auth/register";
+import { register } from "../../api/auth/register.mjs";
 
 /**
  * This function should pass data to the register function in api/auth and handle the response

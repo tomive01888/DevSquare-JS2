@@ -1,4 +1,4 @@
-import { updatePost } from "../../api/post/update";
+import { updatePost } from "../../api/post/update.mjs";
 import { redirectWithToast, showToast } from "../component/toastService.mjs";
 
 /**

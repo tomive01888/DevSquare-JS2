@@ -1,12 +1,12 @@
-import { authGuard } from "../../utilities/authGuard.mjs";
-import { onUpdatePost } from "../../ui/post/update.mjs";
-import { readPost } from "../../api/post/read";
-import { setLogoutListener } from "../../ui/global/logout.mjs";
-import { goToProfilePage } from "../../ui/global/goMyProfile.mjs";
-import { onDeletePost } from "../../ui/post/delete.mjs";
-import { populateEditForm } from "../../ui/component/populateEditForm.mjs";
-import { redirectWithToast } from "../../ui/component/toastService.mjs";
-
+import { readPost } from "../js/api/post/read.mjs";
+import { redirectWithToast } from "../js/ui/component/toastService.mjs";
+import { goToProfilePage } from "../js/ui/global/goMyProfile.mjs";
+import { setLogoutListener } from "../js/ui/global/logout.mjs";
+import { authGuard } from "../js/utilities/authGuard.mjs";
+import { onUpdatePost } from "../js/ui/post/update.mjs";
+import { populateEditForm } from "../js/ui/component/populateEditForm.mjs";
+import { onDeletePost } from "../js/ui/post/delete.mjs";
+import "../css/style.css";
 authGuard();
 setLogoutListener();
 goToProfilePage();

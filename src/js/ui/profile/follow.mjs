@@ -1,5 +1,5 @@
-import { followOrUnfollow } from "../../api/profile/follow";
-import { readProfile } from "../../api/profile/read";
+import { followOrUnfollow } from "../../api/profile/follow.mjs";
+import { readProfile } from "../../api/profile/read.mjs";
 import { createProfileLink } from "../component/profileCardsBuilder.mjs";
 
 /**

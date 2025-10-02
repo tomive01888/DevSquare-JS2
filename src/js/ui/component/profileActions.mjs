@@ -1,4 +1,4 @@
-import { readProfile } from "../../api/profile/read";
+import { readProfile } from "../../api/profile/read.mjs";
 import { compareUsers } from "../../utilities/compareProfiles.mjs";
 import { checkFollowingStatus } from "../../utilities/isFollowingUser.mjs";
 import { handleSectionDisplay } from "../../utilities/profileSectionHandler.mjs";
