@@ -21,7 +21,7 @@ export function displayRestrictedCoverUp() {
 
   const img = document.createElement("img");
   img.id = "cover-up-logo";
-  img.src = "/images/DevSquare.png";
+  img.src = "/images/devsquare2.png";
   img.classList.add("w-full", "max-w-[400px]", "bg-gray-200", "rounded-lg", "p-4");
 
   const title = document.createElement("h1");

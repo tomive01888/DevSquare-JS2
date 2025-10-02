@@ -1,4 +1,4 @@
-import { readPosts } from "../../api/post/read";
+import { readPosts } from "../../api/post/read.mjs";
 import { renderPosts } from "./homePostsBuilder.mjs";
 import { redirectWithToast } from "./toastService.mjs";
 
