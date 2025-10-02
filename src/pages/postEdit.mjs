@@ -7,35 +7,39 @@ import { onUpdatePost } from "../js/ui/post/update.mjs";
 import { populateEditForm } from "../js/ui/component/populateEditForm.mjs";
 import { onDeletePost } from "../js/ui/post/delete.mjs";
 import "../css/style.css";
-authGuard();
-setLogoutListener();
-goToProfilePage();
+import "../js/ui/component/toastService.mjs";
 
-const form = document.forms.editPost;
-form.addEventListener("submit", onUpdatePost);
+document.addEventListener("DOMContentLoaded", () => {
+  authGuard();
+  setLogoutListener();
+  goToProfilePage();
 
-const urlSearch = new URLSearchParams(window.location.search);
-const postId = urlSearch.get("id");
+  const form = document.forms.editPost;
+  form.addEventListener("submit", onUpdatePost);
 
-document.title = `Editing ${postId} - DevSquare`;
+  const urlSearch = new URLSearchParams(window.location.search);
+  const postId = urlSearch.get("id");
 
-const headTitle = document.getElementById("title-post");
-headTitle.textContent = `DevSquare - Editing post ${postId}`;
+  document.title = `Editing ${postId} - DevSquare`;
 
-initEditPost(postId);
-async function initEditPost(id) {
-  try {
-    const postData = await readPost(id);
+  const headTitle = document.getElementById("title-post");
+  headTitle.textContent = `DevSquare - Editing post ${postId}`;
 
-    if (!postData || !postData.data) {
-      throw new Error("Post does not exist");
+  initEditPost(postId);
+  async function initEditPost(id) {
+    try {
+      const postData = await readPost(id);
+
+      if (!postData || !postData.data) {
+        throw new Error("Post does not exist");
+      }
+
+      await populateEditForm(postData);
+    } catch (error) {
+      console.error("Error fetching post data:", error);
+      redirectWithToast("/", "This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
     }
-
-    await populateEditForm(postData);
-  } catch (error) {
-    console.error("Error fetching post data:", error);
-    redirectWithToast("/", "This post no longer exists or an error occurred. Redirecting to the homepage.", "error");
   }
-}
 
-document.querySelector(".delete-post").addEventListener("click", onDeletePost);
+  document.querySelector(".delete-post").addEventListener("click", onDeletePost);
+});

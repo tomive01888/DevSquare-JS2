@@ -8,6 +8,8 @@ import { goToProfilePage } from "../js/ui/global/goMyProfile.mjs";
 import { redirectWithToast } from "../js/ui/component/toastService.mjs";
 import { createCommentForm } from "../js/ui/component/commentFormBuilder.mjs";
 import "../css/style.css";
+import "../js/ui/component/toastService.mjs";
+
 document.addEventListener("DOMContentLoaded", () => {
   authGuard();
   setLogoutListener();
