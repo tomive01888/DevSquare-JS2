@@ -21,7 +21,7 @@ export function createProfileHero(user) {
   avatar.id = "avatar";
   avatar.src = user.avatar.url;
   avatar.alt = user.avatar.alt;
-  avatar.className = "w-24 h-24 bg-cover rounded-md";
+  avatar.className = "w-24 h-24 object-cover rounded-md";
 
   // Profile name
   const name = document.createElement("h1");
